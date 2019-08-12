@@ -41,7 +41,7 @@ permalink: /complexity-a-guided-tour-notes
 4. 混沌系统的共性：
    1. [倍周期](https://en.wikipedia.org/wiki/Period-doubling_bifurcation)： 随着参数控制参数$R$的增大，系统吸引子的震荡周期成倍增加的现象。
       倍周期是一种典型的系统走向混沌的方式。 下图是逻辑斯蒂映射的分叉图，图中吸引子 $x$ 是 控制参数 $r$ 的函数：
-      ![]({{ site.image_prefix | append: 'complexity-a-guided-tour-notes/13.png' }})
+      ![]({{ site.image_prefix | append: 'complexity-a-guided-tour-notes/13.jpg' }})
    2. [费根鲍姆常数](https://zh.wikipedia.org/wiki/%E8%B2%BB%E6%A0%B9%E9%AE%91%E5%A7%86%E5%B8%B8%E6%95%B8)：
       倍周期分叉中两个相邻分叉点间隔的比例收敛于一个常数$4.6692016$，
       也就是第一费根鲍姆常数（上图中左侧，开始的分叉点之间的水平距离之比的极限） ，

@@ -3,3 +3,5 @@ _site
 .jekyll-metadata
 .DS_Store
 .*.sw[opnm]
+node_modules
+package-lock.json

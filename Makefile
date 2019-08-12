@@ -7,6 +7,9 @@ build:
 	bundler exec jekyll build
 	cp _redirects _site/
 
+gulp:
+	gulp
+
 server:
 	bundler exec jekyll s
 

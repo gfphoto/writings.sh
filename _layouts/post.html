@@ -1,0 +1,23 @@
+---
+layout: default
+---
+
+<div class="post-header">
+  <h1>{{ page.title | escape }}</h1>
+  <p class="post-meta">
+    <span class="post-date">{{ page.date | date_to_long_string }}</span>
+    {%- for tag in page.tags -%}
+    <span class="post-tag"> <a href="/tag/{{ tag | relative_url }}">#{{ tag | escape }}</a> </span>
+    {%- endfor -%}
+  </p>
+</div>
+
+{{ content }}
+
+<span class="return-home-link">
+[<a href="{{ "/" | relative_url }}">Home</a>]
+</span>
+
+{%- if site.disqus.shortname -%}
+  {%- include disqus.html -%}
+{%- endif -%}

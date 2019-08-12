@@ -1,0 +1,27 @@
+title: Chao's blog
+email: hit9@icloud.com
+description: "Chao's personal blog"
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://hit9.github.io"
+twitter_username: _hit9
+github_username: hit9
+
+# Build settings
+markdown: kramdown
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+
+image_prefix: "/assets/images/posts/"   # Ends with slash
+
+
+plugins:
+  - jekyll-feed
+  - jekyll/tagging
+
+tag_page_layout: tag_page
+tag_page_dir: tag
+
+disqus:
+  shortname: secret-garden-1

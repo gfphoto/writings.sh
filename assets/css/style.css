@@ -1,0 +1,220 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+html { width: 100%; }
+
+body {
+  margin: 20px auto;
+  font: 16px/1.7 Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  color: #111111;
+  background-color: #fefefe;
+  font-weight: normal;
+  font-variant: normal;
+  font-style: normal;
+  text-rendering: optimizeLegibility;
+  width: 60%;
+  max-width: 700px;
+}
+
+header h1 a:link {
+  text-decoration: none;
+}
+
+footer {
+  text-align: center;
+  padding: .5em 0 .5em 0;
+}
+
+a:link {
+  color: #000;
+  text-decoration: underline;
+}
+
+a:visited {
+  color: #000;
+}
+
+a:hover {
+  color: #fff;
+  background-color: #000;
+  text-decoration: none;
+}
+
+article {
+  word-spacing: -1px;
+}
+
+article .post-meta span {
+  margin-right: 5px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: 600;
+  cursor: text;
+  position: relative;
+  text-align: left;
+}
+
+h1 {
+  font-size: 28px;
+  font-weight: 600;
+}
+
+h2 {
+  font-size: 24px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #ccc;
+}
+
+h3 {
+  font-size: 18px;
+}
+
+h4 {
+  font-size: 16px;
+}
+
+h5 {
+  font-size: 14px;
+}
+
+h6 {
+  color: #555;
+  font-size: 14px;
+}
+
+p,
+blockquote,
+ul,
+ol,
+dl,
+table,
+pre {
+  margin: 15px 0;
+}
+
+hr {
+  border: 0 none;
+  border-bottom: 1px solid #ccc;
+  color: #ccc;
+  height: 4px;
+  padding: 0;
+}
+
+li p.first {
+  display: inline-block
+}
+
+ul {
+  list-style: disc;
+  padding-left: 30px;
+}
+
+ol {
+  list-style: decimal;
+  padding-left: 30px;
+}
+
+ul.no-list,
+ol.no-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+ul :first-child,
+ol :first-child {
+  margin-top: 0;
+}
+
+ul ul,
+ol ul {
+  ist-style-type: circle
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+pre {
+  background-color: #eceff1;
+  border: 0;
+  padding: .8em 1em;
+  overflow: auto;
+  word-spacing: 0;
+}
+
+code {
+  background-color: #eceff1;
+  padding: 1px 4px;
+}
+
+pre code {
+  font-size: 16px;
+  line-height: 1.45;
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  border: none;
+  padding: 0;
+}
+
+blockquote {
+  border-left: 5px solid #DDD;
+  padding: 0 16px;
+  color: #777;
+}
+
+table {
+  display: block;
+  padding: 0;
+  border-collapse: collapse;
+  border-spacing: 0;
+  overflow: auto;
+  width: 100%;
+}
+
+table tr {
+  border-top: 1px solid #ccc;
+}
+
+table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+table th {
+  font-weight: 600;
+}
+
+table th,
+table td {
+  border: 1px solid #ccc;
+  padding: 6px 13px;
+}
+
+table th :first-child,
+table td :first-child {
+  margin-top: 0;
+}
+
+table th :last-child,
+table td :last-child {
+  margin-bottom: 0;
+}
+
+#disqus_thread {
+  margin-top: 50px;
+}
+
+.return-home-link {
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+}

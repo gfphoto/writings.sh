@@ -4,18 +4,11 @@ title: Chao's blog
 permalink: /
 ---
 
-### Links
+### Contact
 
+* **Email**: [hit9[AT]icloud.com](mailto: hit9@icloud.com)
 * **Github**: [*github.com/hit9*](https://github.com/hit9)
 * **Douban**: [*douban.com/people/hit9*](https://www.douban.com/people/hit9)
-
-### Projects
-
-* [~/.dotfiles](https://github.com/hit9/dotfiles) - My dotfiles :)
-* [oo](https://github.com/hit9/oo) - Simple Go Version Manager.
-* [thriftpy](https://github.com/Thriftpy/thriftpy2) - Pure python implementation of Apache Thrift.
-* [img2txt](https://github.com/hit9/img2txt) - Image to Ascii Text with color support.
-* [gif2txt](https://github.com/hit9/gif2txt) - Gif image to Ascii Text.
 
 ### Blog
 

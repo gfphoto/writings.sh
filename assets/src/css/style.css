@@ -218,3 +218,7 @@ table td :last-child {
   margin: 0 auto;
   text-align: center;
 }
+
+.post-copyright {
+  color: #777;
+}

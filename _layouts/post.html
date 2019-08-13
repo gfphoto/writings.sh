@@ -10,10 +10,12 @@ layout: default
     <span class="post-tag"> <a href="/tag/{{ tag | relative_url }}">#{{ tag | escape }}</a> </span>
     {%- endfor -%}
   </p>
+	<span class="post-copyright"> {{ site.copyright_declaration }} </span>
 </div>
 
 {{ content }}
 
+<span class="post-copyright"> {{ site.copyright_declaration }} </span>
 <span class="return-home-link">
 [<a href="{{ "/" | relative_url }}">Home</a>]
 </span>

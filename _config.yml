@@ -12,6 +12,14 @@ exclude:
   - Gemfile
   - Gemfile.lock
   - README.md
+  - node_modules
+  - venv
+  - vendor
+  - Makefile
+  - gulpfile.js
+  - package.json
+  - package-lock.json
+  - Caddyfile
 
 image_prefix: "/assets/images/posts/"   # Ends with slash
 

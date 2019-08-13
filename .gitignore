@@ -5,3 +5,4 @@ _site
 .*.sw[opnm]
 node_modules
 package-lock.json
+Caddyfile

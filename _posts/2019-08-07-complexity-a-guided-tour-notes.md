@@ -3,7 +3,7 @@ layout: post
 title: 《复杂》读书笔记
 date: 2019-08-07 18:04:00 +0800
 tags: 读书笔记 复杂
-permalink: /complexity-a-guided-tour-notes
+permalink: /post/complexity-a-guided-tour-notes
 ---
 
 

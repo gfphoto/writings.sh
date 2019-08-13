@@ -14,8 +14,16 @@ body {
   font-variant: normal;
   font-style: normal;
   text-rendering: optimizeLegibility;
-  width: 60%;
-  max-width: 700px;
+	width: 61.8%;
+	max-width: 710px;
+}
+
+/* Desktop */
+@media (max-device-width:1281px) {
+  body {
+    width: 90%;
+		max-width: 1000px;
+  }
 }
 
 header h1 a:link {

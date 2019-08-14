@@ -7,7 +7,7 @@ html { width: 100%; }
 
 body {
   margin: 20px auto;
-  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace, -apple-system, BlinkMacSystemFont, Helvetica Neue, PingFang SC;
   line-height: 1.7;
   color: #111111;
   background-color: #fefefe;
@@ -260,6 +260,7 @@ table td :last-child {
     max-width: 700px;
     font-size: 15px;
   }
+  .MathJax { font-size: 15px; }
   h1 { font-size: 28px; }
   h2 { font-size: 24px; }
   h3 { font-size: 18px; }

@@ -18,4 +18,4 @@ permalink: /
 最近文章:
 
 {% for post in site.posts limit:30 %}
-- `{{ post.date | date: "%Y-%m-%d" }}` [{{ post.title | escape }}]({{ post.url }}){% endfor %}
+- `{{ post.date | date: "%Y-%m-%d" }}` - [{{ post.title | escape }}]({{ post.url }}){% endfor %}

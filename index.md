@@ -4,18 +4,18 @@ title: Chao's blog
 permalink: /
 ---
 
-### 联系
+```
+夫君子之行，静以修身，俭以养德，
+非淡泊无以明志，非宁静无以致远。
 
-* **Email**: [hit9[at]icloud.com](mailto: hit9@icloud.com)
-* **Github**: [*github.com/hit9*](https://github.com/hit9)
-* **Douban**: [*douban.com/people/hit9*](https://www.douban.com/people/hit9)
-
-### Blog
+- 诸葛亮，《诫子书》
+```
 
 [[所有文章]({{ "/posts"  | relative_url }})]
 [[订阅]]({{ "/feed.xml"  | relative_url }})
+[[联系]]({{ "/contact"  | relative_url }})
 
 最近文章:
 
-{% for post in site.posts limit:15 %}
+{% for post in site.posts limit:30 %}
 - `{{ post.date | date: "%Y-%m-%d" }}` [{{ post.title | escape }}]({{ post.url }}){% endfor %}

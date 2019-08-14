@@ -224,9 +224,9 @@ table td :last-child {
   margin-top: 50px;
 }
 
-.return-home-link {
+.end-of-post-nav {
   display: block;
-  margin: 0 auto;
+  margin: 10px auto;
   text-align: center;
 }
 

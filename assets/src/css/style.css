@@ -239,7 +239,7 @@ table td :last-child {
   body {
     width: 90%;
     max-width: 1000px;
-    font-size: 24px;
+    font-size: 22px;
   }
   h1 { font-size: 38px; }
   h2 { font-size: 34px; }
@@ -253,8 +253,8 @@ table td :last-child {
 @media (min-device-width:1281px) {
   body {
     width: 61.8%;
-    max-width: 710px;
-    font-size: 16px;
+    max-width: 700px;
+    font-size: 15px;
   }
   h1 { font-size: 28px; }
   h2 { font-size: 24px; }

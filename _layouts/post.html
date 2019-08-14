@@ -23,9 +23,12 @@ layout: default
 <span class="post-copyright"> {{ site.copyright_declaration }} </span>
 <span class="end-of-post-nav">
 [<a class="return-home-link" href="{{ "/" | relative_url }}">Home</a>]
-[<a class="return-top-link" href="#">Go to top</a>]
 </span>
 
 {%- if site.disqus.shortname -%}
   {%- include disqus.html -%}
 {%- endif -%}
+
+<!-- Goto top -->
+<!-- https://github.com/azrsix/ue-scroll-js -->
+<div id="ue-scroll" class="ue-scroll btn-black arrow-white circle"></div>

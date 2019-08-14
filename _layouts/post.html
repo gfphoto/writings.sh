@@ -13,7 +13,10 @@ layout: default
 	<span class="post-copyright"> {{ site.copyright_declaration }} </span>
 </div>
 
-{{ content }}
+<!-- https://github.com/allejo/jekyll-anchor-headings -->
+{% include anchor_headings.html
+   html=content h_max=4 anchorClass="heading-anchor" anchorBody="#" beforeHeading=false
+   bodyPrefix='<span class="heading-text">' bodySuffix='</span>' %}
 
 <span class="post-copyright"> {{ site.copyright_declaration }} </span>
 <span class="return-home-link">

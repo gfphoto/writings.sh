@@ -82,6 +82,18 @@ h6 {
   color: #555;
 }
 
+/* heading anchors */
+.heading-anchor {
+  display: none;
+}
+
+.heading-text:hover .heading-anchor {
+  display: inline-block;
+  font-weight: 200;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
 p,
 blockquote,
 ul,

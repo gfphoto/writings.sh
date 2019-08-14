@@ -148,6 +148,14 @@ img {
   max-width: 100%;
 }
 
+/* https://stackoverflow.com/questions/19331362/using-an-image-caption-in-markdown-jekyll */
+/* Image Caption */
+img+em { 
+  display: block;
+  text-align: center;
+  font-size: 80%;
+}
+
 pre {
   background-color: #eceff1;
   border: 0;

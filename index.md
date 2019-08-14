@@ -17,5 +17,5 @@ permalink: /
 
 最近文章:
 
-{% for post in site.posts limit:91 %}
+{% for post in site.posts limit:15 %}
 - `{{ post.date | date: "%Y-%m-%d" }}` - [{{ post.title | escape }}]({{ post.url }}){% endfor %}

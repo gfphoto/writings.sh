@@ -3,14 +3,16 @@
   margin: 0;
 }
 
-html { width: 100%; }
+html {
+  width: 100%; 
+  background-color: #fefefe;
+}
 
 body {
   margin: 20px auto;
-  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace, -apple-system, BlinkMacSystemFont, Helvetica Neue, PingFang SC;
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace, Georgia, -apple-system, BlinkMacSystemFont, Helvetica Neue, PingFang SC;
   line-height: 1.7;
   color: #111111;
-  background-color: #fefefe;
   font-weight: normal;
   font-variant: normal;
   font-style: normal;

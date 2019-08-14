@@ -13,4 +13,4 @@ Fork Notice
 License
 -------
 
-Copyright (c) [Chao Wang](mailto: hit9@icloud.com), All rights reserved.
+Copyright (c) Chao Wang (hit9[at]icloud.com), All rights reserved.

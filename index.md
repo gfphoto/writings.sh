@@ -11,9 +11,9 @@ permalink: /
 - 诸葛亮，《诫子书》
 ```
 
-[[所有文章]({{ "/posts"  | relative_url }})]
-[[订阅]]({{ "/feed.xml"  | relative_url }})
-[[联系]]({{ "/contact"  | relative_url }})
+[**[所有文章]**]({{ "/posts"  | relative_url }})
+[**[订阅]**]({{ "/feed.xml"  | relative_url }}){:target="_blank"}
+[**[联系]**]({{ "/contact"  | relative_url }})
 
 最近文章:
 

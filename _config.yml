@@ -35,3 +35,5 @@ tag_page_dir: tag
 
 disqus:
   shortname: secret-garden-1
+
+google_analytics_gtag:  "UA-145761297-1"

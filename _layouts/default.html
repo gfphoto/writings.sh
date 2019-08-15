@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html>
-  {% include head.html %}
+  <head>
+    {% include head.html %}
+    {% include google_analytics.html %}
+  </head>
   <body>
     <header>
       <h1><a href="/">{{ site.title }}</a></h1>
@@ -9,6 +12,5 @@
       {{ content }}
     </article>
   {% include footer.html %}
-  {% include google_analytics.html %}
   </body>
 </html>

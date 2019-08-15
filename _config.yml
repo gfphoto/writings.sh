@@ -3,7 +3,7 @@ author_name: Chao Wang
 email: hit9@icloud.com
 description: "Chao's personal blog"
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://hit9.github.io"
+url: "https://writings.sh"
 twitter_username: _hit9
 github_username: hit9
 
@@ -29,6 +29,7 @@ copyright_declaration: "声明: 本文转载前需与作者联系并标明出处
 plugins:
   - jekyll-feed
   - jekyll/tagging
+  - jekyll-sitemap
 
 tag_page_layout: tag_page
 tag_page_dir: tag

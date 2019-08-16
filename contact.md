@@ -4,10 +4,13 @@ title: Chao's blog
 permalink: /contact
 ---
 
+![]({{ site.gravatar_link }}?s=150){:height="100px" width="100px" alt="avatar"}
+
+Chao Wang (hit9).
+
 ### Contact
 
-Chao Wang, hit9[at]icloud.com
-
+* **Email**: *hit9[at]icloud.com*
 * **Github**: [*github.com/hit9*](https://github.com/hit9)
 * **Douban**: [*douban.com/people/hit9*](https://www.douban.com/people/hit9)
 

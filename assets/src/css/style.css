@@ -163,6 +163,17 @@ img+em {
   color: #777;
 }
 
+/* Avatar */
+img[alt="avatar"] {
+  max-width: 200px;
+  max-height: 200px;
+  -webkit-border-radius: 100em;
+  -moz-border-radius: 100em;
+  -ms-border-radius: 100em;
+  -o-border-radius: 100em;
+  border-radius: 100em;
+}
+
 pre {
   background-color: #eceff1;
   border: 0;

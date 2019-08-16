@@ -38,3 +38,5 @@ disqus:
   shortname: secret-garden-1
 
 google_analytics_gtag:  "UA-145761297-1"
+
+gravatar_link: https://s.gravatar.com/avatar/ea15c4cf155e86fc429d94a41ddbbcb6

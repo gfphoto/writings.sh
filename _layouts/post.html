@@ -1,49 +1,63 @@
 ---
-layout: default
+layout: base
 ---
 
-<div class="post-header">
-  <h1>{{ page.title | escape }}</h1>
-  <div class="post-meta">
-    <div class="post-meta-primary">
-      <span class="post-date">{{ page.date | date_to_long_string }}</span>
-      {%- for category in page.categories -%}
-      <span class="post-category">
-        <a href="/posts#{{category|slugize}}">「{{ category }}」</a>
+<header class="post-page-header">
+  <span class="post-page-nav">
+    <a class="home-link" href="{{ "/" | relative_url }}">{{ site.title }}</a>
+  </span>
+  |
+  <span class="post-categories">
+    {%- for category in page.categories -%}
+    <span class="post-category">
+       <a href="/posts#{{category|slugize}}">{{ category }}</a>
+    </span>
+  </span>
+  {%- endfor -%}
+
+  <!-- Post date -->
+  <span class="post-date">{{ page.date | timeago }}</span>
+</header> <hr>
+
+<!--- Article -->
+<article>
+  <!-- Post Title  -->
+  <div class="post-title-container">
+    <h1 class="post-title">{{ page.title | escape }}</h1>
+  </div>
+
+  <!-- Post body -->
+  <div class="post-body">
+  <!-- https://github.com/allejo/jekyll-anchor-headings -->
+  {% include anchor_headings.html
+     html=content h_max=4 anchorClass="heading-anchor" anchorBody="#" beforeHeading=false
+     bodyPrefix='<span class="heading-text">' bodySuffix='</span>' %}
+  </div>
+
+  <!-- Post tags on the bottom -->
+  <p class="post-bottom-meta">
+    {%- for tag in page.tags -%}
+      <span class="post-tag">
+        <a href="/tag/{{ tag | relative_url }}">#{{ tag | escape }}</a>
       </span>
-      {%- endfor -%}
-    </div>
-  </div>
-</div>
+    {%- endfor -%}
+  </p>
 
-<div class="post-body">
-<!-- https://github.com/allejo/jekyll-anchor-headings -->
-{% include anchor_headings.html
-   html=content h_max=4 anchorClass="heading-anchor" anchorBody="#" beforeHeading=false
-   bodyPrefix='<span class="heading-text">' bodySuffix='</span>' %}
-</div>
+  <!-- Copyright Notice. -->
+  <p class="post-copyright"> {{ site.copyright_declaration }} </p>
 
-<div class="post-meta">
-  <div class="post-meta-secondary">
-    <p class="post-meta-tags">
-      {%- for tag in page.tags -%}
-        <span class="post-tag">
-          <a href="/tag/{{ tag | relative_url }}">#{{ tag | escape }}</a>
-        </span>
-      {%- endfor -%}
-    </p>
-    <p class="post-copyright"> {{ site.copyright_declaration }} </p>
-  </div>
-</div>
+  <!-- Nav end of post -->
+  <span class="end-of-post-nav">
+  [<a class="return-home-link" href="{{ "/" | relative_url }}">首页</a>]
+  </span>
 
-<span class="end-of-post-nav">
-[<a class="return-home-link" href="{{ "/" | relative_url }}">Home</a>]
-</span>
-
-{%- if site.disqus.shortname -%}
-  {%- include disqus.html -%}
-{%- endif -%}
+</article>
 
 <!-- Goto top -->
 <!-- https://github.com/azrsix/ue-scroll-js -->
 <div id="ue-scroll" class="ue-scroll btn-black arrow-white circle"></div>
+
+<!-- Comments / Disqus -->
+{%- if site.disqus.shortname -%}
+  {%- include disqus.html -%}
+{%- endif -%}

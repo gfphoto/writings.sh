@@ -30,6 +30,7 @@ plugins:
   - jekyll-feed
   - jekyll/tagging
   - jekyll-sitemap
+  - jekyll-timeago
 
 tag_page_layout: tag_page
 tag_page_dir: tag
@@ -40,3 +41,7 @@ disqus:
 google_analytics_gtag:  "UA-145761297-1"
 
 gravatar_link: https://s.gravatar.com/avatar/ea15c4cf155e86fc429d94a41ddbbcb6
+
+
+jekyll_timeago:
+  depth: 2

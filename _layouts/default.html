@@ -1,16 +1,15 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    {% include head.html %}
-    {% include google_analytics.html %}
-  </head>
-  <body>
-    <header>
-      <h1><a href="/">{{ site.title }}</a></h1>
-    </header>
-    <article>
-      {{ content }}
-    </article>
-  {% include footer.html %}
-  </body>
-</html>
+---
+layout: base
+---
+
+<!-- Top header -->
+<header>
+  <h1>
+    <a href="/">{{ site.title }}</a>
+  </h1>
+</header>
+
+<!-- Page content -->
+<article>
+  {{ content }}
+</article>

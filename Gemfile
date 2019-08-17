@@ -37,3 +37,6 @@ gem 'jekyll-tagging'
 
 # https://github.com/jekyll/jekyll-sitemap
 gem 'jekyll-sitemap'
+
+# https://github.com/markets/jekyll-timeago
+gem 'jekyll-timeago'

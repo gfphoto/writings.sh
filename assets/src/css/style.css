@@ -36,6 +36,7 @@ a:hover {
   text-decoration: none;
 }
 
+/* h1 is the blog title */
 header h1 a:link {
   text-decoration: none;
 }
@@ -52,10 +53,6 @@ footer a:visited { color: #999; }
 
 article {
   word-spacing: -1px;
-}
-
-article .post-meta span {
-  margin-right: 5px;
 }
 
 h1,
@@ -265,6 +262,7 @@ table td :last-child {
   h4 { font-size: 25px; }
   h5 { font-size: 22px; }
   h6 { font-size: 20px; }
+  .post-page-header .post-date { display: none; }
 }
 
 /* Desktop */
@@ -284,6 +282,21 @@ table td :last-child {
   img { max-width: 90%; }
 }
 
-.posts-list-post-date {
-  color: #777;
+/* Post date. */
+.posts-list-post-date, 
+.post-date {
+  color: #999;
+}
+
+.post-page-header .post-date {
+  font-size: 85%;
+  float: right;
+}
+
+.post-page-header .home-link {
+  font-weight: bold;
+}
+
+.post-bottom-meta span {
+  margin-right: 5px;
 }

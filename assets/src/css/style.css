@@ -283,3 +283,7 @@ table td :last-child {
   h6 { font-size: 14px; }
   img { max-width: 90%; }
 }
+
+.posts-list-post-date {
+  color: #777;
+}

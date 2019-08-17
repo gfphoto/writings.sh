@@ -2,6 +2,7 @@
 layout: post
 title: 逻辑时钟 - 如何刻画分布式中的事件顺序
 date: 2019-08-10 15:39:00 +0800
+categories: 分布式
 tags: 逻辑时钟 lamport时钟 向量时钟 分布式 因果关系 版本向量
 permalink: /post/logical-clocks
 ---

@@ -1,14 +1,12 @@
 ---
 layout: default
-title: Chao's blog | Posts
+title: Posts | Chao's blog
 permalink: /posts
 ---
 
-### Tags
-
-{{ site | tag_cloud }}
-
-### Posts
-
-{% for post in site.posts %}
-- `{{ post.date | date: "%Y-%m-%d" }}` - [{{ post.title | escape }}]({{ post.url }}){% endfor %}
+{% for category in site.categories %}
+### [{{ category[0] }}](#{{ category[0]|slugize }})
+  {% for post in category[1] %}
+- <span class="posts-list-post-date">{{ post.date | date: "%Y-%m-%d" }}</span> »
+  [{{ post.title | escape }}]({{ post.url }}){:class="posts-list-post-title"}{% endfor %}
+{% endfor %}

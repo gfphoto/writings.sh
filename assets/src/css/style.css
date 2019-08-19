@@ -239,7 +239,11 @@ table td :last-child {
 }
 
 #disqus_thread {
-  margin-top: 50px;
+  display: none;
+}
+
+#disqus_thread .disqus_thread_loader {
+  text-align: center;
 }
 
 .end-of-post-nav {

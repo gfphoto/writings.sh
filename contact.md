@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Chao's blog
+title: 联系 | Chao's blog
 permalink: /contact
 ---
 

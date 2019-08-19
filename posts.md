@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Posts | Chao's blog
+title: 归档 | Chao's blog
 permalink: /posts
 ---
 

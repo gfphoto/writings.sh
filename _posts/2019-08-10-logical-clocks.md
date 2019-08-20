@@ -57,7 +57,9 @@ permalink: /post/logical-clocks
 记录每个分布式进程中发生事件的原始时间戳，
 并把它连同事件本身扩散到其他节点，这样其他节点的视角上就可以观察到完整的因果顺序了？
 
-但是，大家都清楚的一点是，**不同节点的物理时钟其实是不一致的，而且无法做到精确一致**。
+> "If you have one clock, you know what the time is. If you have two, you are not sure." --  Anonymous
+
+大家都清楚的一点是，**不同节点的物理时钟其实是不一致的，而且无法做到精确一致**。
 
 其原因：
 

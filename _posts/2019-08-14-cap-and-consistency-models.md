@@ -247,7 +247,7 @@ CAP定理中的可用性的定义，可以说很强，也可以说很弱：
 我们常说的[高可用性 high availability](https://zh.wikipedia.org/wiki/%E9%AB%98%E5%8F%AF%E7%94%A8%E6%80%A7)，
 一般是指**部分节点损失后整个系统仍可以正常工作**。
 要达成高可用性，就必须做好故障转移。 所以我们也可以说，**CAP定理中的可用性其实是我们所说的高可用性**
-*(而且是最高的可用性，带响应时限要求的)*。
+*(而且是最高的可用性)*。
 
 下面我们列举两种保可用性的方法，都是万变不离其宗地围绕着「故障转移」这个出发点。
 
@@ -468,7 +468,7 @@ Gilbert和Lynch的话， 换一个简单的理解方式说：
   并发的事件则因果无关。 对于不同的一致性协调算法， 因果相关取决于具体的算法设计。
   同样，无论协调算法如何设计，我们仍然一定有前面那两条因果判断：
 
-  * 节点内的事件先后顺序
+  * 节点内的事件之间一定有先后顺序
   * 一次更新的读成功一定发生在写成功之后
 
   下面的图8.5是因果一致性的正反例。 左边的 $S_1$ 是符合因果一致性的，
@@ -496,21 +496,73 @@ Gilbert和Lynch的话， 换一个简单的理解方式说：
 
 现在可以从事件顺序的角度总结下这几个一致性模型：
 
-1. 严格一致性： 依赖绝对的全局物理时钟， 无法实现。
-2. 线性一致性： 要求达成事件顺序的全序一致， 且和物理时钟上的事件顺序一致。
-3. 顺序一致性： 要求达成事件顺序的全序一致。
-4. 因果一致性： 要求达成事件顺序的偏序一致，不必协调因果无关事件的顺序。
+1. 严格一致性： 依赖**绝对的全局物理时钟**， 无法实现。
+2. 线性一致性： 要求达成事件顺序的**全序**一致， 且和物理时钟上的事件顺序一致。
+3. 顺序一致性： 要求达成事件顺序的**全序**一致。
+4. 因果一致性： 要求达成事件顺序的**偏序**一致，不必协调因果无关事件的顺序。
 
-人们会认为一致性越强越好， 我们接下来会看到，
 不同强弱的一致性模型，其实现的难易程度、和带来的代价也是不同的。
 
-### 一致性的代价
+### 一致性的代价 - 响应时长
 
-### FLP不可能性
+回头看下CAP定理关于可用性的定义，
+其中并没有对响应时限做出约束。
+如果一个客户端请求的响应非常非常慢，但是最终得到了响应，在CAP的范畴下，这仍然是具有可用性的。
 
-### PACELC定理 - CAP的扩展
+更广义的可用性， 应该是在约定时限的要求下做出响应。
+现实中，人们往往是非常关心响应时间的。
+我们将看到， **强一致性的代价就是相对高的响应时长**。
+
+在理论计算机科学中，除了为人熟知的CAP定理之外，还有一个叫做**[PACELC](https://en.wikipedia.org/wiki/PACELC_theorem)**的定理，
+这个定理是CAP定理的一个扩展定理。
+
+PACELC定理的命名方式和CAP如出一辙，我们来看下这个定理的含义<sup>[[4]](#footnote-4)</sup>：
+
+当分区(**P**artition)发生的时候， 必须在可用性(**A**vailability) 和 一致性(**C**onsistency) 中做选择；
+否则(**E**lse)，当分区不发生时， 必须在响应时长(**L**atency) 和 一致性(**C**onsistency)中做选择。
+
+前半句的意思，就是CAP定理本身。
+后半句则指出了：**无分区的情况下，要追求更强的一致性， 就要接受更高的响应时长**。
+
+这是个非常酷的结论， 它把可用性的概念广义化到了响应时长。
+我们不做理论证明， 而是通过简单的示例分析来解释下为什么会有这样的结论。
+
+在前面的「[§数据同步的两种方式](#数据同步的两种方式)」章节中， 有提到节点间两种数据同步方式： 同步和异步。
+再次回顾图3.1中两种节点间数据同步的方式可以显然地看到： **同步的方式对客户端的响应时长更高**。
+
+![]({{ site.image_prefix | append: "cap-and-consistency-models/3.1.jpg" }})
+*图3.1 - $P_{1}$ 和 $P_{2}$ 的数据同步方式*
+
+我们接下来可以通过一个小图例来看到， **异步的节点间数据同步方式会降低系统的一致性强度**。
+
+观察下面的图9.1， 左边的 $S_1$ 中写请求会在其他节点完成数据同步后再回复客户端写入完成， 也就是同步方式。
+右边的 $S_2$ 中写请求会直接响应客户端，异步地对其他节点进行数据同步。
+在左右两个图中， 假如我们在$P_2$未完成数据副本同步之前的这个时间窗内，
+从不同的节点分别去读$a$， 在$S_1$ 中会得到一致性的结果， 而在 $S_2$ 则会得到不一致的结果。
+也就是**异步的数据副本同步方式会降低系统的一致性强度**。
+![]({{ site.image_prefix | append: "cap-and-consistency-models/9.1.jpg" }})
+
+综合来看，我们就可以（不严格地）得到这个结论，要做到更强的一致性，就要接受更高的响应时长。
+
+在论文《A Critique of the CAP Theorem》有总结不同的一致性模型下的读写响应时长和网络延迟 $d$ 之间的关系<sup>[[3]](#footnote-3)</sup>，
+其中 $O(d)$ 是一种类似复杂度的表示方法，
+$O(d)$ 表示请求是网络延迟时长敏感的， $O(1)$ 表示请求是和网络延迟无关的。
+
+|一致性(consistency)|写响应时长(write latency)|读响应时长(read latency)|
+|线性一致性| $O(d)$|$O(d)$|
+|顺序一致性| $O(d)$|$O(1)$|
+|因果一致性| $O(1)$|$O(1)$|
+
+可以通过这个研究小结中看出， 三个常见的一致性模型的读写请求对网络延迟的敏感程度。
+也清晰地看到了： 更强地一致性的代价是更高的响应时长。
+
+### 「CP 还是 AP」 并不是绝对的选择题
 
 ### 链接 & 脚注
 
-1. Gilbert and Lynch. [Brewer’s conjecture and the feasibility of consistent, available, partition-tolerant web services.](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.67.6951&rep=rep1&type=pdf) [_^_](#footnote-1){:id="footnote-1"}
-2. [逻辑时钟 - 如何刻画分布式中的事件顺序]({{ '/post/logical-clocks' | relative_url }}) [_^_](#footnote-2){:id="footnote-2"}
+1. Gilbert and Lynch. [Brewer’s conjecture and the feasibility of consistent, available, partition-tolerant web services.](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.67.6951&rep=rep1&type=pdf) [_$_](#footnote-1){:id="footnote-1"}
+2. Chao's blog. [逻辑时钟 - 如何刻画分布式中的事件顺序]({{ '/post/logical-clocks' | relative_url }}) [_$_](#footnote-2){:id="footnote-2"}
+3. Martin Kleppmann. [A Critique of the CAP Theorem](https://www.cl.cam.ac.uk/research/dtg/www/files/publications/public/mk428/cap-critique.pdf) [_$_](#footnote-3){:id="footnote-3"}
+4. Daniel J Abadi. [Consistency tradeoffs in modern distributed database system design. ](http://www.cs.umd.edu/~abadi/papers/abadi-pacelc.pdf) [_$_](#footnote-4){:id="footnote-4"}
+
+-- 毕「分布式的CAP定理和一致性模型」

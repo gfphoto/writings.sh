@@ -303,7 +303,12 @@ table td :last-child {
 
 .contact-info-container a:link,
 .contact-info-container a:visited
-{ color: #666; }
+{
+  color: #666; 
+  text-decoration: none;
+  margin-left: 5px;
+}
+.contact-info-container a:hover { color: #fff; }
 
 .bottom-nav p {
   margin-bottom: 0px;
@@ -340,7 +345,7 @@ header .divider {
   .contact-info-container {
     margin-top: 0;
     color: #666;
-    font-size: 22px;
+    font-size: 20px;
   }
 }
 

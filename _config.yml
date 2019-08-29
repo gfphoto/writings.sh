@@ -1,7 +1,9 @@
-title: Chao's blog
+title: 春水煎茶
 author_name: Chao Wang
+author_name_cn: 王超
+author_location: 上海
 email: hit9@icloud.com
-description: "Chao's personal blog"
+description: 山中何事？松花酿酒，春水煎茶。
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://writings.sh"
 twitter_username: _hit9
@@ -24,7 +26,7 @@ exclude:
 
 image_prefix: "/assets/images/posts/"   # Ends with slash
 
-copyright_declaration: '声明: 本文转载前需<a href="/contact">与作者联系</a>并标明出处，谢谢 ♥'
+copyright_declaration: '声明: 本文转载前需与作者联系并标明出处，谢谢 ♥'
 
 plugins:
   - jekyll-feed

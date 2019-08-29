@@ -315,7 +315,7 @@ table td :last-child {
 }
 
 /* Divider */
-.divider img { height: 50px; }
+.divider img { height: 45px; }
 header h1 { margin-bottom: 0; }
 header .divider { 
   margin-top: -25px;  /* divider.height(50px) / 2 = 25px */

@@ -8,7 +8,7 @@ permalink: /
 
 -- 元•张可久 《人月圆•山中书事》
 
-![]({{ '/assets/images/home-banner.jpg' | relative_url }}){:width="25%"}
+![]({{ '/assets/images/home-banner.jpg' | relative_url }}){:width="160px"}
 
 
 最近文章:

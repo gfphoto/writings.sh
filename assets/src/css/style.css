@@ -17,6 +17,7 @@ body {
   font-variant: normal;
   font-style: normal;
   text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
   width: 61.8%;
   max-width: 710px;
 }
@@ -304,8 +305,8 @@ table td :last-child {
 .contact-info-container a:link,
 .contact-info-container a:visited
 {
-  color: #666; 
-  margin-left: 5px;
+  color: #666;
+  margin-left: 4px;
 }
 .contact-info-container a:hover { color: #fff; }
 
@@ -317,7 +318,7 @@ table td :last-child {
 /* Divider */
 .divider img { height: 45px; }
 header h1 { margin-bottom: 0; }
-header .divider { 
+header .divider {
   margin-top: -25px;  /* divider.height(50px) / 2 = 25px */
 }
 

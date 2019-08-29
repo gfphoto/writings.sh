@@ -306,7 +306,6 @@ table td :last-child {
 .contact-info-container a:visited
 {
   color: #666;
-  margin-left: 4px;
 }
 .contact-info-container a:hover { color: #fff; }
 

@@ -186,8 +186,16 @@ pre {
 }
 
 code {
-  background-color: #eceff1;
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
   padding: 1px 4px;
+  margin: 0 3px;
+  background-color: #EAEDED;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  -ms-border-radius: 2px;
+  -o-border-radius: 2px;
+  border-radius: 2px;
+  color: #17202A;
 }
 
 pre code {

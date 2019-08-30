@@ -27,7 +27,7 @@ exclude:
 
 image_prefix: "/assets/images/posts/"   # Ends with slash
 
-copyright_declaration: '未经允许，不得转载'
+copyright_declaration: '未经允许，不得转载。'
 
 plugins:
   - jekyll-feed

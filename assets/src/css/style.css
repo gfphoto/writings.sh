@@ -157,6 +157,11 @@ img {
   margin: 0 auto;
 }
 
+.post-copyright { color: #777; }
+
+article .post-copyright { font-size: 90%; }
+
+
 /* https://stackoverflow.com/questions/19331362/using-an-image-caption-in-markdown-jekyll */
 /* Image Caption */
 img+em {

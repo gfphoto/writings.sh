@@ -1,8 +1,6 @@
 {%- if page.comments != false -%}
 
-  <div id="disqus_thread">
-    <p class="disqus_thread_loader">Loading comments from disqus...</p>
-  </div>
+<div id="disqus_thread"><div style="text-align: center"> 加载中... </div></div>
   <script>
     var disqus_config = function () {
       this.page.url = '{{ page.url | absolute_url }}';
@@ -21,6 +19,7 @@
       s.setAttribute('data-timestamp', +new Date());
       (d.head || d.body).appendChild(s);
       disqusLoaded = true;
+      document.getElementById("disqus-hint-link").style.display = "none";
       document.getElementById("disqus_thread").style.marginTop = "20px";
       document.getElementById("disqus_thread").style.marginBottom = "20px";
     }

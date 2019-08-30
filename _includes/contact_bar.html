@@ -5,9 +5,10 @@
   </div>
   <div class="contact-info-container">
     {{ site.author_name_cn }}, {{ site.author_location }} ·
-    <a href="mailto: {{ site.email }}">邮箱</a> |
+    <a href="{{ "/"  | relative_url }}">首页</a> |
     <a href="{{ "/posts"  | relative_url }}">归档</a> |
     <a href="{{ "/feed.xml"  | relative_url }}">订阅</a> |
+    <a href="mailto: {{ site.email }}">邮箱</a> |
     <a href="https://github.com/{{ site.github_username }}">Github</a>
   </div>
   <div class="clear"></div>

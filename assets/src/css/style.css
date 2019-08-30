@@ -305,7 +305,6 @@ table td :last-child {
   float: left;
   margin-top: 29px; /* img-size(45px)/2 + margin(15px) - font-size(15px)*line-height(1.7)/2 = 29px; */
   margin-left: 6px;
-  color: #666;
 }
 
 .contact-info-container p { margin: 0; padding: 0; }
@@ -313,14 +312,9 @@ table td :last-child {
 .contact-info-container a:link,
 .contact-info-container a:visited
 {
-  color: #666;
+  color: #111;
 }
 .contact-info-container a:hover { color: #fff; }
-
-.bottom-nav p {
-  margin-bottom: 0px;
-  line-height: 1.3;
-}
 
 /* Pendant */
 .pendant { margin-top: -29px; }
@@ -336,6 +330,22 @@ header .divider {
   margin-top: -25px;  /* divider.height(50px) / 2 = 25px */
 }
 
+
+.disqus-hint-link {
+  display: block;
+  margin: 15px 0;
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+  border: 1px solid grey;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  border-radius: 5px;
+}
+.disqus-hint-link:link { text-decoration: none;}
+.disqus-hint-link:visited { text-decoration: none;}
 
 /* Not-Desktop */
 @media (max-device-width:1281px) {
@@ -358,7 +368,7 @@ header .divider {
   .avatar-container img[alt="avatar"] { display: none; }
   .contact-info-container {
     margin-top: 0;
-    color: #666;
+    color: #111;
     font-size: 20px;
   }
   .pendant { display: none; margin: 0; }

@@ -43,16 +43,11 @@ layout: base
     {%- endfor -%}
   </p>
 
-  <!-- Nav end of post -->
-  <span class="end-of-post-nav">
-    <a class="return-home-link" href="{{ "/" | relative_url }}">首页</a>
-    <a class="disqus-hint-link" id="disqus-hint-link" href="javascript:void(0);" onclick="disqusLoader();">评论</a>
-    <span class="clear"></span>
-  </span>
-
 </article>
 
 {% include contact_bar.html %}
+
+<a class="disqus-hint-link" id="disqus-hint-link" href="javascript:void(0);" onclick="disqusLoader();">展开评论</a>
 
 <!-- Goto top -->
 <!-- https://github.com/azrsix/ue-scroll-js -->

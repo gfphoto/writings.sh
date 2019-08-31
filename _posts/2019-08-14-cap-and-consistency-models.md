@@ -589,9 +589,9 @@ CAP只否定了我们没办法同时达成最强的一致性和最高的可用�
 
 ### 链接 & 脚注
 
-1. Gilbert and Lynch. [Brewer’s conjecture and the feasibility of consistent, available, partition-tolerant web services.](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.67.6951&rep=rep1&type=pdf) [↩](#footnote-1){:id="footnote-1"}
-2. Chao's blog. [逻辑时钟 - 如何刻画分布式中的事件顺序]({{ '/post/logical-clocks' | relative_url }}) [↩](#footnote-2){:id="footnote-2"}
-3. Martin Kleppmann. [A Critique of the CAP Theorem](https://www.cl.cam.ac.uk/research/dtg/www/files/publications/public/mk428/cap-critique.pdf) [↩](#footnote-3){:id="footnote-3"}
-4. Daniel J Abadi. [Consistency tradeoffs in modern distributed database system design. ](http://www.cs.umd.edu/~abadi/papers/abadi-pacelc.pdf) [↩](#footnote-4){:id="footnote-4"}
+1. <span markdown="1" id="footnote-1">Gilbert and Lynch. [Brewer’s conjecture and the feasibility of consistent, available, partition-tolerant web services.](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.67.6951&rep=rep1&type=pdf)</span>
+2. <span markdown="1" id="footnote-2">Chao's blog. [逻辑时钟 - 如何刻画分布式中的事件顺序]({{ '/post/logical-clocks' | relative_url }})</span>
+3. <span markdown="1" id="footnote-3">Martin Kleppmann. [A Critique of the CAP Theorem](https://www.cl.cam.ac.uk/research/dtg/www/files/publications/public/mk428/cap-critique.pdf)</span>
+4. <span markdown="1" id="footnote-4">Daniel J Abadi. [Consistency tradeoffs in modern distributed database system design. ](http://www.cs.umd.edu/~abadi/papers/abadi-pacelc.pdf)</span>
 
 -- 毕「分布式的CAP定理和一致性模型」

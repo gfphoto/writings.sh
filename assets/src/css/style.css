@@ -314,6 +314,13 @@ table td :last-child {
   margin-right: 5px;
 }
 
+.post-bottom-meta span a:link,
+.post-bottom-meta span a:visited
+{
+  color: #888;
+}
+.post-bottom-meta span a:hover { color: #fff; }
+
 /* Contact */
 
 .avatar-container {

@@ -106,20 +106,20 @@ h6 {
   animation: target-fade 2s 1;
   -webkit-animation: target-fade 2s 1;
   -moz-animation: target-fade 2s 1;
-  background-color: #FCF3CF;
+  background-color: #EAEDED;
 }
 
 @keyframes target-fade { 
-  0% { background-color: #F1C40F; }
-  100% { background-color: #FCF3CF; }
+  0% { background-color: #95A5A6; }
+  100% { background-color: #EAEDED; }
 }
 @-webkit-keyframes target-fade {
-  0% { background-color: #F1C40F; }
-  100% { background-color: #FCF3CF; }
+  0% { background-color: #95A5A6; }
+  100% { background-color: #EAEDED; }
 }
 @-moz-keyframes target-fade {
-  0% { background-color: #F1C40F; }
-  100% { background-color: #FCF3CF; }
+  0% { background-color: #95A5A6; }
+  100% { background-color: #EAEDED; }
 }
 
 p,

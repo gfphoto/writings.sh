@@ -3,7 +3,7 @@ layout: post
 title: 分布式的CAP定理和一致性模型
 date: 2019-08-14 18:10:00 +0800
 categories: 分布式
-tags: 分布式  CAP定理 一致性 FLP不可能性 可用性 分区容忍性
+tags: 分布式  CAP定理 一致性 可用性 分区容忍性
 permalink: /post/cap-and-consistency-models
 ---
 

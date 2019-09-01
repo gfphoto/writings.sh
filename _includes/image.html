@@ -1,0 +1,2 @@
+<img src="{{ site.image_prefix | append: include.path }}" alt="{{include.alt}}" {% if {{include.max_height}} %}style="max-height: {{ include.max_height }}px;"{% endif %}>
+{% if include.note %}<em>{{ include.note }}</em>{% endif %}

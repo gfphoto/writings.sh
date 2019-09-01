@@ -20,8 +20,7 @@ permalink: /post/cap-and-consistency-models
 我们可以把客户端的请求用队列做线性化处理，
 例如下面的图1.1：
 
-![]({{ site.image_prefix | append: "cap-and-consistency-models/1.1.jpg" }}){:height="180px"}
-*图1.1 - 单节点的数据存储系统*
+{% include image.html path="cap-and-consistency-models/1.1.jpg" max_height=180 note="图1.1 - 单节点的数据存储系统" %}
 
 上面的图1.1中，横向黑色实线是物理时间轴，
 红色长条是写操作，蓝色长条是读操作。
@@ -37,8 +36,7 @@ permalink: /post/cap-and-consistency-models
 下面图1.2是稍复杂些的单节点系统，包含了「并发读写」和「并发写」的情况。
 可以看到，采用线性化方式处理请求的单节点系统是具备一致性的。
 
-![]({{ site.image_prefix | append: "cap-and-consistency-models/1.2.jpg" }})
-*图1.2 - 单节点系统+线性化处理*
+{% include image.html path="cap-and-consistency-models/1.2.jpg" max_height=180 note="图1.2 - 单节点系统+线性化处理" %}
 
 然而，单节点系统有以下问题：
 
@@ -48,8 +46,7 @@ permalink: /post/cap-and-consistency-models
 更一般地，我们要讨论多节点的分布式系统。
 下面的图1.3中是一个由 $P_{1}$ 和 $P_{2}$ 构成的两节点分布式系统。
 
-![]({{ site.image_prefix | append: "cap-and-consistency-models/1.3.jpg" }}){:height="170px"}
-*图1.3 - 两节点分布式系统*
+{% include image.html path="cap-and-consistency-models/1.3.jpg" max_height=170 note="图1.3 - 两节点分布式系统" %}
 
 可以注意到，为了 $R_{1}$ 可以在 $W_{1}$ 写入完成后返回正确的查询结果 $1$，
 那么 $P_{1}$ 和 $P_{2}$ 之间必然有数据同步。
@@ -59,8 +56,7 @@ permalink: /post/cap-and-consistency-models
 现实中，网络同步必然有丢包、甚至中断的情况，也就是一定会存在某个时刻，
 $P_{1}$ 和 $P_{2}$ 是无法网络连通的， 也就是发生了**分区现象**：
 
-![]({{ site.image_prefix | append: "cap-and-consistency-models/1.4.jpg" }}){:height="190px"}
-*图1.4 - $P_{1}$ 和 $P_{2}$ 发生网络分区的示意图*
+{% include image.html path="cap-and-consistency-models/1.4.jpg" max_height=190 note="图1.4 - $P_{1}$ 和 $P_{2}$ 发生网络分区的示意图" %}
 
 当分区发生时，我们结合下面的图1.5，得出以下结论：
 
@@ -70,8 +66,7 @@ $P_{1}$ 和 $P_{2}$ 是无法网络连通的， 也就是发生了**分区现象
 2. 如果 $R_{1}$ 拒绝服务， 即放弃 $P_{2}$ 的可用性，
    客户端只能查询另一个节点 $P_{1}$ 拿到一致性的结果。
 
-![]({{ site.image_prefix | append: "cap-and-consistency-models/1.5.jpg" }}){:height="200px"}
-*图1.5 - 可用性和一致性不可兼得*
+{% include image.html path="cap-and-consistency-models/1.5.jpg" max_height=200 note="图1.5 - 可用性和一致性不可兼得" %}
 
 我们似乎认识到，**在网络发生分区的情况下，我们必须在可用性和一致性之间做出选择**。
 
@@ -90,8 +85,7 @@ $P_{1}$ 和 $P_{2}$ 是无法网络连通的， 也就是发生了**分区现象
 但是，网络分区一旦出现， $P_{1}$故障前瞬间的写请求仍然不可同步到 $P_{2}$，
 就会造成数据丢失以及后续请求的不一致性。
 
-![]({{ site.image_prefix | append: "cap-and-consistency-models/2.1.jpg" }})
-*图2.1 - 主备结构的$P_{1}$ 和 $P_{2}$*
+{% include image.html path="cap-and-consistency-models/2.1.jpg" note="图2.1 - 主备结构的$P_{1}$ 和 $P_{2}$" %}
 
 ### 数据同步的两种方式
 
@@ -103,8 +97,8 @@ $P_{1}$ 和 $P_{2}$ 是无法网络连通的， 也就是发生了**分区现象
 2. 异步： 先返回写入成功，再同步到其他节点。
 
 下面的图3.1是两种数据同步方式的示例，紫色长条表示数据备份：
-![]({{ site.image_prefix | append: "cap-and-consistency-models/3.1.jpg" }})
-*图3.1 - $P_{1}$ 和 $P_{2}$ 的数据同步方式*
+
+{% include image.html path="cap-and-consistency-models/3.1.jpg" note="图3.1 - $P_{1}$ 和 $P_{2}$ 的数据同步方式" %}
 
 当然，同步和异步的方式并不是绝对的，
 我们可以设计出先同步写 $N$ 个节点，回复客户端，再异步写入其他节点的方式。
@@ -112,8 +106,7 @@ $P_{1}$ 和 $P_{2}$ 是无法网络连通的， 也就是发生了**分区现象
 不过，我们稍加分析即可以发现，
 网络分区发生的时候，无论同步还是异步的方式，如果不放弃可用性，都不能保证一致性。
 
-![]({{ site.image_prefix | append: "cap-and-consistency-models/3.2.jpg" }})
-*图3.2 - $P_{1}$ 和 $P_{2}$ 的数据同步 - 网络分区发生的时候*
+{% include image.html path="cap-and-consistency-models/3.2.jpg" note="图3.2 - $P_{1}$ 和 $P_{2}$ 的数据同步 - 网络分区发生的时候" %}
 
 ### CAP定理
 
@@ -154,8 +147,7 @@ CAP其实在说**强一致性和高可用性，二者择其一**。
 
 下面的图4.1是一个网络分区现象的示意图， 图中出现了三个分区：
 
-![]({{ site.image_prefix | append: "cap-and-consistency-models/4.1.jpg" }}){:height="280px"}
-*图4.1 - 分区现象示意图*
+{% include image.html path="cap-and-consistency-models/4.1.jpg" max_height=280 note="图4.1 - 分区现象示意图" %}
 
 分区所强调的是**节点间的不连通问题，即使每个节点都可以工作**。
 简单来说，**Partition != Crash**。
@@ -165,8 +157,7 @@ CAP其实在说**强一致性和高可用性，二者择其一**。
 CAP定理中对分区的定义<sup>[[1]](#footnote-1)</sup>是相对狭义的，
 比连通性更广义的分区界定是按通信时限的说法： 如果不能在通信时限内达成数据一致，就意味着发生了分区。
 例如下面图4.2中，数据同步的消息多次重试后，两个节点没有在一定时限内达成数据一致，此时即认为发生了分区。
-![]({{ site.image_prefix | append: "cap-and-consistency-models/4.2.jpg" }}){:height="200px"}
-*图4.2 - 分区现象示意图*
+{% include image.html path="cap-and-consistency-models/4.2.jpg" max_height=200 note="图4.2 - 分区现象示意图" %}
 
 分区现象的概念清楚了后，我们看分区容忍性：
 
@@ -195,8 +186,7 @@ CAP定理中对分区的定义<sup>[[1]](#footnote-1)</sup>是相对狭义的，
 
 下面的图5.1中， 左边的 $S_{1}$ 具有可用性； 右边的 $S_{2}$ 则不具有可用性。
 因为在 $S_{2}$ 中， 由于系统设计的原因，并发写和并发读写导致了带有错误的回复消息。
-![]({{ site.image_prefix | append: "cap-and-consistency-models/5.1.jpg" }})
-*图5.1 - 可用性是指读写都必须无错响应*
+{% include image.html path="cap-and-consistency-models/5.1.jpg" note="图5.1 - 可用性是指读写都必须无错响应" %}
 
 可用性并没有要求读到的数据的正确性，只描述了**系统可以总可以非错的工作的能力**。
 
@@ -216,16 +206,14 @@ CAP定理中对分区的定义<sup>[[1]](#footnote-1)</sup>是相对狭义的，
 或者直接简单地响应一个超时或者拒绝服务的错误，
 都是不具备可用性的。
 
-![]({{ site.image_prefix | append: "cap-and-consistency-models/5.2.jpg" }})
-*图5.2 - 响应错误 或者 长时间后再响应，都不具备可用性*
+{% include image.html path="cap-and-consistency-models/5.2.jpg" note="图5.2 - 响应错误 或者 长时间后再响应，都不具备可用性" %}
 
 那么，节点故障时，我们是否可以仍然保证可用性？
 
 方法是[**故障转移**](https://en.wikipedia.org/wiki/Failover)：
 把故障节点的负载转移给备份节点负责。 下面的图5.3演示了主备结构下的故障转移:
 
-![]({{ site.image_prefix | append: "cap-and-consistency-models/5.3.jpg" }})
-*图5.3 - 故障转移*
+{% include image.html path="cap-and-consistency-models/5.3.jpg" note="图5.3 - 故障转移" %}
 
 我们注意到，CAP定理对可用性的定义存在一个**non-failing**的限定语。
 也就是说，在CAP的范畴下，如果一个系统没有做好故障转移的逻辑，
@@ -259,8 +247,7 @@ CAP定理中的可用性的定义，可以说很强，也可以说很弱：
 当 $P_{1}$ 故障时，代理服务可以发现并暂时把 $P_{1}$ 从代理列表里踢出。
 把后续的请求转发到健康的 $P_{2}$ 上去。
 
-![]({{ site.image_prefix | append: "cap-and-consistency-models/5.4.jpg" }})
-*图5.4 - 通过代理完成故障转移*
+{% include image.html path="cap-and-consistency-models/5.4.jpg" note="图5.4 - 通过代理完成故障转移" %}
 
 还有一种方式，我们甚至可以 **配合客户端完成故障转移**。
 这就是另外一个工程上常用的负载均衡方案，
@@ -269,8 +256,7 @@ CAP定理中的可用性的定义，可以说很强，也可以说很弱：
 客户端可以通过监测目标系统的服务器健康情况，
 来决定向哪一个节点发起请求。
 
-![]({{ site.image_prefix | append: "cap-and-consistency-models/5.5.jpg" }}){:height="240px"}
-*图5.5 - 配合客户端完成故障转移*
+{% include image.html path="cap-and-consistency-models/5.5.jpg" max_height=240 note="图5.5 - 配合客户端完成故障转移" %}
 
 此外，实践中，还可以通过减少人工维护造成的系统宕机、
 gracefully-shutdown、添加系统报警等手段来提高系统的可用性。
@@ -286,8 +272,7 @@ gracefully-shutdown、添加系统报警等手段来提高系统的可用性。
 
 下面的图6.1中， 我们可以这样讲：左边的 $S_{1}$ 具有一致性， 右边的 $S_{2}$ 则不具有一致性。
 
-![]({{ site.image_prefix | append: "cap-and-consistency-models/6.1.jpg" }})
-*图6.1 - 一致性是指两次读返回的结果一致*
+{% include image.html path="cap-and-consistency-models/6.1.jpg" note="图6.1 - 一致性是指两次读返回的结果一致" %}
 
 一致性可以理解为「正确性」。 具有一致性的系统，
 在读写逻辑上并不会给客户端带来"惊讶"。
@@ -343,8 +328,7 @@ Gilbert和Lynch的话， 换一个简单的理解方式说：
    向系统写入一个值后，后续任意时刻的读取一定成功。
 
 下面的图6.2给出了一致性分类的示例：
-![]({{ site.image_prefix | append: "cap-and-consistency-models/6.2.jpg" }}){:height="280px"}
-*图6.2 - 一致性的分类*
+{% include image.html path="cap-and-consistency-models/6.2.jpg" max_height=280 note="图6.2 - 一致性的分类" %}
 
 ### 事件先后和并发
 
@@ -373,8 +357,7 @@ Gilbert和Lynch的话， 换一个简单的理解方式说：
 * 一次更新的读成功一定发生在写成功之后
 
 观察下面图7.1， 我们可以推导出来一些先后关系和并发关系。
-![]({{ site.image_prefix | append: "cap-and-consistency-models/7.1.jpg" }}){:height="180px"}
-*图7.1 - 事件先后示意*
+{% include image.html path="cap-and-consistency-models/7.1.jpg" max_height=180 note="图7.1 - 事件先后示意" %}
 
 在分布式的事件顺序的理解上，我们一定要清楚**事件的先后是具有相对性的**。
 我们无法在系统中创造一个上帝视角观察到全局情况， 只能通过每个节点对系统的局部感知来推导全局的事件顺序是怎样的，
@@ -386,8 +369,7 @@ Gilbert和Lynch的话， 换一个简单的理解方式说：
 
 下图8.1中是一种一致性分类 更为精细、严格的一致性模型：
 
-![]({{ site.image_prefix | append: "cap-and-consistency-models/8.1.jpg" }})
-*图8.1 - 更为精细严格的一致性模型*
+{% include image.html path="cap-and-consistency-models/8.1.jpg" note="图8.1 - 更为精细严格的一致性模型" %}
 
 我们接下来详细讨论几个常见的一致性模型， 请注意从事件顺序的角度去观察它们之间的区别：
 
@@ -398,8 +380,7 @@ Gilbert和Lynch的话， 换一个简单的理解方式说：
   现实中，严格一致性是很难实现的，
   因为节点间的网络同步的延迟是无法确定的。
 
-  ![]({{ site.image_prefix | append: "cap-and-consistency-models/8.2.jpg" }})
-  *图8.2 - 严格一致性的正反例*
+  {% include image.html path="cap-and-consistency-models/8.2.jpg" note="图8.2 - 严格一致性的正反例" %}
 
 * **线性一致性 Linearizability Consistency**
 
@@ -420,8 +401,7 @@ Gilbert和Lynch的话， 换一个简单的理解方式说：
   回复的事件顺序同样如此， **整个系统的请求处理好像是由单节点来完成的一样， 是线性化的**，
   这也正是线性一致性的建模出发点。
 
-  ![]({{ site.image_prefix | append: "cap-and-consistency-models/8.3.jpg" }})
-  *图8.3 - 线性一致性的正反例*
+  {% include image.html path="cap-and-consistency-models/8.3.jpg" note="图8.3 - 线性一致性的正反例" %}
 
   可以观察到，在符合线性一致性的情况下，
   事件顺序具有**全序关系**<sup>[[2]](#footnote-2)</sup>，
@@ -447,8 +427,8 @@ Gilbert和Lynch的话， 换一个简单的理解方式说：
 
   下面图8.4中， 左边的 $S_1$ 是符合顺序一致性的， 因为所有节点的视角上看到的事件顺序是一致的。
   右边的 $S_2$ 则不符合， 因为 $P_3$ 和 $P_4$ 没有对 $1$ 和 $2$ 的更新顺序达成一致。
-  ![]({{ site.image_prefix | append: "cap-and-consistency-models/8.4.jpg" }})
-  *图8.4 - 顺序一致性的正反例*
+
+  {% include image.html path="cap-and-consistency-models/8.4.jpg" note="图8.4 - 顺序一致性的正反例" %}
 
   和线性一致性相同的点在于： 顺序一致性仍然要求所有节点的视角在全序上一致。
   不同的地方在于， 顺序一致性不再要求节点看到的事件顺序一定要是物理时钟上的真实事件顺序，
@@ -477,8 +457,7 @@ Gilbert和Lynch的话， 换一个简单的理解方式说：
   因为$P_3$ 中先读到了 $3$ 后读到了 $1$， 在 $P_3$ 的视角里 $a$ 先更新到了 $3$ 再更新到了 $1$。
   而在 $P_1$ 的视角里 $a$ 先更新到了 $1$ 再更新到了 $3$， 两个节点的因果顺序不一致。
 
-  ![]({{ site.image_prefix | append: "cap-and-consistency-models/8.5.jpg" }})
-  *图8.5 - 因果一致性的正反例*
+  {% include image.html path="cap-and-consistency-models/8.5.jpg" note="图8.5 - 因果一致性的正反例" %}
 
   在$S_1$ 中，由于$W_1 \parallel W_2$， 所以导致了 $P_3$ 和 $P_4$ 中对 $a=1$ 还是 $a=2$ 没有一致。
   我们注意到并发请求是因果无关的，所以 $S_1$ 确实是符合因果一致性的。
@@ -487,8 +466,7 @@ Gilbert和Lynch的话， 换一个简单的理解方式说：
   下面的图8.6是另一个不符合因果一致性的反例。
   原因在于， $W_1 \rightarrow R_1$ 和 $R_1 \rightarrow W_2$ 可以推导出来 $W_1 \rightarrow W_2$ 。
   但是 $P_3$ 的视角上 $a$ 先更新到 $2$ ， 再更新到 $1$ , 矛盾。
-  ![]({{ site.image_prefix | append: "cap-and-consistency-models/8.6.jpg" }}){:height="200px"}
-  *图8.6 - 因果一致性的反例*
+  {% include image.html path="cap-and-consistency-models/8.6.jpg" max_height=200 note="图8.6 - 因果一致性的反例" %}
 
   关于因果一致性，我认为最重要的一个特征是，**因果一致性要求构建的是偏序，不是全序**。
   著名的向量时钟算法<sup>[[2]](#footnote-2)</sup>，就是一种符合因果一致性协调算法，
@@ -530,8 +508,7 @@ PACELC定理的命名方式和CAP如出一辙，我们来看下这个定理的�
 在前面的「[§数据同步的两种方式](#数据同步的两种方式)」章节中， 有提到节点间两种数据同步方式： 同步和异步。
 再次回顾图3.1中两种节点间数据同步的方式可以显然地看到： **同步的方式对客户端的响应时长更高**。
 
-![]({{ site.image_prefix | append: "cap-and-consistency-models/3.1.jpg" }})
-*图3.1 - $P_{1}$ 和 $P_{2}$ 的数据同步方式*
+{% include image.html path="cap-and-consistency-models/3.1.jpg" note="图3.1 - $P_{1}$ 和 $P_{2}$ 的数据同步方式" %}
 
 我们接下来可以通过一个小图例来看到， **异步的节点间数据同步方式会降低系统的一致性强度**。
 
@@ -540,7 +517,7 @@ PACELC定理的命名方式和CAP如出一辙，我们来看下这个定理的�
 在左右两个图中， 假如我们在$P_2$未完成数据副本同步之前的这个时间窗内，
 从不同的节点分别去读$a$， 在$S_1$ 中会得到一致性的结果， 而在 $S_2$ 则会得到不一致的结果。
 也就是**异步的数据副本同步方式会降低系统的一致性强度**。
-![]({{ site.image_prefix | append: "cap-and-consistency-models/9.1.jpg" }})
+{% include image.html path="cap-and-consistency-models/9.1.jpg" %}
 
 综合来看，我们就可以（不严格地）得到这个结论，要做到更强的一致性，就要接受更高的响应时长。
 

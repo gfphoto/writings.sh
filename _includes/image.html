@@ -1,5 +1,5 @@
 <img class="post-content-img lozad"
-  data-background-image="{{ "/assets/images/lozad-background.jpg" | relative_url }}"
+  src="{{ "/assets/images/loader.gif" | relative_url }}"
   data-src="{% if include.absolute_url %}{{ include.absolute_url }}{% else %}{{ site.image_prefix | append: include.path }}{% endif %}"
   alt="{{include.alt}}"
   {% if {{include.max_height}} %}style="max-height: {{ include.max_height }}px;"{% endif %} />

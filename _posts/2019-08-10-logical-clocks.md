@@ -18,8 +18,7 @@ permalink: /post/logical-clocks
 3. 但是由于无法确定的网络延迟原因，导致进程A发出的消息到达C晚于进程B发出的消息到达C，这样
    进程C的视角上，最终看到的事件顺序是 $b, a$，但是这与事实是相悖的。
 
-![]({{ site.image_prefix | append: "logical-clocks/01.jpg" }}){:height="240px"}
-*图1 - 由于网络延迟， 进程$B$发出的消息晚于进程$A$发出的消息到达进程$C$*
+{% include image.html path="logical-clocks/01.jpg" max_height=240 note="图1 - 由于网络延迟， 进程$B$发出的消息晚于进程$A$发出的消息到达进程$C$" %}
 
 可以看到，在分布式通信中，由于网络延迟的不确定性，
 **仅仅以接收顺序作为整个分布式系统中事件的发生顺序是不可取的**。
@@ -32,18 +31,15 @@ permalink: /post/logical-clocks
 4. 但是由于无法确定的网络延迟的原因，导致纽约的数据中心先收到小红的回复，而后收到了原始的提问消息。
    这样，导致最终小李看到的问答顺序是不符合问答的因果一致性的。
 
-![]({{ site.image_prefix | append: "logical-clocks/02.jpg" }}){:height="450px"}
-*图2 - 由于网络延迟，小李看到的事件顺序并不符合问答的因果关系*
+{% include image.html path="logical-clocks/02.jpg" max_height=450 note="图2 - 由于网络延迟，小李看到的事件顺序并不符合问答的因果关系" %}
 
 以上的例子，是腾讯微信朋友圈真实碰到并解决的问题。 详细的介绍见 [微信朋友圈技术之道](https://ppt.baomitu.com/d/010f1d70)。
 
 下面是微信朋友圈架构设计的两个关于因果一致性算法设计的PPT截图：
 
-![]({{ site.image_prefix | append: "logical-clocks/03.jpg" }}){:height="450px"}
-*图3 - 《微信朋友圈技术之道》中分享的关于因果性的PPT*
+{% include image.html path="logical-clocks/03.jpg" max_height=450 note="图3 - 《微信朋友圈技术之道》中分享的关于因果性的PPT" %}
 
-![]({{ site.image_prefix | append: "logical-clocks/04.jpg" }}){:height="450px"}
-*图4 - 《微信朋友圈技术之道》中分享的关于向量时钟的PPT*
+{% include image.html path="logical-clocks/04.jpg" max_height=450 note="图4 - 《微信朋友圈技术之道》中分享的关于向量时钟的PPT" %}
 
 在腾讯的分享PPT中，提到了「向量时钟」， 不过我们稍后再揭开它的神秘面纱。
 
@@ -112,8 +108,7 @@ permalink: /post/logical-clocks
 
 而$S_{2}$上的关系，描述的是集合之间的包含关系，是一种偏序关系，其中 $v_{2}$ 和 $v_{3}$ 是不可比较的。
 
-![]({{ site.image_prefix | append: "logical-clocks/05.jpg" }}){:height="240px"}
-*图5 - $S1$描述了全序关系； $S2$描述了偏序关系*
+{% include image.html path="logical-clocks/05.jpg" max_height=240 note="图5 - $S1$描述了全序关系； $S2$描述了偏序关系" %}
 
 现在我们回头看，寻求全局时钟为分布式节点中的时间做顺序标定的方式，
 其实是在寻求一种全序关系来描述分布式中的事件顺序。
@@ -154,8 +149,7 @@ permalink: /post/logical-clocks
 但是对于月台的观察者$B$而言，火车的尾部会迎向光移动，而车尾会远离光移动，
 而且光速是有限的，且相对于两个观察者都是相同的常数，所以$B$认为光会先到达车尾，后到达车头。
 
-![]({{ site.image_prefix | append: "logical-clocks/06.jpg" }}){:height="270px"}
-*图6 - 狭义相对论中著名的火车思想实验*
+{% include image.html path="logical-clocks/06.jpg" max_height=270 note="图6 - 狭义相对论中著名的火车思想实验" %}
 
 这样，**对于不同参照系的观察者而言，事件的顺序并没有一个一致性的结论**。
 之所以得出这样神奇的结论，仍然是因为关键的「光速不变原理」。
@@ -175,9 +169,7 @@ permalink: /post/logical-clocks
 造成了一个新的事件$B$，叫做「观察到了事件$A$的事件$B$」。
 这时我们才有 $A$ happened before $B$ 的因果关系。
 
-![]({{ site.image_prefix | append: "logical-clocks/07.jpg" }}){:height="200px"}
-*图7 - 物理时空中因果关系建立了事件顺序*
-
+{% include image.html path="logical-clocks/07.jpg" max_height=200 note="图7 - 物理时空中因果关系建立了事件顺序" %}
 
 可以看到，时空对于描述事件顺序的「happened before」同样是偏序关系。
 
@@ -207,8 +199,7 @@ Lamport受相对论中事件顺序的相对性的启发，创造了[Lamport Logi
 我们试着从每个进程的视角，依次对图$S_{1}$和$S_{2}$进行推导一下，会发现，
 其实**两个图所描述的事件顺序，在进程的相对视角中，是一样的**。
 
-![]({{ site.image_prefix | append: "logical-clocks/08.jpg" }})
-*图8 - 示例： $S_{1}$和$S_{2}$虽然在物理时序上不一样，但是在各个进程的视角上推导出来却是一样的*
+{% include image.html path="logical-clocks/08.jpg" note="图8 - 示例： $S_{1}$和$S_{2}$虽然在物理时序上不一样，但是在各个进程的视角上推导出来却是一样的" %}
 
 我们的逻辑时序应该越接近物理时序越好，然而两个图对时序的刻画，
 出现了歧义（比如无法确定 $a_{3}$ 和 $b_{2}$ 的顺序）。
@@ -227,8 +218,7 @@ Lamport受相对论中事件顺序的相对性的启发，创造了[Lamport Logi
 2. 发送一个消息，是一个事件（如下图中的蓝色标记的事件）。
 3. 接收一个消息，是一个事件 （如下图中的黑灰色标记的事件）。
 
-![]({{ site.image_prefix | append: "logical-clocks/09.jpg" }})
-*图9 - 分布式中事件的分类*
+{% include image.html path="logical-clocks/09.jpg" note="图9 - 分布式中事件的分类" %}
 
 我们上面有提到「happened before」的关系，我们知道，因果关系是推导「happened before」关系的重要一环：
 
@@ -266,8 +256,7 @@ Lamport受相对论中事件顺序的相对性的启发，创造了[Lamport Logi
 
 下面的图10是这个算法的示意图，可以推算最后的时钟计数器的值：$C_{i}=3$, $C_{j}=5$
 
-![]({{ site.image_prefix | append: "logical-clocks/10.jpg" }})
-*图10 - Lamport时钟算法*
+{% include image.html path="logical-clocks/10.jpg" note="图10 - Lamport时钟算法" %}
 
 下面，将证明：如果 $a \rightarrow b$，那么一定有 $C_{a} < C_{b}$。
 
@@ -287,8 +276,7 @@ Lamport受相对论中事件顺序的相对性的启发，创造了[Lamport Logi
 
    那么，最终推导出 $C_{a} < C_{b}$（严格小于）。
 
-   ![]({{ site.image_prefix | append: "logical-clocks/11.jpg" }}){:height="200px"}
-   *图11 - 事件 $a$ 和 $b$ 在不同进程的情况下，中间一定有消息传递，否则两个事件并发*
+   {% include image.html path="logical-clocks/11.jpg" note="图11 - 事件 $a$ 和 $b$ 在不同进程的情况下，中间一定有消息传递，否则两个事件并发"  max_height=200 %}
 
 以上，得证 $a \rightarrow b \Rightarrow C_{a} < C_{b}$。
 
@@ -296,8 +284,7 @@ Lamport受相对论中事件顺序的相对性的启发，创造了[Lamport Logi
 
 悲哀的是，不能。 下面的图12是个反例：
 
-![]({{ site.image_prefix | append: "logical-clocks/12.jpg" }}){:height="240px"}
-*图12 - lamport时钟无法反向推导事件顺序的反例： 红色 $a$ 和蓝色 $b$ 是并发的*
+{% include image.html path="logical-clocks/12.jpg" note="图12 - lamport时钟无法反向推导事件顺序的反例： 红色 $a$ 和蓝色 $b$ 是并发的"  max_height=240 %}
 
 这样，我们反证了 $C_{ a } < C_{ b } \nRightarrow a \rightarrow b$。
 
@@ -341,8 +328,7 @@ lamport时钟的缺陷在于：**如果两个事件并不相关，那么这个�
    2. 发送消息的时候，需要传播出去自己的整个向量（也就是广播自己对整个系统的视角）。
    3. 接收到消息的时候，也就是蓝色事件，需要对齐对方的向量，并应用第一条规则，即自己的向量内相应计数器自增。
 
-![]({{ site.image_prefix | append: "logical-clocks/13.jpg" }}){:height="340px"}
- *图13 - 向量时钟示意图*
+{% include image.html path="logical-clocks/13.jpg" note="图13 - 向量时钟示意图"  max_height=340 %}
 
 可以发现，向量时钟和lamport的时钟算法结构一样， 不同的点在于：
 lamport时钟只是在对齐时钟的计数器，
@@ -382,13 +368,11 @@ lamport时钟只是在对齐时钟的计数器，
    因为 $VC_a < VC_b$ ，所以 $m \le s$， 所以必然在 不早于 $a$ 之前 和 不晚于 $b$ 之后的时间内，
    $P_a$ 向 $P_b$ 发送了消息 （否则 $P_b$ 对 $P_a$ 的计数器得不到及时刷新，就不会不小于 $m$ ）。
 
-   ![]({{ site.image_prefix | append: "logical-clocks/14.jpg" }}){:height="200px"}
-   *图14 - 中间必然存在$P_a$向$P_b$发送了消息*
+   {% include image.html path="logical-clocks/14.jpg" note="图14 - 中间必然存在$P_a$向$P_b$发送了消息"  max_height=200 %}
 
    实际上，可以分为以下几种情况：
 
-   ![]({{ site.image_prefix | append: "logical-clocks/15.jpg" }})
-   *图15 - 可能出现的4种情况*
+   {% include image.html path="logical-clocks/15.jpg" note="图15 - 可能出现的4种情况" %}
 
    1. 当 $a = c$ 且 $d = b$ , 易得 $a \rightarrow b$.
    2. 当 $a = c$ 且 $d \rightarrow b$ ，由传递性，得 $a \rightarrow b$ .
@@ -423,8 +407,7 @@ lamport时钟只是在对齐时钟的计数器，
 也就是我们找到了一种方法来描述这种情况下的事件顺序。
 进程$C$的视角下观察 $a$ 和 $b$ 的顺序的问题也有了明确的答案。
 
-![]({{ site.image_prefix | append: "logical-clocks/16.jpg" }})
-*图16 - 用向量时钟的方法解答文章开始提出的问题*
+{% include image.html path="logical-clocks/16.jpg" note="图16 - 用向量时钟的方法解答文章开始提出的问题" %}
 
 最后，我们回到朋友圈的例子。 下面图17中可以看出，
 $VC_{a} < VC_{b} < VC_{c} < VC_{d} < VC_{e}$， 显然可以确定 $a \rightarrow b \rightarrow c \rightarrow d \rightarrow e$ 。
@@ -432,8 +415,7 @@ $VC_{a} < VC_{b} < VC_{c} < VC_{d} < VC_{e}$， 显然可以确定 $a \rightarro
 在小李看到小明的朋友圈和小红的评论的时候，也收到了这两条数据的向量，
 我们可以根据向量时钟来确定事件的先后关系，从而不会显示出因果矛盾。
 
-![]({{ site.image_prefix | append: "logical-clocks/17.jpg" }})
-*图17 - 用向量时钟的方法看朋友圈问题*
+{% include image.html path="logical-clocks/17.jpg" note="图17 - 用向量时钟的方法看朋友圈问题" %}
 
 图17中还有一个事件 $f$， 它的发生可能是小红又发了一条评论。 我们可以看到 $VC_{f} \parallel VC_{e}$。
 这时候，无法确定事件 $f$ 和 $e$ 的先后关系，也就是说 $f \parallel e$。
@@ -471,8 +453,7 @@ $VC_{a} < VC_{b} < VC_{c} < VC_{d} < VC_{e}$， 显然可以确定 $a \rightarro
 1. **更新数据**的事件， 即图18中红色的点。
 2. **同步数据**的事件， 发送数据 和 接收数据， 分别为蓝色和黑灰色的点。
 
-![]({{ site.image_prefix | append: "logical-clocks/18.jpg" }})
-*图18 - 版本向量示意图*
+{% include image.html path="logical-clocks/18.jpg" note="图18 - 版本向量示意图" %}
 
 我们可以看到，在进行一次同步操作后，双方进程的版本向量会变成一样。
 

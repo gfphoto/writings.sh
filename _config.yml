@@ -1,14 +1,25 @@
+###
+# Site Meta
+###
+
 title: 春水煎茶
+description: 山中何事？松花酿酒，春水煎茶。
+
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://writings.sh"
+
+###
+# Author
+###
+
+email: hit9@icloud.com
 author_name: Chao Wang
 author_name_cn: 王超
 author_location: 上海
-email: hit9@icloud.com
-description: 山中何事？松花酿酒，春水煎茶。
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://writings.sh"
 twitter_username: _hit9
 github_username: hit9
 douban_username: hit9
+gravatar_link: https://s.gravatar.com/avatar/ea15c4cf155e86fc429d94a41ddbbcb6
 
 # Build settings
 markdown: kramdown
@@ -42,8 +53,6 @@ disqus:
   shortname: secret-garden-1
 
 google_analytics_gtag:  "UA-145761297-1"
-
-gravatar_link: https://s.gravatar.com/avatar/ea15c4cf155e86fc429d94a41ddbbcb6
 
 
 jekyll_timeago:

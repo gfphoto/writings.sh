@@ -1,6 +1,10 @@
 {%- if page.comments != false -%}
 
-<div id="disqus_thread"><div style="text-align: center"> 加载中... </div></div>
+<div id="disqus_thread">
+  <div style="text-align: center">
+    <img src="{{ "/assets/images/loader.gif" | relative_url }}" style="display: inline; margin: 0 auto;"/>
+  </div>
+</div>
   <script>
     var disqus_config = function () {
       this.page.url = '{{ page.url | absolute_url }}';

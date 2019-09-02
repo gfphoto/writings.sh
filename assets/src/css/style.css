@@ -356,6 +356,13 @@ img.pendant-img {
   margin: 25px auto;
   height: 16px;
 }
+.pendant-larg { 
+  margin-top: 30px; 
+}
+img.pendant-img-large {
+  margin: 36px auto;
+  height: 23px;
+}
 
 /* Divider */
 .divider img { height: 45px; }
@@ -424,5 +431,5 @@ header .divider {
   h5 { font-size: 14px; }
   h6 { font-size: 14px; }
   img { max-width: 90%; }
-  .contact-info-container { font-size: 90%; }
+  .contact-info-container { font-size: 85%; }
 }

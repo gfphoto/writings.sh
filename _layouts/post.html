@@ -39,13 +39,17 @@ layout: base
 
   <!-- Post tags on the bottom -->
   <p class="post-bottom-meta">
+    #
     {%- for tag in page.tags -%}
       <span class="post-tag">
-        <a href="/tag/{{ tag | relative_url }}">#{{ tag | escape }}</a>
+        <a href="/tag/{{ tag | relative_url }}">{{ tag | escape }}</a>
       </span>
     {%- endfor -%}
   </p>
 
+  <div class="pendant-large">
+    <img class="pendant-img-large" src="{{ '/assets/images/pendant-large.png' | relative_url }}">
+  </div>
 </article>
 
 {% include contact_bar.html %}

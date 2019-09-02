@@ -10,7 +10,7 @@ permalink: /post/complexity-a-guided-tour-notes
 
 豆瓣链接： [《复杂》·梅拉妮·米歇尔](https://book.douban.com/subject/6749832/)
 
-![]({{ site.image_prefix | append: 'complexity-a-guided-tour-notes/01.jpg' }})
+{% include image.html path="complexity-a-guided-tour-notes/01.jpg" %}
 
 ### 读后感
 
@@ -42,14 +42,14 @@ permalink: /post/complexity-a-guided-tour-notes
 4. 混沌系统的共性：
    1. [倍周期](https://en.wikipedia.org/wiki/Period-doubling_bifurcation)： 随着参数控制参数$R$的增大，系统吸引子的震荡周期成倍增加的现象。
       倍周期是一种典型的系统走向混沌的方式。 下图是逻辑斯蒂映射的分叉图，图中吸引子 $x$ 是 控制参数 $r$ 的函数：
-      ![]({{ site.image_prefix | append: 'complexity-a-guided-tour-notes/13.jpg' }})
+      {% include image.html path="complexity-a-guided-tour-notes/13.jpg" %}
    2. [费根鲍姆常数](https://zh.wikipedia.org/wiki/%E8%B2%BB%E6%A0%B9%E9%AE%91%E5%A7%86%E5%B8%B8%E6%95%B8)：
       倍周期分叉中两个相邻分叉点间隔的比例收敛于一个常数$4.6692016$，
       也就是第一费根鲍姆常数（上图中左侧，开始的分叉点之间的水平距离之比的极限） ，
       上图中，竖直方向上特定的分叉点之间距离之比的极限也就是第二费根鲍姆常数 $2.50290787$.
       另外，具有自相似性质的著名的[曼德博集合](https://zh.wikipedia.org/wiki/%E6%9B%BC%E5%BE%B7%E5%8D%9A%E9%9B%86%E5%90%88)
       的缩放速率接近费根鲍姆常数
-      ![]({{ site.image_prefix | append: 'complexity-a-guided-tour-notes/14.gif' }})
+      {% include image.html path="complexity-a-guided-tour-notes/14.gif" %}
 
 
 对于混沌思想的三点总结：
@@ -96,7 +96,7 @@ permalink: /post/complexity-a-guided-tour-notes
   1. 一个**无限长**的纸带`.
   2. 一个读写头.
   3. 一组**有限的规则集合**，根据当前机器所处状态和当前读写头的指向符号来决定接下来读写头的操作。
-  ![]({{ site.image_prefix | append: 'complexity-a-guided-tour-notes/02.jpg' }})
+  {% include image.html path="complexity-a-guided-tour-notes/02.jpg" %}
 
 * [通用图灵机](https://zh.wikipedia.org/wiki/%E9%80%9A%E7%94%A8%E5%9C%96%E9%9D%88%E6%A9%9F):
 
@@ -138,7 +138,7 @@ permalink: /post/complexity-a-guided-tour-notes
 
 ### 分形
 
-![曼德博集合]({{ site.image_prefix | append: 'complexity-a-guided-tour-notes/03.jpg' }})
+{% include image.html path="complexity-a-guided-tour-notes/03.jpg"  note="曼德博集合" %}
 
 在任何尺度上都有微细结构的几何形状，具有 **自相似性** 和 **无尺度性**。分形也被称为扩展对称或展开对称。
 如果在每次放大后，形状的重复是完全相同的，这被称为自相似。
@@ -146,7 +146,7 @@ permalink: /post/complexity-a-guided-tour-notes
 [科赫曲线](https://zh.wikipedia.org/wiki/%E7%A7%91%E8%B5%AB%E6%9B%B2%E7%B7%9A) 是一种分形结构：
 将各边分成3等份，不断重复这个过程。
 
-![科赫曲线]({{ site.image_prefix | append: 'complexity-a-guided-tour-notes/04.jpg' }})
+{% include image.html path="complexity-a-guided-tour-notes/04.jpg"  note="科赫曲线" %}
 
 每条科赫曲线的长度是无限大（但面积是有限的），它是连续而无处可微的曲线。
 
@@ -204,8 +204,8 @@ ${X}^{N}$倍，那么这个$N$就定义为这个分形结构的维度 ([参考�
 
 下图是元胞自动机的例子： [生命的游戏](https://zh.wikipedia.org/wiki/%E5%BA%B7%E5%A8%81%E7%94%9F%E5%91%BD%E6%B8%B8%E6%88%8F)
 
-![]({{ site.image_prefix | append: 'complexity-a-guided-tour-notes/05.gif' }})
-![]({{ site.image_prefix | append: 'complexity-a-guided-tour-notes/06.gif' }})
+{% include image.html path="complexity-a-guided-tour-notes/05.gif"  %}
+{% include image.html path="complexity-a-guided-tour-notes/06.gif"  %}
 
 元胞自动机也是由大量简单个体组成，不存在中央控制，每个个体都只与少量其他个体交互。
 
@@ -225,7 +225,7 @@ ${X}^{N}$倍，那么这个$N$就定义为这个分形结构的维度 ([参考�
 * 类型4(复杂态)： 最有趣的一种。 几乎所有的初始模式将会演变成相互作用的复杂和有趣的方式结构，并且局部结构的形成能够长时间存在。
 
 这里推荐下玩一下模拟生命样貌的元胞自动机： [Lenia](https://github.com/Chakazul/Lenia)，下图是Lenia的一个示例图
-![]({{ site.image_prefix | append: 'complexity-a-guided-tour-notes/09.gif' }})
+{% include image.html path="complexity-a-guided-tour-notes/09.gif"  %}
 
 沃尔夫勒姆的一位助手库克证明了[规则110](https://en.wikipedia.org/wiki/Rule_110)是通用的。
 
@@ -355,7 +355,7 @@ ${X}^{N}$倍，那么这个$N$就定义为这个分形结构的维度 ([参考�
 
 典型的带有无尺度特性的网络：万维网。
 
-![]({{ site.image_prefix | append: 'complexity-a-guided-tour-notes/10.png' }})
+{% include image.html path="complexity-a-guided-tour-notes/10.png"  %}
 
 **无尺度网络的度分布（在网络中随机抽取一个节点，它的度是多少呢？这个概率分布就称为节点的度分布），
 符合[幂律分布](https://zh.wikipedia.org/wiki/%E5%B8%95%E7%B4%AF%E6%89%98%E5%88%86%E5%B8%83)。**
@@ -363,7 +363,7 @@ ${X}^{N}$倍，那么这个$N$就定义为这个分形结构的维度 ([参考�
 另外，幂律分布本身具有无尺度特点，延伸：[80/20法则](https://zh.wikipedia.org/wiki/%E5%B8%95%E7%B4%AF%E6%89%98%E6%B3%95%E5%88%99)。
 
 下图a是随机网络的度分布，b是无尺度网络的度分布，可以看出b是符合幂律分布的，幂律分布本身也是无尺度的，具有标度不变性。
-![]({{ site.image_prefix | append: 'complexity-a-guided-tour-notes/12.png' }})
+{% include image.html path="complexity-a-guided-tour-notes/12.png"  %}
 
 所有的无尺度网络也具有小世界特性，但是并不是所有具有小世界特性的网络都是无尺度的。
 

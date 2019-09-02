@@ -1,2 +1,14 @@
-<img src="{{ site.image_prefix | append: include.path }}" alt="{{include.alt}}" {% if {{include.max_height}} %}style="max-height: {{ include.max_height }}px;"{% endif %}>
+<img class="post-content-img lozad"
+  data-background-image="{{ "/assets/images/lozad-background.jpg" | relative_url }}"
+  data-src="{% if include.absolute_url %}{{ include.absolute_url }}{% else %}{{ site.image_prefix | append: include.path }}{% endif %}"
+  alt="{{include.alt}}"
+  {% if {{include.max_height}} %}style="max-height: {{ include.max_height }}px;"{% endif %} />
 {% if include.note %}<em>{{ include.note }}</em>{% endif %}
+
+<noscript>
+<img class="post-content-img lozad"
+  src="{{ site.image_prefix | append: include.path }}"
+  alt="{{include.alt}}"
+  {% if {{include.max_height}} %}style="max-height: {{ include.max_height }}px;"{% endif %} />
+{% if include.note %}<em>{{ include.note }}</em>{% endif %}
+</noscript>

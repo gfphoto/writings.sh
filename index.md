@@ -2,6 +2,7 @@
 layout: default
 title: 春水煎茶
 permalink: /
+id: index
 ---
 
 [归档]({{ "/posts" | relative_url }}) |

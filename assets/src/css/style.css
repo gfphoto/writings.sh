@@ -108,24 +108,24 @@ h6 {
   animation: target-fade 2s 1;
   -webkit-animation: target-fade 2s 1;
   -moz-animation: target-fade 2s 1;
-  background-color: #EAEDED;
+  background-color: #D5F5E3;
 }
 
 @keyframes target-fade { 
-  0% { background-color: #95A5A6; }
-  100% { background-color: #EAEDED; }
+  0% { background-color: #58D68D; }
+  100% { background-color: #D5F5E3; }
 }
 @-webkit-keyframes target-fade {
-  0% { background-color: #95A5A6; }
-  100% { background-color: #EAEDED; }
+  0% { background-color: #58D68D; }
+  100% { background-color: #D5F5E3; }
 }
 @-moz-keyframes target-fade {
-  0% { background-color: #95A5A6; }
-  100% { background-color: #EAEDED; }
+  0% { background-color: #58D68D; }
+  100% { background-color: #D5F5E3; }
 }
 
-/* Selection background */
-::selection{background-color: #D6DBDF;}
+/* Selection background, mark, highlighted */
+::selection, mark, .highlighted {background-color: #D5F5E3;}
 
 p,
 blockquote,
@@ -202,11 +202,11 @@ img+em {
 img[alt="avatar"] {
   max-width: 200px;
   max-height: 200px;
-  -webkit-border-radius: 100em;
-  -moz-border-radius: 100em;
-  -ms-border-radius: 100em;
-  -o-border-radius: 100em;
-  border-radius: 100em;
+  -webkit-border-radius: 100%;
+  -moz-border-radius: 100%;
+  -ms-border-radius: 100%;
+  -o-border-radius: 100%;
+  border-radius: 100%;
 }
 
 pre {

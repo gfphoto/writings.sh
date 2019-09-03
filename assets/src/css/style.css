@@ -12,7 +12,7 @@ body {
   margin: 20px auto;
   font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace, Georgia, -apple-system, BlinkMacSystemFont, Helvetica Neue, PingFang SC;
   line-height: 1.7;
-  color: #111111;
+  color: rgba(0,0,0,0.86);
   font-weight: normal;
   font-variant: normal;
   font-style: normal;
@@ -234,9 +234,9 @@ pre code {
 }
 
 blockquote {
-  border-left: 5px solid #DDD;
+  border-left: 2px solid #5D6D7E;
   padding: 0 16px;
-  color: #666;
+  color: rgba(0,0,0,0.68);
 }
 
 table {

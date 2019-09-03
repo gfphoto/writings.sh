@@ -56,7 +56,9 @@ permalink: /post/consistent-hashing-algorithms-part-2-consistent-hash-ring
 
 {% include image.html path="consistent-hashing-algorithms/5.3-removing-node-from-hash-ring.jpg" max_height=300 note="图5.3 - 从哈希环中删除一个槽位" %}
 
+<span class="highlighted" markdown="1">
 哈希环做到了在槽位数量变化前后的**增量式的重新映射**， 避免了全量的重新映射。
+</span>
 
 ### 哈希环法的复杂度分析
 
@@ -65,7 +67,7 @@ permalink: /post/consistent-hashing-algorithms-part-2-consistent-hash-ring
 我们把环拉开成一个自然数轴，
 所有的槽位在环上的哈希值组成一个有序表。
 在有序表里做查找， 这是**[二分查找](https://zh.wikipedia.org/wiki/二分搜索算法)**可以解决的事情，
-所以哈希环的映射函数的时间复杂度是 $O(log {n})$。
+所以<span class="highlighted" markdown="1">哈希环的映射函数的时间复杂度是 $O(log {n})$</span>。
 
 {% include image.html path="consistent-hashing-algorithms/6.1-binary-search-on-hash-ring.jpg" max_height=200 note="图6.1 - 哈希环上二分查找" %}
 
@@ -96,7 +98,9 @@ permalink: /post/consistent-hashing-algorithms-part-2-consistent-hash-ring
 原因是，节点越多、映射的分布越均匀，
 **采用影子节点可以减少真实节点之间的负载差异**。
 
+<span class="highlighted" markdown="1">
 一致性哈希环算法的映射结果仍然不是很均匀<sup>[[1]](#footnote-1)</sup>：
+</span>
 
 > With 100 replicas (“vnodes”) per server, the standard deviation of load is about 10%.
 >  Increasing the number of replicas to 1000 points per server reduces the standard deviation to ~3.2%.
@@ -107,7 +111,8 @@ permalink: /post/consistent-hashing-algorithms-part-2-consistent-hash-ring
 另外，和[下一篇文章讨论的快速一致性哈希算法的均匀性对比](/post/consistent-hashing-algorithms-part-3-jump-consistent-hash#hash-ring-vs-jump-hash-about-uniformlity)，
 哈希环的表现也不是很好。
 
-影子节点是一个绝妙的设计，不仅提高了映射结果的均匀性， 而且为实现加权映射提供了方式。
+<span class="highlighted" markdown="1">
+影子节点是一个绝妙的设计，不仅提高了映射结果的均匀性， 而且为实现加权映射提供了方式。</span>
 但是，**影子节点增加了内存消耗和查找时间**， 以常用的ketama为例，
 每个节点都对应40个影子节点， 内存的消耗从 $O(n)$ 变为 $O(40n)$ ，
 查找时间从 $O(logn)$ 变为 $O(log(40n))$ 。

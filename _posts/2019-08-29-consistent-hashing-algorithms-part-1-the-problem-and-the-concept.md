@@ -122,7 +122,7 @@ permalink: /post/consistent-hashing-algorithms-part-1-the-problem-and-the-concep
     当添加一个槽时，  只需要对 $K/n$ 个字符串进行进行重新映射。
 
 
-这个算法的关键特征在于， **不要导致全局重新映射， 而是要做增量的重新映射**。
+<span class="highlighted" markdown="1">这个算法的关键特征在于， **不要导致全局重新映射， 而是要做增量的重新映射**。</span>
 
 接下来将介绍三种一致性哈希算法：
 

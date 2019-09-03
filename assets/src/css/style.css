@@ -125,7 +125,10 @@ h6 {
 }
 
 /* Selection background, mark, highlighted */
-::selection, mark, .highlighted {background-color: #D5F5E3;}
+article ::selection,
+article mark,
+article .highlighted 
+{ background-color: #D5F5E3; }
 
 p,
 blockquote,
@@ -304,7 +307,7 @@ table td :last-child {
 /* Post date. */
 .posts-list-post-date,
 .post-date {
-  color: #999;
+  color: rgba(0,0,0,0.55);
 }
 
 .post-page-header .post-date {
@@ -363,11 +366,11 @@ img.pendant-img {
   height: 16px;
 }
 .pendant-larg { 
-  margin-top: 30px; 
+  margin-top: 36px; 
 }
 img.pendant-img-large {
   margin: 36px auto;
-  height: 23px;
+  width: 33.3%;
 }
 
 /* Divider */
@@ -378,21 +381,25 @@ header .divider {
 }
 
 
+.disqus-hint-link:link { 
+  text-decoration: none; 
+}
+.disqus-hint-link:visited { 
+  text-decoration: none;
+}
 .disqus-hint-link {
   display: block;
   margin: 15px 0;
-  padding: 8px;
+  padding: 4px;
   text-align: center;
   text-decoration: none;
-  border: 1px solid rgba(0,0,0,0.5);
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  -ms-border-radius: 5px;
-  -o-border-radius: 5px;
-  border-radius: 5px;
+  border: 1px solid rgba(0,0,0,0.3);
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+  border-radius: 4px;
 }
-.disqus-hint-link:link { text-decoration: none;}
-.disqus-hint-link:visited { text-decoration: none;}
 
 /* Not-Desktop */
 @media (max-device-width:1281px) {
@@ -407,19 +414,27 @@ header .divider {
   h4 { font-size: 22px; }
   h5 { font-size: 17px; }
   h6 { font-size: 15px; }
+  .contact-info-container { font-size: 15px; }
+}
+
+/* Phone */
+@media (max-device-width:700px) {
+  /* Too small to display the date. */
+  .post-date-container { display: none; }
   .post-page-header .post-date { display: none; }
+  /* Too small to display the avatar. */
+  .avatar-container img[alt="avatar"] { display: none; }
   .avatar-container {
     display: none;
     margin: 0;
   }
-  .avatar-container img[alt="avatar"] { display: none; }
+  /* Too small to display the pendant. */
+  .pendant { display: none; margin: 0; }
+  .pendant-img {display: none; margin: 0; }
   .contact-info-container {
     margin-top: 0;
     color: #111;
-    font-size: 15px;
   }
-  .pendant { display: none; margin: 0; }
-  .pendant-img {display: none; margin: 0; }
 }
 
 /* Desktop */

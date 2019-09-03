@@ -399,14 +399,14 @@ header .divider {
   body {
     width: 90%;
     max-width: 1000px;
-    font-size: 22px;
+    font-size: 17px;
   }
-  h1 { font-size: 38px; }
-  h2 { font-size: 34px; }
-  h3 { font-size: 29px; }
-  h4 { font-size: 25px; }
-  h5 { font-size: 22px; }
-  h6 { font-size: 20px; }
+  h1 { font-size: 33px; }
+  h2 { font-size: 29px; }
+  h3 { font-size: 24px; }
+  h4 { font-size: 22px; }
+  h5 { font-size: 17px; }
+  h6 { font-size: 15px; }
   .post-page-header .post-date { display: none; }
   .avatar-container {
     display: none;
@@ -416,7 +416,7 @@ header .divider {
   .contact-info-container {
     margin-top: 0;
     color: #111;
-    font-size: 20px;
+    font-size: 15px;
   }
   .pendant { display: none; margin: 0; }
   .pendant-img {display: none; margin: 0; }

@@ -5,7 +5,7 @@ permalink: /
 ---
 
 [归档]({{ "/posts" | relative_url }}) |
-[订阅]({{ "/feed.xml" | relative_url }}) |
+[订阅]({{ "/feed.xml" | relative_url }}){:target="_blank"} |
 [联系](mailto:hit9@icloud.com)
 
 {% include image.html max_height=220 absolute_url='/assets/images/home-banner.jpg' %}

@@ -24,24 +24,26 @@ body {
 
 a:link {
   color: #000;
-  text-decoration: underline;
-  text-decoration-color: grey;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(0,0,0,0.5);
 }
 
 a:visited {
   color: #000;
-  text-decoration-color: grey;
+  text-decoration: none;
 }
 
 a:hover {
   color: #fff;
   background-color: #000;
   text-decoration: none;
+  border-bottom: 0;
 }
 
 /* h1 is the blog title */
 header h1 a:link {
   text-decoration: none;
+  border-bottom: 0;
 }
 
 footer {
@@ -121,6 +123,9 @@ h6 {
   0% { background-color: #95A5A6; }
   100% { background-color: #EAEDED; }
 }
+
+/* Selection background */
+::selection{background-color: #D6DBDF;}
 
 p,
 blockquote,
@@ -234,6 +239,7 @@ pre code {
 }
 
 blockquote {
+  font-style: italic;
   border-left: 2px solid #5D6D7E;
   padding: 0 16px;
   color: rgba(0,0,0,0.68);
@@ -378,7 +384,7 @@ header .divider {
   padding: 8px;
   text-align: center;
   text-decoration: none;
-  border: 1px solid grey;
+  border: 1px solid rgba(0,0,0,0.5);
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   -ms-border-radius: 5px;

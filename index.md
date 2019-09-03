@@ -4,11 +4,17 @@ title: 春水煎茶
 permalink: /
 ---
 
-**山中何事？松花酿酒，春水煎茶。**
+[归档]({{ "/posts" | relative_url }}) |
+[订阅]({{ "/feed.xml" | relative_url }}) |
+[联系](mailto:hit9@icloud.com)
 
--- 元•张可久 《人月圆•山中书事》
+{% include image.html max_height=220 absolute_url='/assets/images/home-banner.jpg' %}
 
-{% include image.html absolute_url='/assets/images/home-banner.jpg' max_height=160 %}
+欢迎来到我的博客，名字「春水煎茶」取自：
+
+> 山中何事？松花酿酒，春水煎茶。
+>
+> -- 张可久《人月圆·山中书事》
 
 最近文章:
 

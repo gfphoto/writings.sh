@@ -62,7 +62,7 @@ permalink: /post/logical-clocks
 1. 仍然是由于网络延迟的不确定，我们无法通过网络同步时间来获取一个全局一致的物理时钟。
 2. 现实中的多个时钟，即使时间已经调成一致，但是由于日积月累的计时速率的差异，会导致时钟漂移而显示不同的时间。
 
-如此看来，**寄希望于一个全局的时钟来对事件顺序做全局标定也是不现实的**。
+如此看来，<span class="highlighted" markdown="1">**寄希望于一个全局的时钟来对事件顺序做全局标定也是不现实的**</span>。
 
 参考链接：
 
@@ -124,9 +124,11 @@ permalink: /post/logical-clocks
 > There is only a partial order in which an event e1 precedes an event e2 iff e1 can causally affect e2.
 > -- Leslie Lamport [Time clocks and …](https://lamport.azurewebsites.net/pubs/pubs.html#time-clocks)
 
+<span class="highlighted" markdown="1">
 爱因斯坦的狭义相对论告诉我们，**时空中不存在绝对的全序事件顺序，
 不同的观察者可能对哪个事件是先发生的无法达成一致。
 但是有偏序关系存在，当事件e2是由事件e1引起的时候，e1和e2之间才有先后关系**。
+</span>
 
 对于「不同的观察者可能对哪个事件是先发生的无法达成一致」这个说法，
 我们从[同时的相对性](https://zh.wikipedia.org/wiki/相對同時)开始说起：
@@ -210,7 +212,8 @@ Lamport受相对论中事件顺序的相对性的启发，创造了[Lamport Logi
 现在，我们开始讨论Lamport的逻辑时钟算法。
 
 首先我们需要明确一点：
-**逻辑时钟并不度量时间本身，仅区分事件发生的前后顺序。**
+<span class="highlighted" markdown="1">
+**逻辑时钟并不度量时间本身，仅区分事件发生的前后顺序。**</span>
 
 那么，「事件」是如何分类的：
 
@@ -292,7 +295,8 @@ Lamport受相对论中事件顺序的相对性的启发，创造了[Lamport Logi
 
 但是， 如果 $C_{ a } < C_{ b }$，一定不会有 $b \rightarrow a$ 的关系存在。
 
-Lamport的逻辑时钟算法构建了一个全序(total ordering)时钟来描述事件顺序，
+<span class="highlighted" markdown="1">
+Lamport的逻辑时钟算法构建了一个全序(total ordering)时钟来描述事件顺序</span>，
 但是我们知道「happened before」是一个偏序关系，
 用全序关系的一维计数器来描述「happened before」的话，
 就会导致无法等价化描述的结果，
@@ -392,7 +396,9 @@ lamport时钟只是在对齐时钟的计数器，
 
    $VC_a \parallel VC_b \Leftrightarrow a \parallel b$
 
+<span class="highlighted" markdown="1">
 是的，**向量时钟可以准确刻画事件顺序**。
+</span>
 
 其本质在于将lamport时钟的全序计数器的方式改造成向量时钟的偏序大小关系。
 
@@ -435,7 +441,9 @@ $VC_{a} < VC_{b} < VC_{c} < VC_{d} < VC_{e}$， 显然可以确定 $a \rightarro
 
 版本向量在此基础上，做了一点小的加强：
 
+<span class="highlighted" markdown="1">
 **消息传播后，发送方也对齐接收者的向量， 也就是双向对齐，在版本向量中，叫做同步。**
+</span>
 
 用数学语言描述的话，向量时钟算法的第三点，改成：
 
@@ -511,7 +519,9 @@ $VC_{a} < VC_{b} < VC_{c} < VC_{d} < VC_{e}$， 显然可以确定 $a \rightarro
 1. 我把我的视角分享给其他节点。
 2. 我对齐我看到的其他节点的视角。
 
+<span class="highlighted" markdown="1">
 本质上，是在做 **视角对齐**。
+</span>
 
 这自然地，让我想起了[Gossip谣言传播算法](https://en.wikipedia.org/wiki/Gossip_protocol)。
 Gossip算法如其名，每个分布式参与者都在散播自己视角的信息，以达到谣言扩散的效果。

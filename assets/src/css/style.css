@@ -10,14 +10,15 @@ html {
 
 body {
   margin: 20px auto;
-  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace, Georgia, -apple-system, BlinkMacSystemFont, Helvetica Neue, PingFang SC;
-  line-height: 1.7;
+  font-family: "Source Code Pro", Courier, Georgia, -apple-system, BlinkMacSystemFont, Helvetica Neue, PingFang SC, sans-serif;
+  line-height: 1.6;
   color: rgba(0,0,0,0.86);
   font-weight: normal;
   font-variant: normal;
   font-style: normal;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
+  letter-spacing; -0.003em;
   width: 61.8%;
   max-width: 710px;
 }
@@ -25,7 +26,7 @@ body {
 a:link {
   color: #000;
   text-decoration: none;
-  border-bottom: 1px solid rgba(0,0,0,0.5);
+  border-bottom: 1px dotted rgba(0,0,0,0.5);
 }
 
 a:visited {
@@ -38,6 +39,10 @@ a:hover {
   background-color: #000;
   text-decoration: none;
   border-bottom: 0;
+}
+
+.post-body a:link {
+  border-bottom: 1px solid rgba(0,0,0,0.5);
 }
 
 /* h1 is the blog title */
@@ -77,6 +82,7 @@ h6 {
 h1 {
   font-weight: 600;
 }
+header h1 { font-weight: 400; }
 
 h2 {
   padding-bottom: 5px;
@@ -221,7 +227,7 @@ pre {
 }
 
 code {
-  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  font-family: "Source Code Pro", "Liberation Mono", Menlo, Courier, monospace;
   padding: 1px 4px;
   margin: 0 3px;
   background-color: #EAEDED;
@@ -234,9 +240,9 @@ code {
 }
 
 pre code {
+  font-family: "Source Code Pro", "Liberation Mono", Menlo, Courier, monospace;
   font-size: 15px;
   line-height: 1.45;
-  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
   border: none;
   padding: 0;
 }
@@ -359,7 +365,7 @@ table td :last-child {
   float: left;
   margin: 15px;
   padding: 2px;
-  border: 1px solid 82E0AA;
+  border: 1px solid #82E0AA;
   -webkit-border-radius: 100%;
   -moz-border-radius: 100%;
   -ms-border-radius: 100%;
@@ -393,11 +399,6 @@ table td :last-child {
 }
 
 /* Pendant */
-.pendant { margin-top: -29px; }
-img.pendant-img {
-  margin: 25px auto;
-  height: 16px;
-}
 .pendant-larg { 
   margin-top: 36px; 
 }
@@ -421,6 +422,9 @@ header .divider {
   background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGUAAAA0CAYAAACTrvadAAADWUlEQVR42u1av2sUURBek0juEpQcGrjiUigpkqApDpSDGPREwRBBOcghGJuYKjYmlV55XQ6swpEqjZ2dSHpBhICdhaWV1bX+AfecJy8xnLu3t++b/T0fDAsHuztvvr335psZx0k5lFJ3yH5o6/f77+g64QhiJeSJGgAR85Eu0xKdeAjZUt74RnZVohQdGRfIWsofP8muScTCJ2SCrKuC4aZELjxCpsx5YYN7EkF+QkrmnECwIZHkI6RiUl4O7EhEcUIWyXqKF22dLEh07Qi5rUICnU3v6TIpUQ5GyJoKH1/JLku0RyNkU0WH72RlifpwUbinooc+sxaEAXdCOkBgtXqvmastbgkT/wiZNAevLU5O61x0nTFnhS3WhBA6aMEgfiArDjyzYH63xWaeCSmbg9YW+169E1Mj2wee/SZ3WoYWPA+Kwl2/oDEkDp3cNMxooVUwW3oWVYptCqBTWSfkAUjIfcv3PgbeqQuhpawSsgFqiWXw/TX68n9bvl8XRCtZI2QH2EJ+cXUQ6TlLwFmm77uRFVHY5tAgjD7NgSJzJc2E6LT0kFODMPp2xRBui6dpFYXHYWgQRh+LtDV+AnzcThMhs6AofBWVcDP/5oNMN8z0gQzu180YfB4jewv4fJhYkalHeUANUo/Z/20gQ/ycuIYZOXQ3Tg3CuI5GJhpmbvO8Afsgcwn7wOrgeuadtP7lTcm+lNCtuAqof41qXKKwlUQNkqBK9sOoRWE3yRqEca1lMJt8HoWT08A8b6QahHHNl8i+AGt+HdqaGeZ5m05KQb5fJDsCG2Zj3E6h87x1J+WgNYwjLWYzHFLgcgaZ502MBmFMcHZjzTh1mTpLGoSRHGSK075hRjeuZ1GDMBLzCKxiLAZ94YssaxBGYmqgyFwZdc/cy4MGYSQGaTFrrPuVsDt50iDM2SkiMrfcHloA53mbTs5hdBzSYm6dfdTmYcg876ojOI1lEZxj7v7d/gFRqPfRJaHCtTZo3WLWDTMH0CAVoWDo+WzbYm7bzPZmXoMwkvMyYGwPzmpkAZT7EVv9Jj/ENALou/HBm/3aoO3/bhKMSsyqT2yPPfXdkNJKbjUIIzHLHiLzxLcC4vJ3a0hI2Yi5bgbWzydMM0FqXz3RIKEQM2vI6HkNr/8Bm6ReqxbVux8AAAAASUVORK5CYII=);
   background-color: #000;
 }
+
+/* Nav divider */
+.nav-divider { color: #bbb; }
 
 
 /* Not-Desktop */
@@ -457,6 +461,10 @@ header .divider {
     margin-top: 4px;
     color: #111;
   }
+  /* Don't display the divider on the header. */
+  .divider img {  display: none; }
+  /* Recover the header h1 margin-bottom */
+  header h1 { margin-bottom: 30px; }
 }
 
 /* Desktop */
@@ -464,15 +472,15 @@ header .divider {
   body {
     width: 61.8%;
     max-width: 700px;
-    font-size: 15px;
+    font-size: 16px;
   }
-  .MathJax { font-size: 15px; }
-  h1 { font-size: 28px; }
-  h2 { font-size: 24px; }
-  h3 { font-size: 18px; }
-  h4 { font-size: 16px; }
-  h5 { font-size: 14px; }
-  h6 { font-size: 14px; }
+  .MathJax { font-size: 16px; }
+  h1 { font-size: 30px; }
+  h2 { font-size: 25px; }
+  h3 { font-size: 19px; }
+  h4 { font-size: 17px; }
+  h5 { font-size: 15px; }
+  h6 { font-size: 15px; }
   img { max-width: 90%; }
   .contact-info-container { font-size: 90%; }
 }

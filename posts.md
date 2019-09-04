@@ -2,6 +2,7 @@
 layout: default
 title: 归档 | Chao's blog
 permalink: /posts
+id: posts
 ---
 
 {% for category in site.categories %}

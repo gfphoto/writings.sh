@@ -1,5 +1,12 @@
 function init () {
+  // turbolinks
+  Turbolinks.setProgressBarDelay(200)
   Turbolinks.start()
+
+  document.addEventListener('turbolinks:load', function (e) {
+    var body = document.getElementsByTagName('body')[0]
+    body.classList.add('fadein')
+  }, false)
   // https://stackoverflow.com/questions/20814531/local-mathjax-loading-with-turbolinks-in-rails-4
   document.addEventListener('turbolinks:load', function (e) {
     window.MathJax.Hub.Queue(['Typeset', MathJax.Hub])
@@ -20,9 +27,14 @@ function init () {
         element.classList.add('highlighted')
       }
     }
+    // GA
+    ga('set', 'page', window.location.pathname)
+    ga('send', 'pageview')
   }, false)
+
   // UeScroll
   UeScroll.init()
+
   // mediumZoom
   mediumZoom('img.post-content-img', {
     background: 'rgba(153,153,153,0.6)'

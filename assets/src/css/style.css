@@ -21,6 +21,7 @@ body {
   letter-spacing; -0.003em;
   width: 61.8%;
   max-width: 710px;
+  background-color: #fefefe;
 }
 
 a:link {
@@ -200,7 +201,9 @@ img {
 
 .post-copyright { color: #777; }
 
-article .post-copyright { font-size: 90%; }
+
+/* Post-meta */
+article .post-meta { font-size: 90%; }
 
 
 /* https://stackoverflow.com/questions/19331362/using-an-image-caption-in-markdown-jekyll */
@@ -342,26 +345,6 @@ table td :last-child {
   color: rgba(0,0,0,0.55);
 }
 
-.post-page-header .post-date {
-  font-size: 85%;
-  float: right;
-}
-
-.post-page-header .home-link {
-  font-weight: bold;
-}
-
-.post-bottom-meta span {
-  margin-right: 5px;
-}
-
-.post-bottom-meta span a:link,
-.post-bottom-meta span a:visited
-{
-  color: #888;
-}
-.post-bottom-meta span a:hover { color: #fff; }
-
 /* Contact */
 
 .avatar-container {
@@ -451,7 +434,6 @@ header .divider {
 @media (max-device-width:700px) {
   /* Too small to display the date. */
   .post-date-container { display: none; }
-  .post-page-header .post-date { display: none; }
   /* Too small to display the avatar. */
   .avatar-container img[alt="avatar"] { display: none; }
   .avatar-container {

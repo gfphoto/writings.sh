@@ -42,18 +42,9 @@ copyright_declaration: '未经允许，不得转载。'
 
 plugins:
   - jekyll-feed
-  - jekyll/tagging
   - jekyll-sitemap
-  - jekyll-timeago
-
-tag_page_layout: tag_page
-tag_page_dir: tag
 
 disqus:
   shortname: secret-garden-1
 
 google_analytics_gtag:  "UA-145761297-1"
-
-
-jekyll_timeago:
-  depth: 2

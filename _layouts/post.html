@@ -6,18 +6,17 @@ layout: base
   <span class="post-page-nav">
     <a class="home-link" href="{{ "/" | relative_url }}">{{ site.title }}</a>
   </span>
-  <span class="nav-divider">|</span>
-  <span class="post-categories">
+  »
+  <!-- Post Category -->
+  <span class="post-categories post-meta-item">
     {%- for category in page.categories -%}
     <span class="post-category">
-       <a href="/posts#{{category|slugize}}">{{ category }}</a>
+      <a href="/posts#{{category|slugize}}">{{ category }}</a>
     </span>
+    {%- endfor -%}
   </span>
-  {%- endfor -%}
 
-  <!-- Post date -->
-  <span class="post-date">{{ page.date | timeago }}</span>
-</header> <hr style="border-bottom-color: #ddd; color: #ddd;">
+</header>
 
 <!--- Article -->
 <article>
@@ -26,8 +25,15 @@ layout: base
     <h1 class="post-title">{{ page.title | escape }}</h1>
   </div>
 
-  <!-- Copyright Notice. -->
-  <span class="post-copyright"> {{ site.copyright_declaration }} </span>
+  <div class="post-meta">
+
+    <!-- Post date -->
+    <span class="post-date post-meta-item">{{ page.date | date: "%Y-%m-%d" }}</span>
+    ·
+    <!-- Copyright Notice. -->
+    <span class="post-copyright post-meta-item"> {{ site.copyright_declaration }} </span>
+
+  </div>
 
   <!-- Post body -->
   <div class="post-body">
@@ -36,16 +42,6 @@ layout: base
      html=content h_max=4 anchorClass="heading-anchor" anchorBody="§" beforeHeading=true
      bodyPrefix='<span class="heading-text">' bodySuffix='</span>' %}
   </div>
-
-  <!-- Post tags on the bottom -->
-  <p class="post-bottom-meta">
-    #
-    {%- for tag in page.tags -%}
-      <span class="post-tag">
-        <a href="/tag/{{ tag | relative_url }}">{{ tag | escape }}</a>
-      </span>
-    {%- endfor -%}
-  </p>
 
   <div class="pendant-large">
     <img class="pendant-img-large" src="{{ '/assets/images/pendant-large.png' | relative_url }}">

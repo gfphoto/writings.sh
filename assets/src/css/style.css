@@ -83,11 +83,13 @@ h1 {
   font-weight: 600;
 }
 header h1 { font-weight: 400; }
+h1.post-title { font-weight: 400; }
 
 h2 {
   padding-bottom: 5px;
   border-bottom: 1px solid #ccc;
 }
+h3 { font-weight: 400; }
 
 h6 {
   color: #555;
@@ -95,17 +97,20 @@ h6 {
 
 /* heading anchors */
 .heading-anchor {
-  display: none;
   font-weight: 200;
   float: left;
   margin-left: -20px;
   padding-left: 4px;
   padding-right: 5px;
+  border: none;
 }
 
 .heading-text:hover .heading-anchor,
 .heading-anchor:hover .heading-anchor {
   display: inline-block;
+}
+a.heading-anchor:link {
+  border: none;
 }
 
 /* highlight anchor target */
@@ -248,7 +253,6 @@ pre code {
 }
 
 blockquote {
-  font-style: italic;
   border-left: 2px solid #5D6D7E;
   padding: 0 16px;
   color: rgba(0,0,0,0.68);
@@ -471,16 +475,16 @@ header .divider {
 @media (min-device-width:1281px) {
   body {
     width: 61.8%;
-    max-width: 700px;
-    font-size: 16px;
+    max-width: 710px;
+    font-size: 15px;
   }
-  .MathJax { font-size: 16px; }
-  h1 { font-size: 30px; }
-  h2 { font-size: 25px; }
-  h3 { font-size: 19px; }
-  h4 { font-size: 17px; }
-  h5 { font-size: 15px; }
-  h6 { font-size: 15px; }
+  .MathJax { font-size: 15px; }
+  h1 { font-size: 28px; }
+  h2 { font-size: 24px; }
+  h3 { font-size: 18px; }
+  h4 { font-size: 16px; }
+  h5 { font-size: 14px; }
+  h6 { font-size: 14px; }
   img { max-width: 90%; }
   .contact-info-container { font-size: 90%; }
 }

@@ -203,8 +203,41 @@ img {
 
 
 /* Post-meta */
-article .post-meta { font-size: 90%; }
+article .post-meta { 
+  font-size: 95%; 
+  line-height: 28px;
+}
 
+article .post-meta .avatar-container {
+  display: inline-block;
+  float: left;
+  padding: 1px;
+  border: 1px solid #fefefe;
+  -webkit-border-radius: 100%;
+  -moz-border-radius: 100%;
+  -ms-border-radius: 100%;
+  -o-border-radius: 100%;
+  border-radius: 100%;
+  border: none;
+}
+
+article .post-meta img[alt="avatar"] {
+  height: 26px;
+  width: 26px;
+}
+
+article .post-meta .avatar-container:link,
+article .post-meta .avatar-container:visited
+{
+  border: 1px solid #fefefe;
+}
+article .post-meta span.post-date {
+  margin-left: 8px;
+}
+article .post-meta .avatar-container:hover {
+  background-color: #fefefe;
+  border: 1px solid #58D68D;
+}
 
 /* https://stackoverflow.com/questions/19331362/using-an-image-caption-in-markdown-jekyll */
 /* Image Caption */
@@ -309,34 +342,11 @@ table td :last-child {
   text-align: center;
 }
 
-.end-of-post-nav {
-  display: block;
-  margin-bottom: 0px;
-  line-height: 1.3;
-}
-
-.end-of-post-nav .disqus-hint-link { float: right; }
-
-.disqus-hint-link:link { 
-  border-bottom: none;
-  text-decoration: none; 
-  border-bottom: 1px solid #ddd;
-}
-.disqus-hint-link:visited { 
-  text-decoration: none;
-}
 .disqus-hint-link {
-  display: block;
-  margin: 15px 0;
-  padding: 4px;
-  text-align: center;
+  float: right;
+  font-size: 95%;
+  display: inline-block;
   text-decoration: none;
-  border: 1px solid #ddd;
-  -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
-  -ms-border-radius: 4px;
-  -o-border-radius: 4px;
-  border-radius: 4px;
 }
 
 /* Post date. */
@@ -345,52 +355,9 @@ table td :last-child {
   color: rgba(0,0,0,0.55);
 }
 
-/* Contact */
-
-.avatar-container {
-  display: inline-block;
-  float: left;
-  margin: 15px;
-  padding: 2px;
-  border: 1px solid #82E0AA;
-  -webkit-border-radius: 100%;
-  -moz-border-radius: 100%;
-  -ms-border-radius: 100%;
-  -o-border-radius: 100%;
-  border-radius: 100%;
-}
-
-.avatar-container img[alt="avatar"] {
-  height: 45px;
-  width: 45px;
-}
-
-.contact-info-container {
-  display: inline-block;
-  float: left;
-  margin-top: 29px; /* img-size(45px)/2 + margin(15px) - font-size(15px)*line-height(1.7)/2 = 29px; */
-  margin-left: 6px;
-}
-
-.contact-info-container p { margin: 0; padding: 0; }
-
-.contact-info-container a:link,
-.contact-info-container a:visited
-{
-  color: #111;
-}
-.contact-info-container a:hover { color: #fff; }
-.contact-info hr { 
-  color: #ddd; 
-  border-bottom: 1px solid #ddd;
-}
-
 /* Pendant */
-.pendant-larg { 
-  margin-top: 36px; 
-}
 img.pendant-img-large {
-  margin: 36px auto;
+  margin: 65px auto;
   width: 33.3%;
 }
 
@@ -427,7 +394,6 @@ header .divider {
   h4 { font-size: 22px; }
   h5 { font-size: 17px; }
   h6 { font-size: 15px; }
-  .contact-info-container { font-size: 15px; }
 }
 
 /* Phone */
@@ -440,14 +406,12 @@ header .divider {
     display: none;
     margin: 0;
   }
+  article .post-meta span.post-date {
+    margin-left: 0;
+  }
   /* Too small to display the pendant. */
   .pendant { display: none; margin: 0; }
   .pendant-img {display: none; margin: 0; }
-  .contact-info-container {
-    margin-top: 4px;
-    color: #111;
-  }
-  /* Don't display the divider on the header. */
   .divider img {  display: none; }
   /* Recover the header h1 margin-bottom */
   header h1 { margin-bottom: 30px; }
@@ -468,5 +432,4 @@ header .divider {
   h5 { font-size: 14px; }
   h6 { font-size: 14px; }
   img { max-width: 90%; }
-  .contact-info-container { font-size: 90%; }
 }

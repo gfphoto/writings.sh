@@ -27,12 +27,17 @@ layout: base
 
   <div class="post-meta">
 
+    <a class="avatar-container" href="{{ "/about" | relative_url }}">
+      <img alt="avatar" src="{{ site.gravatar_link }}?s=50">
+    </a>
+
     <!-- Post date -->
     <span class="post-date post-meta-item">{{ page.date | date: "%Y-%m-%d" }}</span>
     ·
     <!-- Copyright Notice. -->
     <span class="post-copyright post-meta-item"> {{ site.copyright_declaration }} </span>
 
+    <div class="clear"></div>
   </div>
 
   <!-- Post body -->
@@ -43,14 +48,14 @@ layout: base
      bodyPrefix='<span class="heading-text">' bodySuffix='</span>' %}
   </div>
 
+  <a class="disqus-hint-link" id="disqus-hint-link" href="javascript:void(0);" onclick="disqusLoader();">[评论]</a>
+
+  <div class="clear"></div>
   <div class="pendant-large">
     <img class="pendant-img-large" src="{{ '/assets/images/pendant-large.png' | relative_url }}">
   </div>
 </article>
 
-{% include contact_bar.html %}
-
-<a class="disqus-hint-link" id="disqus-hint-link" href="javascript:void(0);" onclick="disqusLoader();">展开评论</a>
 
 <!-- Goto top -->
 <!-- https://github.com/azrsix/ue-scroll-js -->

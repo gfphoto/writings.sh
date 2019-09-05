@@ -4,8 +4,10 @@ function init () {
   Turbolinks.start()
 
   document.addEventListener('turbolinks:load', function (e) {
-    var body = document.getElementsByTagName('body')[0]
-    body.classList.add('fadein')
+    if (document.getElementsByClassName('post-body').length > 0) {
+      var body = document.getElementsByTagName('body')[0]
+      body.classList.add('fadein')
+    }
   }, false)
   // https://stackoverflow.com/questions/20814531/local-mathjax-loading-with-turbolinks-in-rails-4
   document.addEventListener('turbolinks:load', function (e) {

@@ -342,9 +342,10 @@ table td :last-child {
   text-align: center;
 }
 
-.disqus-hint-link {
-  float: right;
-  font-size: 95%;
+.disqus-hint-link,
+.go-top-link
+{
+  font-size: 90%;
   display: inline-block;
   text-decoration: none;
 }

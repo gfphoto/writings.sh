@@ -18,7 +18,7 @@ permalink: /post/consistent-hashing-algorithms-part-3-jump-consistent-hash
 
 ### 快速一致性哈希法
 
-快速一致性哈希(Jump Hash)是Google于2014年发布的一个极简的、快速的一致性哈希算法<sup>[[1]](#footnote-1)</sup>。
+快速一致性哈希(Jump Consistent Hash)是Google于2014年发布的一个极简的、快速的一致性哈希算法<sup>[[1]](#footnote-1)</sup>。
 <span markdown="1" id="code-definition">
 这个算法精简到可以用几行代码来描述， 下面的就是Google原论文中的算法的C++表示：
 </span>

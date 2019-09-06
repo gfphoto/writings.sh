@@ -5,7 +5,7 @@ permalink: /about
 id: about
 ---
 
-{% include image.html max_height=220 absolute_url='/assets/images/home-banner.jpg' %}
+{% include image.html max_height=220 absolute_url='/assets/images/i.jpg' %}
 
 王超 (Hit9)， 90后， 上海。
 

@@ -17,7 +17,7 @@ id: about
 **工作**
 
 * `2018-2019` [YOGO Robot](https://www.yogorobot.com)
-* `2014-2019` [Eleme](https://ele.me)
+* `2014-2018` [Eleme](https://ele.me)
 
 **教育**
 

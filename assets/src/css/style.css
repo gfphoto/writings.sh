@@ -137,7 +137,7 @@ a.heading-anchor:link {
 }
 
 /* Selection background, mark, highlighted */
-article ::selection,
+article ::selection { background-color: #F7DC6F; }
 article mark,
 article .highlighted 
 { background-color: #D5F5E3; }

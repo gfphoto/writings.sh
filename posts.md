@@ -5,6 +5,11 @@ permalink: /posts
 id: posts
 ---
 
+[首页]({{ "/" | relative_url }}) <span class="nav-divider">|</span>
+[归档]({{ "/posts" | relative_url }}) <span class="nav-divider">|</span>
+[关于]({{ "/about" | relative_url }}) <span class="nav-divider">|</span>
+[订阅]({{ "/feed.xml" | relative_url }}){:target="_blank"}
+
 {% for category in site.categories %}
 ### [{{ category[0] }}](#{{ category[0]|slugize }})
   {% for post in category[1] %}

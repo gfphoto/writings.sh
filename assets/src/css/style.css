@@ -123,7 +123,7 @@ a.heading-anchor:link {
   background-color: #D5F5E3;
 }
 
-@keyframes target-fade { 
+@keyframes target-fade {
   0% { background-color: #58D68D; }
   100% { background-color: #D5F5E3; }
 }
@@ -139,7 +139,7 @@ a.heading-anchor:link {
 /* Selection background, mark, highlighted */
 article ::selection { background-color: #F7DC6F; }
 article mark,
-article .highlighted 
+article .highlighted
 { background-color: #D5F5E3; }
 
 p,
@@ -203,8 +203,8 @@ img {
 
 
 /* Post-meta */
-article .post-meta { 
-  font-size: 95%; 
+article .post-meta {
+  font-size: 95%;
   line-height: 28px;
 }
 

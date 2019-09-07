@@ -102,9 +102,10 @@ $k_1$ 和 $k_2$ 每一次都要根据随机序列相应的值和目标分布 $1/
 
 另一方面，虽然随机序列是由种子决定的， 但是随机序列足够均匀，这才能保证 $ch$ 函数映射结果的均匀性。
 
- $ch$ 函数没有造成全量重新映射， 而是 $1/(n+1)$ 份重新映射，
- 按照[一致性哈希算法的定义](/post/consistent-hashing-algorithms-part-1-the-problem-and-the-concept#一致性哈希算法)，
- 这个函数已经达到了定义标准。
+$ch$ 函数没有造成全量重新映射， 而是 $1/(n+1)$ 份重新映射，
+这个函数已经达到了一致性哈希算法的定义标准：
+<span class="highlighted" markdown="1">快速一致性哈希做到了最小化重新映射(minimum disruption)，
+做到了[完全的一致性](/post/consistent-hashing-algorithms-part-1-the-problem-and-the-concept#what-is-consistency)</span>。
 
 分析下它的时间复杂度呢？ 显然是 $O(n)$ 。 接下来我们把这个时间复杂度优化到 $log$ 级别。
 

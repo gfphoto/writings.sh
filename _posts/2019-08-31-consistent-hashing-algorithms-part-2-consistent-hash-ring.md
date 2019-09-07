@@ -60,6 +60,11 @@ permalink: /post/consistent-hashing-algorithms-part-2-consistent-hash-ring
 哈希环做到了在槽位数量变化前后的**增量式的重新映射**， 避免了全量的重新映射。
 </span>
 
+假设整体的 $k$ 的数量是 $K$ , 由于哈希映射的均匀性，
+所以，添加或者删除一个槽位，总会只影响一个槽位的映射量，也就是 $1/K$ ,
+因此，<span class="highlighted" markdown="1">哈希环做到了最小化重新映射(minimum disruption)，做到了[完全的一致性](/post/consistent-hashing-algorithms-part-1-the-problem-and-the-concept#what-is-consistency)</span>。
+
+
 ### 哈希环法的复杂度分析
 
 在技术实现上，实现哈希环的方法一般叫做 ketama 或 hash ring。

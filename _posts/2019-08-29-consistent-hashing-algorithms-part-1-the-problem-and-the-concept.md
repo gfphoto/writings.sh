@@ -118,8 +118,10 @@ permalink: /post/consistent-hashing-algorithms-part-1-the-problem-and-the-concep
   * 相同的 $k$, $n$ 输入， 一定会有相同的输出。
   * 当槽的数目增减时， 映射结果和之前不一致的字符串的数量要尽量少。
 
+  <span class="markdown" id="what-is-consistency">
     更严格的、[维基百科的定义](https://zh.wikipedia.org/wiki/%E4%B8%80%E8%87%B4%E5%93%88%E5%B8%8C)是：
     当添加一个槽时，  只需要对 $K/n$ 个字符串进行进行重新映射。
+  </span>
 
 
 <span class="highlighted" markdown="1">这个算法的关键特征在于， **不要导致全局重新映射， 而是要做增量的重新映射**。</span>

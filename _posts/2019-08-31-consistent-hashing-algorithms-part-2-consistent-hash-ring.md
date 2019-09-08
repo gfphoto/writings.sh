@@ -62,7 +62,7 @@ permalink: /post/consistent-hashing-algorithms-part-2-consistent-hash-ring
 
 假设整体的 $k$ 的数量是 $K$ , 由于哈希映射的均匀性，
 所以，添加或者删除一个槽位，总会只影响一个槽位的映射量，也就是 $1/K$ ,
-因此，<span class="highlighted" markdown="1">哈希环做到了最小化重新映射(minimum disruption)，做到了[完全的一致性](/post/consistent-hashing-algorithms-part-1-the-problem-and-the-concept#what-is-consistency)</span>。
+因此，<span id="hash-ring-impls-minimum-disruption" class="highlighted" markdown="1">哈希环做到了最小化重新映射(minimum disruption)，做到了[完全的一致性](/post/consistent-hashing-algorithms-part-1-the-problem-and-the-concept#what-is-consistency)</span>。
 
 
 ### 哈希环法的复杂度分析
@@ -170,9 +170,10 @@ permalink: /post/consistent-hashing-algorithms-part-2-consistent-hash-ring
 
 ### 小结
 
-哈希环法是经典的一致性哈希算法， 避免了因槽位数量变化导致的全量重新映射。
+哈希环法是经典的一致性哈希算法， 避免了因槽位数量变化导致的全量重新映射，
+<span class="highlighted" markdown="1">实现了最小化的重新映射</span>。
 时间复杂度是 $O(log(n))$ ， 空间复杂度是 $O(n)$， 实际根据影子节点数量而乘上相应倍数。
-映射均匀性不是很优秀。 热扩容和容灾的方式比较直观。
+<span class="highlighted" markdown="1">映射均匀性不是很优秀。 热扩容和容灾的方式比较直观。</span>
 
 -- 毕「一致性哈希算法 - 哈希环法」。
 

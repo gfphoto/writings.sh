@@ -332,7 +332,7 @@ $$
 但是，原始的快速一致性哈希算法的确定也很明显，<span class="highlighted" markdown="1">不支持自定义的槽位标号、而且只能在尾部增删槽位</span>。
 不过我们讨论下来，在这个算法下做热扩容和容灾也是有路可循的， 但是理解起来远不及哈希环直观。
 
--- 毕「一致性哈希算法 - 哈希环法」。
+-- 毕「一致性哈希算法 - 快速一致性哈希法」。
 
 本系列的下一文章 [一致性哈希算法（四） - Maglev一致性哈希法](/post/consistent-hashing-algorithms-part-4-maglev-consistent-hash)。
 

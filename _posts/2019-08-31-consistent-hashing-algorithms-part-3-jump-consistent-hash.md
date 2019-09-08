@@ -197,7 +197,9 @@ $$
 ### 快速一致性哈希的特点
 
 根据论文<sup>[[1]](#footnote-1)</sup>中的试验数据来看，
+<span class="highlighted" markdown="1">
 **快速一致性哈希在执行速度、内存消耗、映射均匀性上都比[经典的哈希环法](/post/consistent-hashing-algorithms-part-2-consistent-hash-ring#一致性哈希环算法)要好**。
+</span>
 
 下图是论文<sup>[[1]](#footnote-1)</sup>中快速一致性哈希算法和[哈希环法](/post/consistent-hashing-algorithms-part-2-consistent-hash-ring#一致性哈希环算法)关于运行时间的对比，
 可以看到红色的线（jump hash）是明显耗时更低的。

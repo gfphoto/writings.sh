@@ -11,7 +11,7 @@ permalink: /post/consistent-hashing-algorithms-part-2-consistent-hash-ring
 
 * [一致性哈希算法（一） - 问题的提出](/post/consistent-hashing-algorithms-part-1-the-problem-and-the-concept)
 * [一致性哈希算法（二） - 哈希环法](/post/consistent-hashing-algorithms-part-2-consistent-hash-ring)
-* [一致性哈希算法（三） - 快速一致性哈希法](/post/consistent-hashing-algorithms-part-3-jump-consistent-hash)
+* [一致性哈希算法（三） - 跳跃一致性哈希法](/post/consistent-hashing-algorithms-part-3-jump-consistent-hash)
 * [一致性哈希算法（四） - Maglev一致性哈希法](/post/consistent-hashing-algorithms-part-4-maglev-consistent-hash)
 
 本文是第二部分。
@@ -113,7 +113,7 @@ permalink: /post/consistent-hashing-algorithms-part-2-consistent-hash-ring
 意思是， 当有100个影子节点时，哈希环法的映射结果的分布的标准差大约有 $10\%$。
 当影子节点增加到1000个时，这个标准差降到 $3.2\%$ 左右。
 
-另外，和[下一篇文章讨论的快速一致性哈希算法的均匀性对比](/post/consistent-hashing-algorithms-part-3-jump-consistent-hash#hash-ring-vs-jump-hash-about-uniformlity)，
+另外，和[下一篇文章讨论的跳跃一致性哈希算法的均匀性对比](/post/consistent-hashing-algorithms-part-3-jump-consistent-hash#hash-ring-vs-jump-hash-about-uniformlity)，
 哈希环的表现也不是很好。
 
 <span class="highlighted" markdown="1">
@@ -177,7 +177,7 @@ permalink: /post/consistent-hashing-algorithms-part-2-consistent-hash-ring
 
 -- 毕「一致性哈希算法 - 哈希环法」。
 
-本系列的下一文章 [一致性哈希算法（三） - 快速一致性哈希法](/post/consistent-hashing-algorithms-part-3-jump-consistent-hash)。
+本系列的下一文章 [一致性哈希算法（三） - 跳跃一致性哈希法](/post/consistent-hashing-algorithms-part-3-jump-consistent-hash)。
 
 ### 引用和脚注
 

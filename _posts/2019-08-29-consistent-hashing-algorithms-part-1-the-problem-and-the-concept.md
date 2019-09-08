@@ -11,7 +11,7 @@ permalink: /post/consistent-hashing-algorithms-part-1-the-problem-and-the-concep
 
 * [一致性哈希算法（一） - 问题的提出](/post/consistent-hashing-algorithms-part-1-the-problem-and-the-concept)
 * [一致性哈希算法（二） - 哈希环法](/post/consistent-hashing-algorithms-part-2-consistent-hash-ring)
-* [一致性哈希算法（三） - 快速一致性哈希法](/post/consistent-hashing-algorithms-part-3-jump-consistent-hash)
+* [一致性哈希算法（三） - 跳跃一致性哈希法](/post/consistent-hashing-algorithms-part-3-jump-consistent-hash)
 * [一致性哈希算法（四） - Maglev一致性哈希法](/post/consistent-hashing-algorithms-part-4-maglev-consistent-hash)
 
 本文是第一部分。
@@ -129,7 +129,7 @@ permalink: /post/consistent-hashing-algorithms-part-1-the-problem-and-the-concep
 接下来将介绍三种一致性哈希算法：
 
 * [哈希环法](/post/consistent-hashing-algorithms-part-2-consistent-hash-ring)
-* [快速一致性哈希法](/post/consistent-hashing-algorithms-part-3-jump-consistent-hash)
+* [跳跃一致性哈希法](/post/consistent-hashing-algorithms-part-3-jump-consistent-hash)
 * [Maglev一致性哈希法](/post/consistent-hashing-algorithms-part-4-maglev-consistent-hash)
 
 -- 毕「一致性哈希算法 - 问题的提出」。

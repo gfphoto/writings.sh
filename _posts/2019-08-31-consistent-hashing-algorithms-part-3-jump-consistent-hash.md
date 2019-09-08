@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 一致性哈希算法（三） - 快速一致性哈希法
+title: 一致性哈希算法（三） - 跳跃一致性哈希法
 date: 2019-08-31 16:20:00 +0800
 categories: 分布式
 tags: 一致性哈希 分布式 一致性 哈希算法
@@ -11,14 +11,14 @@ permalink: /post/consistent-hashing-algorithms-part-3-jump-consistent-hash
 
 * [一致性哈希算法（一） - 问题的提出](/post/consistent-hashing-algorithms-part-1-the-problem-and-the-concept)
 * [一致性哈希算法（二） - 哈希环法](/post/consistent-hashing-algorithms-part-2-consistent-hash-ring)
-* [一致性哈希算法（三） - 快速一致性哈希法](/post/consistent-hashing-algorithms-part-3-jump-consistent-hash)
+* [一致性哈希算法（三） - 跳跃一致性哈希法](/post/consistent-hashing-algorithms-part-3-jump-consistent-hash)
 * [一致性哈希算法（四） - Maglev一致性哈希法](/post/consistent-hashing-algorithms-part-4-maglev-consistent-hash)
 
 本文是第三部分。
 
-### 快速一致性哈希法
+### 跳跃一致性哈希法
 
-快速一致性哈希(Jump Consistent Hash)是Google于2014年发布的一个极简的、快速的一致性哈希算法<sup>[[1]](#footnote-1)</sup>。
+跳跃一致性哈希(Jump Consistent Hash)是Google于2014年发布的一个极简的、快速的一致性哈希算法<sup>[[1]](#footnote-1)</sup>。
 <span markdown="1" id="code-definition">
 这个算法精简到可以用几行代码来描述， 下面的就是Google原论文中的算法的C++表示：
 </span>
@@ -44,7 +44,7 @@ int32_t JumpConsistentHash(uint64_t key, int32_t num_buckets) {
 现在，先不要纠结上面这个函数本身，
 我们一步一步地看论文中是如何推导出来这个函数的。
 
-### 快速一致性哈希法的推导
+### 跳跃一致性哈希法的推导
 
 假设，我们要求的一致性哈希函数是 $ch(k, n)$， $n$是槽位数量，
 $K$是映射的数据的总数量：
@@ -105,7 +105,7 @@ $k_1$ 和 $k_2$ 每一次都要根据随机序列相应的值和目标分布 $1/
 $ch$ 函数没有造成全量重新映射， 而是 $1/(n+1)$ 份重新映射，
 这个函数已经达到了一致性哈希算法的定义标准。
 <span class="highlighted" markdown="1">
-可以说，快速一致性哈希做到了最小化重新映射(minimum disruption)，
+可以说，跳跃一致性哈希做到了最小化重新映射(minimum disruption)，
 做到了[完全的一致性](/post/consistent-hashing-algorithms-part-1-the-problem-and-the-concept#what-is-consistency)</span>。
 
 分析下它的时间复杂度呢？ 显然是 $O(n)$ 。 接下来我们把这个时间复杂度优化到 $log$ 级别。
@@ -176,7 +176,7 @@ int ch(int k, int n) {
 
 > It is interesting to note that jump consistent hash makes fewer expected jumps (by a constant factor) than the log2(n) comparisons needed by a binary search among n sorted keys.
 
-意思是， 快速一致性哈希算法的复杂度是比二分查找的复杂度 $O(log(n))$ 要快一些的，因为有一个常数。
+意思是， 跳跃一致性哈希算法的复杂度是比二分查找的复杂度 $O(log(n))$ 要快一些的，因为有一个常数。
 我猜了下作者的意思应该是这样的:
 
 $$
@@ -184,43 +184,43 @@ O(ln(n)) = O(\frac { log_{2}{n} } { log_{2}{e} })
 $$
 
 因为 $log_{2} e$ 是一个大于1的数， 所以， $O(ln(n))$ 虽然在复杂度上和 $O(log(n))$ 一样，都是对数级别复杂度，
-但是，二分查找的复杂度是二分的，底是2， 快速一致性哈希的底是 $e$ ， 跳的要更快。
+但是，二分查找的复杂度是二分的，底是2， 跳跃一致性哈希的底是 $e$ ， 跳的要更快。
 
 还是没有达到最终Google的函数呀？
 因为Google的 `JumpConsistentHash` 函数没有用语言自己的 $random$ ,
 而是自己做了一个64位的线性同余随机数生成器。
 
 <span class="highlighted" markdown="1">
-快速一致性哈希算法的设计非常精妙， 我认为最美的部分是**利用了伪随机数的一致性和分布均匀性**。
+跳跃一致性哈希算法的设计非常精妙， 我认为最美的部分是**利用了伪随机数的一致性和分布均匀性**。
 </span>
 
-### 快速一致性哈希的特点
+### 跳跃一致性哈希的特点
 
 根据论文<sup>[[1]](#footnote-1)</sup>中的试验数据来看，
 <span class="highlighted" markdown="1">
-**快速一致性哈希在执行速度、内存消耗、映射均匀性上都比[经典的哈希环法](/post/consistent-hashing-algorithms-part-2-consistent-hash-ring#一致性哈希环算法)要好**。
+**跳跃一致性哈希在执行速度、内存消耗、映射均匀性上都比[经典的哈希环法](/post/consistent-hashing-algorithms-part-2-consistent-hash-ring#一致性哈希环算法)要好**。
 </span>
 
-下图是论文<sup>[[1]](#footnote-1)</sup>中快速一致性哈希算法和[哈希环法](/post/consistent-hashing-algorithms-part-2-consistent-hash-ring#一致性哈希环算法)关于运行时间的对比，
+下图是论文<sup>[[1]](#footnote-1)</sup>中跳跃一致性哈希算法和[哈希环法](/post/consistent-hashing-algorithms-part-2-consistent-hash-ring#一致性哈希环算法)关于运行时间的对比，
 可以看到红色的线（jump hash）是明显耗时更低的。
 
-{% include image.html path="consistent-hashing-algorithms/9.1-jump-hash-execute-time-vs-hash-ring.jpg" note="图9.1 - 快速一致性哈希和哈希环的执行时间对比" %}
+{% include image.html path="consistent-hashing-algorithms/9.1-jump-hash-execute-time-vs-hash-ring.jpg" note="图9.1 - 跳跃一致性哈希和哈希环的执行时间对比" %}
 
-<span markdown="1" id="hash-ring-vs-jump-hash-about-uniformlity">下图是论文<sup>[[1]](#footnote-1)</sup>中快速一致性哈希算法和[哈希环法](/post/consistent-hashing-algorithms-part-2-consistent-hash-ring#一致性哈希环算法)关于映射分布的均匀性的对比，
-其中 Standard Error是指分布的标准差， 标准差越小则分布越均匀。 可以看到快速一致性哈希的分布要比哈希环的方式均匀的多。
-这一点也可以理解， 快速一致性哈希的算法设计就是源于对均匀性的推理。</span>
+<span markdown="1" id="hash-ring-vs-jump-hash-about-uniformlity">下图是论文<sup>[[1]](#footnote-1)</sup>中跳跃一致性哈希算法和[哈希环法](/post/consistent-hashing-algorithms-part-2-consistent-hash-ring#一致性哈希环算法)关于映射分布的均匀性的对比，
+其中 Standard Error是指分布的标准差， 标准差越小则分布越均匀。 可以看到跳跃一致性哈希的分布要比哈希环的方式均匀的多。
+这一点也可以理解， 跳跃一致性哈希的算法设计就是源于对均匀性的推理。</span>
 
-{% include image.html path="consistent-hashing-algorithms/9.2-jump-hash-vs-hash-ring-mapping-distribution-uniformity.jpg" note="图9.2 - 快速一致性哈希和哈希环的映射的均匀性对比" %}
+{% include image.html path="consistent-hashing-algorithms/9.2-jump-hash-vs-hash-ring-mapping-distribution-uniformity.jpg" note="图9.2 - 跳跃一致性哈希和哈希环的映射的均匀性对比" %}
 
 关于内存消耗上的对比结果， 其实已然不言自明。
 经典的一致性哈希环需要数据结构的支撑， 空间复杂度是 $O(N)$ 的，
-而快速一致性哈希算法几乎没有额外内存消耗。
+而跳跃一致性哈希算法几乎没有额外内存消耗。
 
-一切看上去都很美好, 但是，快速一致性哈希算法有两个显著缺点：
+一切看上去都很美好, 但是，跳跃一致性哈希算法有两个显著缺点：
 
 * **无法自定义槽位标号**
 
-  快速一致性哈希算法中， 因为我们没有存储任何数据结构，
+  跳跃一致性哈希算法中， 因为我们没有存储任何数据结构，
   所以我们无法自定义槽位标号， 标号是从 $0$ 开始数过来的。
 
 * <span class="highlighted" markdown="1">**只能在尾部增删节点**</span>
@@ -228,15 +228,15 @@ $$
   下面图9.3，
   假如我们在非尾部添加一个新的槽位， 会导致这个位置后续的槽位的标号全部发生变化。
   所以在非尾部插入新槽位没有意义， **我们只能在尾部插入**。
-  {% include image.html path="consistent-hashing-algorithms/9.3-jump-hash-add-node-not-on-the-end.jpg" note="图9.3 - 快速一致性哈希中在非尾部插入新槽位没有意义" max_height=220 %}
+  {% include image.html path="consistent-hashing-algorithms/9.3-jump-hash-add-node-not-on-the-end.jpg" note="图9.3 - 跳跃一致性哈希中在非尾部插入新槽位没有意义" max_height=220 %}
 
   对于在非尾部删除一个槽位也是一样的, **我们只能在尾部删除**。
-  {% include image.html path="consistent-hashing-algorithms/9.4-jump-hash-remove-node-not-on-the-end.jpg" note="图9.4 - 快速一致性哈希中在非尾部删除槽位" max_height=180 %}
+  {% include image.html path="consistent-hashing-algorithms/9.4-jump-hash-remove-node-not-on-the-end.jpg" note="图9.4 - 跳跃一致性哈希中在非尾部删除槽位" max_height=180 %}
 
   如果导致后面的槽位全部重新标号，更提不上一致性映射。
 
 
-### 快速一致性哈希下的热扩容和容灾
+### 跳跃一致性哈希下的热扩容和容灾
 
 回到[kvdb的例子](/post/consistent-hashing-algorithms-part-1-the-problem-and-the-concept#如何代理一个简单的kvdb)上来，
 我们讨论下如下问题：
@@ -260,7 +260,7 @@ $$
 当一个查询 $get(k)$ 到来， 因为 $k$ 此时映射到的是新节点 $N_n$ ， 所以可能会查不到数据，
 接下来把请求中继到老节点 $N_{old}$ ， 即可以查到结果。 同时 $N_n$ 把 $k$ 对齐到自己这里。
 
-{% include image.html path="consistent-hashing-algorithms/10.1-jump-hash-add-new-node-with-relay.jpg" note="图10.1 - 快速一致性哈希中新增节点时做中继" max_height=250 %}
+{% include image.html path="consistent-hashing-algorithms/10.1-jump-hash-add-new-node-with-relay.jpg" note="图10.1 - 跳跃一致性哈希中新增节点时做中继" max_height=250 %}
 
 通过这种方式，可以做到整个系统不停服扩容。 关键在于如何找到老节点。
 
@@ -274,18 +274,18 @@ $$
 参考上面如何扩容的玩法，可以把尾部节点的数据备份到[老节点](#what-is-old-node)
 (例如，图10.2中 $k_2$ 的老节点就是 $N_3$)。
 
-{% include image.html path="consistent-hashing-algorithms/10.2-jump-hash-what-happened-after-removing-a-node.jpg" note="图10.2 - 快速一致性哈希中删除尾部节点的情况" max_height=320 %}
+{% include image.html path="consistent-hashing-algorithms/10.2-jump-hash-what-happened-after-removing-a-node.jpg" note="图10.2 - 跳跃一致性哈希中删除尾部节点的情况" max_height=320 %}
 
 但是，移除一个非尾部节点的情况就不一样了。
 下面的图10.3中，移除 $N_1$ 时，映射的整体结果会发生较大变化，
 造成了**大面积的映射右偏**现象。
-原因在于， 虽然快速一致性哈希映射到的**节点标号**和节点数是 $n$ 的情况是一致的，
+原因在于， 虽然跳跃一致性哈希映射到的**节点标号**和节点数是 $n$ 的情况是一致的，
 但是，映射到的**节点本身**已经变化了。
 在这种情况下，因为大量数据的重新映射，
-快速一致性哈希已经不符合[一致性哈希的定义标准](/post/consistent-hashing-algorithms-part-1-the-problem-and-the-concept#一致性哈希算法)，
+跳跃一致性哈希已经不符合[一致性哈希的定义标准](/post/consistent-hashing-algorithms-part-1-the-problem-and-the-concept#一致性哈希算法)，
 带来的数据迁移的工作量也是巨大的。
 
-{% include image.html path="consistent-hashing-algorithms/10.3-jump-hash-what-happened-after-removing-a-node.jpg" note="图10.3 - 快速一致性哈希中删除非尾部节点节点的情况" max_height=320 %}
+{% include image.html path="consistent-hashing-algorithms/10.3-jump-hash-what-happened-after-removing-a-node.jpg" note="图10.3 - 跳跃一致性哈希中删除非尾部节点节点的情况" max_height=320 %}
 
 现实中，节点故障是肯定有可能发生在非尾部节点的。一旦这种情况发生，
 除了故障数据丢失的问题之外，还面临**大面积的映射偏移**的问题。
@@ -303,36 +303,36 @@ $$
 
   下图10.4中， 删除了 $N_4$ 后， $k_2$ 被重新映射到 $N_3$， 因为 $N_4$ 的数据在 $N_3$ 有备份， 因此正常。
 
-  {% include image.html path="consistent-hashing-algorithms/10.4-jump-hash-replica-of-last-node.jpg" note="图10.4 - 快速一致性哈希中的容灾策略" max_height=280 %}
+  {% include image.html path="consistent-hashing-algorithms/10.4-jump-hash-replica-of-last-node.jpg" note="图10.4 - 跳跃一致性哈希中的容灾策略" max_height=280 %}
 
 * 当删除非尾部节点时：
 
   下图10.5中， 删除了 $N_1$ 后， 由于 $k$， $k_1$， $k_3$ 都在邻居节点上有备份，
   所以此时映射右偏后并不会造成三个数据丢失， 而且查询也是正确的。
 
-  {% include image.html path="consistent-hashing-algorithms/10.5-jump-hash-replica-of-non-last-node.jpg" note="图10.5 - 快速一致性哈希中的容灾策略" max_height=280 %}
+  {% include image.html path="consistent-hashing-algorithms/10.5-jump-hash-replica-of-non-last-node.jpg" note="图10.5 - 跳跃一致性哈希中的容灾策略" max_height=280 %}
 
-至此，快速一致性哈希下的热扩容和容灾的思路就讨论到这里。
-虽然快速一致性哈希表现这么简单，思考起来比经典的哈希环法要复杂一些。
+至此，跳跃一致性哈希下的热扩容和容灾的思路就讨论到这里。
+虽然跳跃一致性哈希表现这么简单，思考起来比经典的哈希环法要复杂一些。
 
-### 带权重的快速一致性哈希
+### 带权重的跳跃一致性哈希
 
-最后，讨论下快速一致性哈希法如何对映射加权。
+最后，讨论下跳跃一致性哈希法如何对映射加权。
 
 我们同样可以尝试[虚拟节点(影子节点)](/post/consistent-hashing-algorithms-part-2-consistent-hash-ring#virtual-node)的办法来做权重。
 
 下面图11.1中， $V(N_{i})$ 表示 $N_{i}$ 的影子节点， 可以看到 $N_0$, $N_1$, $N_2$ 的权重比是 $3:2:1$。
 当我们把比重变成 $3:3:1$ 时，和一致性哈希环一样， 可能会引起数据的重新映射，带来数据迁移工作。
 
-{% include image.html path="consistent-hashing-algorithms/11.1-jump-hash-weighted-node.jpg" note="图11.1 - 快速一致性哈希的加权" max_height=280 %}
+{% include image.html path="consistent-hashing-algorithms/11.1-jump-hash-weighted-node.jpg" note="图11.1 - 跳跃一致性哈希的加权" max_height=280 %}
 
 ### 小结
 
-快速一致性哈希法最显著的特点是： <span class="highlighted" markdown="1">实现轻巧、快速、内存占用小、映射均匀、算法精妙</span>。
-但是，原始的快速一致性哈希算法的确定也很明显，<span class="highlighted" markdown="1">不支持自定义的槽位标号、而且只能在尾部增删槽位</span>。
+跳跃一致性哈希法最显著的特点是： <span class="highlighted" markdown="1">实现轻巧、快速、内存占用小、映射均匀、算法精妙</span>。
+但是，原始的跳跃一致性哈希算法的确定也很明显，<span class="highlighted" markdown="1">不支持自定义的槽位标号、而且只能在尾部增删槽位</span>。
 不过我们讨论下来，在这个算法下做热扩容和容灾也是有路可循的， 但是理解起来远不及哈希环直观。
 
--- 毕「一致性哈希算法 - 快速一致性哈希法」。
+-- 毕「一致性哈希算法 - 跳跃一致性哈希法」。
 
 本系列的下一文章 [一致性哈希算法（四） - Maglev一致性哈希法](/post/consistent-hashing-algorithms-part-4-maglev-consistent-hash)。
 

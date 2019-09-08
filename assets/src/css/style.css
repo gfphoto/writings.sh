@@ -39,7 +39,7 @@ a:hover {
   color: #fff;
   background-color: #000;
   text-decoration: none;
-  border-bottom: 1px dotted #fefefe;
+  border-bottom: 1px solid #fefefe;
 }
 
 .post-body a:link {

@@ -324,7 +324,7 @@ $$
 下面图11.1中， $V(N_{i})$ 表示 $N_{i}$ 的影子节点， 可以看到 $N_0$, $N_1$, $N_2$ 的权重比是 $3:2:1$。
 当我们把比重变成 $3:3:1$ 时，和一致性哈希环一样， 可能会引起数据的重新映射，带来数据迁移工作。
 
-{% include image.html path="consistent-hashing-algorithms/11.1-jump-hash-weighted-node.jpg" note="图11.1 - 跳跃一致性哈希的加权" max_height=280 %}
+{% include image.html path="consistent-hashing-algorithms/11.1-jump-hash-weighted-node.jpg" note="图11.1 - 跳跃一致性哈希的加权" max_height=160 %}
 
 ### 小结
 

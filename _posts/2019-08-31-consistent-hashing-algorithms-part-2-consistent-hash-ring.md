@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 一致性哈希算法（二） - 哈希环法
+title: 一致性哈希算法（二）- 哈希环法
 date: 2019-08-31 11:30:00 +0800
 categories: 分布式
 tags: 一致性哈希 分布式 一致性 哈希算法
@@ -9,10 +9,10 @@ permalink: /post/consistent-hashing-algorithms-part-2-consistent-hash-ring
 
 本系列共分为四部分：
 
-* [一致性哈希算法（一） - 问题的提出](/post/consistent-hashing-algorithms-part-1-the-problem-and-the-concept)
-* [一致性哈希算法（二） - 哈希环法](/post/consistent-hashing-algorithms-part-2-consistent-hash-ring)
-* [一致性哈希算法（三） - 跳跃一致性哈希法](/post/consistent-hashing-algorithms-part-3-jump-consistent-hash)
-* [一致性哈希算法（四） - Maglev一致性哈希法](/post/consistent-hashing-algorithms-part-4-maglev-consistent-hash)
+* [一致性哈希算法（一）- 问题的提出](/post/consistent-hashing-algorithms-part-1-the-problem-and-the-concept)
+* [一致性哈希算法（二）- 哈希环法](/post/consistent-hashing-algorithms-part-2-consistent-hash-ring)
+* [一致性哈希算法（三）- 跳跃一致性哈希法](/post/consistent-hashing-algorithms-part-3-jump-consistent-hash)
+* [一致性哈希算法（四）- Maglev一致性哈希法](/post/consistent-hashing-algorithms-part-4-maglev-consistent-hash)
 
 本文是第二部分。
 

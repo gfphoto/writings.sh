@@ -5,26 +5,26 @@ permalink: /about
 id: about
 ---
 
-[首页]({{ "/" | relative_url }}) <span class="nav-divider">|</span>
-[归档]({{ "/posts" | relative_url }}) <span class="nav-divider">|</span>
-[关于]({{ "/about" | relative_url }}) <span class="nav-divider">|</span>
-[订阅]({{ "/feed.xml" | relative_url }}){:target="_blank"}
+<span class="nav" markdown="1">[首页]({{ "/" | relative_url }})</span>
+<span class="nav-divider">·</span>
+<span class="nav" markdown="1">[归档]({{ "/posts" | relative_url }})</span>
+<span class="nav-divider">·</span>
+<span class="nav" markdown="1">[关于]({{ "/about" | relative_url }})</span>
+<span class="nav-divider">·</span>
+<span class="nav" markdown="1">[订阅]({{ "/feed.xml" | relative_url }}){:target="_blank"}</span>
 
-{% include image.html max_height=171 absolute_url='/assets/images/i.jpg' %}
+{% include image.html max_height=200 absolute_url='/assets/images/i.jpg' %}
 
-王超 · Hit9
-| 上海.
+<div class="post-body" markdown="1">
 
-**联系**
+王超 · Hit9, 上海。
 
-* [hit9@icloud.com](mailto:hit9@icloud.com)
-* [https://github.com/hit9](https://github.com/hit9){:target="_blank"}
-
-**经历**
+经历
 
 * *2018-2019* YOGO机器人
 * *2014-2018* 饿了么（上海）
 
-**鸣谢**
+联系
 
-[Jekyll](https://jekyllrb.com/), [Github](https://github.com/), [Netlify](https://www.netlify.com/)
+* [hit9@icloud.com](mailto:hit9@icloud.com)
+* [https://github.com/hit9](https://github.com/hit9){:target="_blank"}

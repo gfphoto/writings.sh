@@ -27,7 +27,7 @@ body {
 a:link {
   color: #000;
   text-decoration: none;
-  border-bottom: 1px dotted rgba(0,0,0,0.5);
+  /* border-bottom: 1px dotted rgba(0,0,0,0.5); */
 }
 
 a:visited {
@@ -42,8 +42,18 @@ a:hover {
   border-bottom: 1px solid #fefefe;
 }
 
-.post-body a:link {
+/* Link inside post */
+.post-body a:link,
+.post-body a:visited { 
   border-bottom: 1px solid rgba(0,0,0,0.5);
+}
+
+/* Add a '.drop-cap' class around paragraph for first-letter larger and drop.  */
+.post-body .drop-cap p:first-letter {
+  float: left;
+  font-size: 45px;
+  line-height: 1;
+  margin-right: 9px;
 }
 
 /* h1 is the blog title */
@@ -187,7 +197,7 @@ ol :first-child {
 
 ul ul,
 ol ul {
-  ist-style-type: circle
+  list-style-type: circle
 }
 
 img {
@@ -201,42 +211,24 @@ img {
 
 .post-copyright { color: #777; }
 
-
-/* Post-meta */
-article .post-meta {
-  font-size: 95%;
+/* Post header */
+.post-page-header {
   line-height: 28px;
 }
 
-article .post-meta .avatar-container {
-  display: inline-block;
-  float: left;
-  padding: 1px;
-  border: 1px solid #fefefe;
-  -webkit-border-radius: 100%;
-  -moz-border-radius: 100%;
-  -ms-border-radius: 100%;
-  -o-border-radius: 100%;
-  border-radius: 100%;
-  border: none;
+/* Post meta */
+.post-meta { 
+  font-size: 90%;
 }
 
-article .post-meta img[alt="avatar"] {
-  height: 26px;
-  width: 26px;
+.post-meta,
+.post-meta a:link,
+.post-meta a:visited {
+  color: #777;
 }
-
-article .post-meta .avatar-container:link,
-article .post-meta .avatar-container:visited
-{
-  border: 1px solid #fefefe;
-}
-article .post-meta span.post-date {
-  margin-left: 8px;
-}
-article .post-meta .avatar-container:hover {
-  background-color: #fefefe;
-  border: 1px solid #58D68D;
+.post-meta a:hover {
+  color: #fff;
+  background-color: #000;
 }
 
 /* https://stackoverflow.com/questions/19331362/using-an-image-caption-in-markdown-jekyll */
@@ -308,9 +300,9 @@ table tr {
   border-top: 1px solid #ccc;
 }
 
-table tr:nth-child(2n) {
-  background-color: #f8f8f8;
-}
+/* table tr:nth-child(2n) { */
+/*   background-color: #f8f8f8; */
+/* } */
 
 table th {
   font-weight: 600;
@@ -365,9 +357,13 @@ img.pendant-img-large {
 
 /* Divider */
 .divider img { height: 45px; }
-header h1 { margin-bottom: 0; }
+header h1 {
+  margin-bottom: 0; 
+  z-index: 999;
+}
 header .divider {
   margin-top: -25px;  /* divider.height(50px) / 2 = 25px */
+  opacity: 0.86;
 }
 
 /* Scroll Goi-To-Top */
@@ -377,6 +373,11 @@ header .divider {
 #ue-scroll:hover {
   background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGUAAAA0CAYAAACTrvadAAADWUlEQVR42u1av2sUURBek0juEpQcGrjiUigpkqApDpSDGPREwRBBOcghGJuYKjYmlV55XQ6swpEqjZ2dSHpBhICdhaWV1bX+AfecJy8xnLu3t++b/T0fDAsHuztvvr335psZx0k5lFJ3yH5o6/f77+g64QhiJeSJGgAR85Eu0xKdeAjZUt74RnZVohQdGRfIWsofP8muScTCJ2SCrKuC4aZELjxCpsx5YYN7EkF+QkrmnECwIZHkI6RiUl4O7EhEcUIWyXqKF22dLEh07Qi5rUICnU3v6TIpUQ5GyJoKH1/JLku0RyNkU0WH72RlifpwUbinooc+sxaEAXdCOkBgtXqvmastbgkT/wiZNAevLU5O61x0nTFnhS3WhBA6aMEgfiArDjyzYH63xWaeCSmbg9YW+169E1Mj2wee/SZ3WoYWPA+Kwl2/oDEkDp3cNMxooVUwW3oWVYptCqBTWSfkAUjIfcv3PgbeqQuhpawSsgFqiWXw/TX68n9bvl8XRCtZI2QH2EJ+cXUQ6TlLwFmm77uRFVHY5tAgjD7NgSJzJc2E6LT0kFODMPp2xRBui6dpFYXHYWgQRh+LtDV+AnzcThMhs6AofBWVcDP/5oNMN8z0gQzu180YfB4jewv4fJhYkalHeUANUo/Z/20gQ/ycuIYZOXQ3Tg3CuI5GJhpmbvO8Afsgcwn7wOrgeuadtP7lTcm+lNCtuAqof41qXKKwlUQNkqBK9sOoRWE3yRqEca1lMJt8HoWT08A8b6QahHHNl8i+AGt+HdqaGeZ5m05KQb5fJDsCG2Zj3E6h87x1J+WgNYwjLWYzHFLgcgaZ502MBmFMcHZjzTh1mTpLGoSRHGSK075hRjeuZ1GDMBLzCKxiLAZ94YssaxBGYmqgyFwZdc/cy4MGYSQGaTFrrPuVsDt50iDM2SkiMrfcHloA53mbTs5hdBzSYm6dfdTmYcg876ojOI1lEZxj7v7d/gFRqPfRJaHCtTZo3WLWDTMH0CAVoWDo+WzbYm7bzPZmXoMwkvMyYGwPzmpkAZT7EVv9Jj/ENALou/HBm/3aoO3/bhKMSsyqT2yPPfXdkNJKbjUIIzHLHiLzxLcC4vJ3a0hI2Yi5bgbWzydMM0FqXz3RIKEQM2vI6HkNr/8Bm6ReqxbVux8AAAAASUVORK5CYII=);
   background-color: #000;
+}
+
+/* Nav */
+.nav { 
+  border-bottom: 1px solid rgba(0,0,0,0.5);
 }
 
 /* Nav divider */

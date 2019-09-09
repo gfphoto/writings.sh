@@ -3,19 +3,10 @@ layout: base
 ---
 
 <header class="post-page-header">
-  <span class="post-page-nav">
-    <a class="home-link" href="{{ "/" | relative_url }}">{{ site.title }}</a>
-  </span>
-  »
-  <!-- Post Category -->
-  <span class="post-categories post-meta-item">
-    {%- for category in page.categories -%}
-    <span class="post-category">
-      <a href="/posts#{{category|slugize}}">{{ category }}</a>
-    </span>
-    {%- endfor -%}
-  </span>
 
+  <span class="post-page-nav">
+    <a class="home-link nav" href="{{ "/" | relative_url }}">{{ site.title }}</a>
+  </span>
 </header>
 
 <!--- Article -->
@@ -26,18 +17,23 @@ layout: base
   </div>
 
   <div class="post-meta">
-
-    <a class="avatar-container" href="{{ "/about" | relative_url }}">
-      <img alt="avatar" src="{{ site.gravatar_link }}?s=50">
-    </a>
-
     <!-- Post date -->
-    <span class="post-date post-meta-item">{{ page.date | date: "%Y-%m-%d" }}</span>
-    ·
-    <!-- Copyright Notice. -->
-    <span class="post-copyright post-meta-item"> {{ site.copyright_declaration }} </span>
+    <span class="post-date post-meta-item">{{ page.date | date: "%Y-%m-%d" }} </span>
+    <span class="nav-divider">·</span>
 
-    <div class="clear"></div>
+    <!-- Post Category -->
+    <span class="post-categories post-meta-item">
+      {%- for category in page.categories -%}
+      <span class="post-category">
+        <a class="nav" href="/posts#{{category|slugize}}">{{ category }}</a>
+      </span>
+      {%- endfor -%}
+    </span>
+
+    <span class="nav-divider">·</span>
+
+    <!-- Copyright Notice. -->
+    <span class="post-copyright post-meta-item">{{ site.copyright_declaration }} </span>
   </div>
 
   <!-- Post body -->
@@ -48,9 +44,9 @@ layout: base
      bodyPrefix='<span class="heading-text">' bodySuffix='</span>' %}
   </div>
 
-  <a class="disqus-hint-link" id="disqus-hint-link" href="javascript:void(0);" onclick="disqusLoader();">评论</a>
+  <a class="nav disqus-hint-link" id="disqus-hint-link" href="javascript:void(0);" onclick="disqusLoader();">评论</a>
   ·
-  <a class="go-top-link" href="#" >顶部</a>
+  <a class="nav go-top-link" href="#" >顶部</a>
 
   <div class="clear"></div>
   <div class="pendant-large">

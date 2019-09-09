@@ -72,10 +72,6 @@ footer {
 footer a:link { color: #999; }
 footer a:visited { color: #999; }
 
-article {
-  word-spacing: -1px;
-}
-
 h1,
 h2,
 h3,
@@ -275,7 +271,7 @@ code {
 
 pre code {
   font-family: "Source Code Pro", "Liberation Mono", Menlo, Courier, monospace;
-  font-size: 15px;
+  font-size: 16px;
   line-height: 1.45;
   border: none;
   padding: 0;
@@ -428,16 +424,16 @@ header .divider {
 @media (min-device-width:1281px) {
   body {
     width: 61.8%;
-    max-width: 710px;
-    font-size: 15px;
+    max-width: 730px;
+    font-size: 16px;
   }
-  .MathJax { font-size: 15px; }
-  h1 { font-size: 28px; }
-  h2 { font-size: 24px; }
-  h3 { font-size: 18px; }
-  h4 { font-size: 16px; }
-  h5 { font-size: 14px; }
-  h6 { font-size: 14px; }
+  .MathJax { font-size: 16px; }
+  h1 { font-size: 30px; }
+  h2 { font-size: 26px; }
+  h3 { font-size: 20px; }
+  h4 { font-size: 18px; }
+  h5 { font-size: 15px; }
+  h6 { font-size: 15px; }
   img { max-width: 90%; }
 
   .fadein {

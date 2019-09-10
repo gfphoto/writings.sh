@@ -14,7 +14,7 @@ layout: base
 <!--- Article -->
 <article>
   <!-- Post image -->
-  {% if page.image %}
+  {% if site.enable_post_image_render and page.image %}
   <div class="post-image-container">
     <figure>
       <img src="{{ page.image }}" />

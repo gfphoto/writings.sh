@@ -36,6 +36,8 @@ exclude:
   - package-lock.json
   - Caddyfile
 
+# Image
+enable_post_image_render: true
 image_prefix: "/assets/images/posts/"   # Ends with slash
 
 copyright_declaration: '未经允许，不得转载。'

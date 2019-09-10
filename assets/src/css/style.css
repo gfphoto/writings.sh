@@ -347,6 +347,15 @@ table td :last-child {
   text-decoration: none;
 }
 
+/* Post image */
+.post-image-container {
+  margin: 20px 0;
+  width: 100%;
+}
+.post-image-container img{
+  width: 100%;
+}
+
 /* Post date. */
 .posts-list-post-date,
 .post-date {
@@ -442,7 +451,6 @@ header .divider {
   h4 { font-size: 18px; }
   h5 { font-size: 15px; }
   h6 { font-size: 15px; }
-  img { max-width: 90%; }
 
   .fadein {
     -webkit-animation: fadein 1s; /* Safari, Chrome and Opera > 12.1 */

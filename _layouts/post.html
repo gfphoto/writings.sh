@@ -13,6 +13,13 @@ layout: base
 
 <!--- Article -->
 <article>
+  <!-- Post image -->
+  {% if page.image %}
+  <div class="post-image-container">
+    <img src="{{ page.image }}" />
+  </div>
+  {% endif %}
+
   <!-- Post Title  -->
   <div class="post-title-container">
     <h1 class="post-title">{{ page.title | escape }}</h1>

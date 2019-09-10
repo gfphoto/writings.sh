@@ -211,6 +211,14 @@ img {
 .post-page-header {
   line-height: 28px;
 }
+.post-page-header .home-link {
+  display: inline-block;
+  float: left;
+}
+.post-page-header .rss-link {
+  display: inline-block;
+  float: right;
+}
 
 /* Post meta */
 .post-meta { 

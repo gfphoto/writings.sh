@@ -5,6 +5,9 @@ date: 2019-08-31 16:20:00 +0800
 categories: 分布式
 tags: 一致性哈希 分布式 一致性 哈希算法
 permalink: /post/consistent-hashing-algorithms-part-3-jump-consistent-hash
+image: /assets/images/posts/consistent-hashing-algorithms/rper-consistent-hash.jpeg
+image_ref_text: unsplash
+image_ref_link: https://unsplash.com/photos/YfCVCPMNd38
 ---
 
 本系列共分为四部分：

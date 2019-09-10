@@ -5,6 +5,9 @@ date: 2019-08-07 18:04:00 +0800
 categories: 阅读
 tags: 读书笔记 复杂
 permalink: /post/complexity-a-guided-tour-notes
+image: /assets/images/posts/complexity-a-guided-tour-notes/repr-complexity.jpg
+image_ref_text: wikipedia/Mandelbrot_set
+image_ref_link: https://en.wikipedia.org/wiki/Mandelbrot_set
 ---
 
 

@@ -5,6 +5,9 @@ date: 2019-08-10 15:39:00 +0800
 categories: 分布式
 tags: 逻辑时钟 lamport时钟 向量时钟 分布式 因果关系 版本向量
 permalink: /post/logical-clocks
+image: /assets/images/posts/logical-clocks/repr-clock.jpg
+image_ref_text: unsplash
+image_ref_link: https://unsplash.com/photos/OshG1lLSNa4
 ---
 
 ### 如何确定分布式系统中事件的发生顺序？

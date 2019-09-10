@@ -5,6 +5,9 @@ date: 2019-08-14 18:10:00 +0800
 categories: 分布式
 tags: 分布式  CAP定理 一致性 可用性 分区容忍性
 permalink: /post/cap-and-consistency-models
+image: /assets/images/posts/cap-and-consistency-models/repr-cap-trade-off.jpg
+image_ref_text: rockbridgeinvest
+image_ref_link: https://www.rockbridgeinvest.com/the-tradeoff-preserving-capital-or-preserving-purchasing-power/
 ---
 
 首先，我们从一个数据存储系统的设计开始讨论。

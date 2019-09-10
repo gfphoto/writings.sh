@@ -16,7 +16,14 @@ layout: base
   <!-- Post image -->
   {% if page.image %}
   <div class="post-image-container">
-    <img src="{{ page.image }}" />
+    <figure>
+      <img src="{{ page.image }}" />
+      {% if page.image_ref_text %}
+      <figcaption>
+        图片来自 <a {% if page.image_ref_link %}href="{{ page.image_ref_link }}"{% endif %} target="_blank">{{ page.image_ref_text }}</a>
+      </figcaption>
+      {% endif %}
+    </figure>
   </div>
   {% endif %}
 

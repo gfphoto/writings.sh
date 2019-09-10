@@ -11,7 +11,7 @@ id: index
 <span class="nav-divider">·</span>
 <span class="nav" markdown="1">[关于]({{ "/about" | relative_url }})</span>
 <span class="nav-divider">·</span>
-<span class="nav" markdown="1">[订阅]({{ "/feed.xml" | relative_url }}){:target="_blank"}</span>
+<span class="nav" markdown="1">[订阅]({{ site.feedburner_url }}){:target="_blank"}</span>
 
 欢迎来到我的博客！
 

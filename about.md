@@ -11,7 +11,7 @@ id: about
 <span class="nav-divider">·</span>
 <span class="nav" markdown="1">[关于]({{ "/about" | relative_url }})</span>
 <span class="nav-divider">·</span>
-<span class="nav" markdown="1">[订阅]({{ "/feed.xml" | relative_url }}){:target="_blank"}</span>
+<span class="nav" markdown="1">[订阅]({{ site.feedburner_url }}){:target="_blank"}</span>
 
 {% include image.html max_height=200 absolute_url='/assets/images/i.jpg' %}
 

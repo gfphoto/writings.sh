@@ -48,3 +48,7 @@ disqus:
   shortname: secret-garden-1
 
 google_analytics_gtag:  "UA-145761297-1"
+
+### feedburner
+
+feedburner_url: https://feeds.feedburner.com/writings-sh

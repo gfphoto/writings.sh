@@ -10,18 +10,17 @@ image_ref_text: wikipedia/Mandelbrot_set
 image_ref_link: https://en.wikipedia.org/wiki/Mandelbrot_set
 ---
 
-
-豆瓣链接： [《复杂》·梅拉妮·米歇尔](https://book.douban.com/subject/6749832/)
-
-{% include image.html path="complexity-a-guided-tour-notes/01.jpg" %}
-
-### 读后感
-
-《复杂》是近期对我思维模式影响非常大的一本科普书，是我在做机器人群体协作的时候阅读的，对我设计多机器人协作的系统有很多思维启迪的作用。
+<div class="drop-cap drop-cap-red" markdown="1">
+对我思维模式影响非常大的一本科普书，是我在做机器人群体协作的时候阅读的，对我设计多机器人协作的系统有很多思维启迪的作用。
 这本书被称为最好的复杂性科学的科普读物之一。 非常感兴趣的部分有元胞自动机、分形、小世界网络、无尺度网络、遗传算法等等，
 非常好奇和神往的点在于 大自然的复杂系统的运作逻辑、复杂系统对自然界系统的刻画，以及对我们建模上、思维方式上的启发。
 世界有太多的系统是自组织的， 很多自组织的个体形成了复杂甚至智能的集体表现。 本书涉猎面很广，有很多点都值得继续深挖学习下去。
 这一本书有益于一览复杂性世界的历史演进、浅尝复杂系统相关的有趣的研究方法，是一本复杂系统方向的非常好的科普书。
+</div>
+
+豆瓣链接： [《复杂》·梅拉妮·米歇尔](https://book.douban.com/subject/6749832/)
+
+{% include image.html path="complexity-a-guided-tour-notes/01.jpg" %}
 
 ---
 

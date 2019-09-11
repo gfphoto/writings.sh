@@ -21,9 +21,11 @@ image_ref_link: https://unsplash.com/photos/YfCVCPMNd38
 
 ### Maglev一致性哈希算法
 
-2016年， Google发布了一篇论文 <sup>[[1]](#footnote-1)</sup>，
+<div class="drop-cap drop-cap-red" markdown="1">
+Maglev哈希算法来自Google， 在其2016年发布的一篇论文中<sup>[[1]](#footnote-1)</sup>，
 介绍了自2008年起服役的网络负载均衡器Maglev，
 文中包括Maglev负载均衡器中所使用的一致性哈希算法，即Maglev一致性哈希 (Maglev Consistent Hashing)。
+</div>
 
 我们要设计一个[一致性哈希算法](/post/consistent-hashing-algorithms-part-1-the-problem-and-the-concept#一致性哈希算法)，
 要求映射均匀， 并尽力把槽位变化时的映射变化降到最小（避免全局重新映射）。

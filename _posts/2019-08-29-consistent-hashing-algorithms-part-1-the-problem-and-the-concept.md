@@ -10,6 +10,15 @@ image_ref_text: unsplash
 image_ref_link: https://unsplash.com/photos/YfCVCPMNd38
 ---
 
+<div class="drop-cap drop-cap-red" markdown="1">
+一致性哈希算法是一种特殊的哈希算法，
+当目标槽位数量发生变化时，它会尽力降低的重新映射的数量。
+传统的哈希表设计中，添加或者删除一个槽位，会造成全量的重新映射，
+一致性哈希则追求的是增量式重新映射。
+一致性哈希最早由Karger在1997年提出，多用于分布式系统中的扩容缩容问题、
+分布式哈希表的设计等等。
+</div>
+
 本系列共分为四部分：
 
 * [一致性哈希算法（一）- 问题的提出](/post/consistent-hashing-algorithms-part-1-the-problem-and-the-concept)
@@ -17,7 +26,7 @@ image_ref_link: https://unsplash.com/photos/YfCVCPMNd38
 * [一致性哈希算法（三）- 跳跃一致性哈希法](/post/consistent-hashing-algorithms-part-3-jump-consistent-hash)
 * [一致性哈希算法（四）- Maglev一致性哈希法](/post/consistent-hashing-algorithms-part-4-maglev-consistent-hash)
 
-本文是第一部分。
+本文是第一部分， 将从一个kvdb的设计谈起，解答「为什么需要一致性哈希」的问题。
 
 ### 如何代理一个简单的kvdb？
 

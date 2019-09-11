@@ -19,9 +19,13 @@ image_ref_link: https://unsplash.com/photos/YfCVCPMNd38
 
 本文是第二部分。
 
-### 一致性哈希环算法
+<div class="drop-cap drop-cap-red" markdown="1">
+哈希环法是最常用的、最经典的一致性哈希算法， 也叫做割环法。
+这个算法易于理解、应用广泛（例如亚马逊的Dynamo），
+实现了最小化的重新映射。
+</div>
 
-一致性哈希环是最常用的、最经典的一致性哈希算法， 也叫做割环法等。
+### 一致性哈希环算法
 
 具体的算法：
 

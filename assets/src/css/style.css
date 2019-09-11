@@ -51,9 +51,17 @@ a:hover {
 /* Add a '.drop-cap' class around paragraph for first-letter larger and drop.  */
 .post-body .drop-cap p:first-letter {
   float: left;
-  font-size: 45px;
+  font-size: 32px;
   line-height: 1;
   margin-right: 9px;
+  font-weight: bold;
+  border-radius: 5px;
+  padding: 7px;
+}
+
+.post-body .drop-cap-red p:first-letter {
+  color: #fff;
+  background-color: #900;
 }
 
 /* h1 is the blog title */

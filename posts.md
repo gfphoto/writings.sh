@@ -5,13 +5,7 @@ permalink: /posts
 id: posts
 ---
 
-<span class="nav" markdown="1">[首页]({{ "/" | relative_url }})</span>
-<span class="nav-divider">·</span>
-<span class="nav" markdown="1">[归档]({{ "/posts" | relative_url }})</span>
-<span class="nav-divider">·</span>
-<span class="nav" markdown="1">[关于]({{ "/about" | relative_url }})</span>
-<span class="nav-divider">·</span>
-<span class="nav" markdown="1">[订阅]({{ site.feedburner_url }}){:target="_blank"}</span>
+{% include navbar.html %}
 
 {% for category in site.categories %}
 ### [{{ category[0] }}](#{{ category[0]|slugize }})

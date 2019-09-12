@@ -5,8 +5,20 @@ layout: base
 <header class="post-page-header">
 
   <span class="post-page-nav">
-    <a class="home-link nav" href="{{ "/" | relative_url }}">{{ site.title }}</a>
-    <a class="rss-link nav" href="{{ site.feedburner_url }}" target="_blank" >rss</a>
+    <a class="home-link nav icon-wrapper" href="{{ "/" | relative_url }}">
+      <span class="icon-home1"></span>
+      {{ site.title }}
+    </a>
+    <span class="nav nav-right-icons">
+      <a class="icon-wrapper" href="{{ site.feedburner_url }}" target="_blank" >
+        <span class="icon-rss1"></span>
+      </a>
+
+      <a class="icon-wrapper" href="https://github.com/{{ site.github_username }}" target="_blank">
+        <span class="icon-github1"></span>
+      </a>
+
+    </span>
   </span>
   <div class="clear"></div>
 </header>
@@ -34,7 +46,10 @@ layout: base
 
   <div class="post-meta">
     <!-- Post date -->
-    <span class="post-date post-meta-item">{{ page.date | date: "%Y-%m-%d" }} </span>
+    <span class="post-date post-meta-item">
+      <span class="icon-clock"></span>
+      {{ page.date | date: "%Y-%m-%d" }}
+    </span>
     <span class="nav-divider">·</span>
 
     <!-- Post Category -->
@@ -60,11 +75,36 @@ layout: base
      bodyPrefix='<span class="heading-text">' bodySuffix='</span>' %}
   </div>
 
-  <a class="nav disqus-hint-link" id="disqus-hint-link" href="javascript:void(0);" onclick="disqusLoader();">评论</a>
-  ·
-  <a class="nav go-top-link" href="#" >顶部</a>
+  <!-- Nav botton of Post -->
+  <div class="post-bottom-navs">
+    <!-- Comment -->
+    <span class="nav disqus-link">
+      <span class="icon-message-circle"></span>
+      <a id="disqus-hint-link" href="javascript:void(0);" onclick="disqusLoader();">评论</a>
+    </span>
+
+    <span class="nav-divider">·</span>
+
+    <!-- GoTop -->
+    <span class="nav shares">
+
+      <a class="icon-wrapper" href="http://twitter.com/share?url={{ page.url | absolute_url }}&text={{ page.title }}" target="_blank">
+        <span class="icon-twitter1"></span>
+      </a>
+
+      <a class="icon-wrapper" href="http://reddit.com/submit?url={{ page.url | absolute_url }}&title={{ page.title }}" target="_blank">
+        <span class="icon-reddit"></span>
+      </a>
+
+      <a class="icon-wrapper" href="{{ site.feedburner_url }}" target="_blank" >
+        <span class="icon-rss1"></span>
+      </a>
+
+    </span>
+  </div>
 
   <div class="clear"></div>
+
   <div class="pendant-large">
     <img class="pendant-img-large" src="{{ '/assets/images/pendant-large.png' | relative_url }}">
   </div>

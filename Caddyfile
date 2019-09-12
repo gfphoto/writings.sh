@@ -1,20 +1,26 @@
 # writings.sh
 
-writings.sh
+writings.sh {
+    tls hit9@icloud.com
+    root /srv/site
+    gzip
+    
+    # Rewrite post/XXX  to /post/XXX.html
+    rewrite /post/(.+) /post/{1}.html
+    rewrite /posts$ posts.html
+    rewrite /about$ about.html
+    
+    errors {
+        404 404.html
+    }
+    
+    log / /var/log/site/site.log {
+        rotate_keep 7
+    }
+}
 
 # Redirects www record access to without www domain.
-www.writings.sh {
-    redir https://writings.sh{uri}
-}
-
-root /srv/site
-gzip
-
-# Rewrite post/XXX  to /post/XXX.html
-rewrite /post/(.+) /post/{1}.html
-rewrite /posts$ posts.html
-rewrite /about$ about.html
-
-errors {
-    404 404.html
-}
+# www.writings.sh {
+#     tls hit9@icloud.com
+#     redir https://writings.sh{uri}
+# }

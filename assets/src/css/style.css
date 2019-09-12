@@ -231,7 +231,7 @@ img {
 }
 .post-page-header .nav-right-icons a {
   display: inline-block;
-  margin-left: 4px;
+  margin-left: 6px;
 }
 
 /* Post meta */
@@ -361,7 +361,7 @@ table td :last-child {
   float: right;
 }
 .shares .icon-wrapper {
-  margin-left: 4px;
+  margin-left: 6px;
 }
 
 /* Post image */

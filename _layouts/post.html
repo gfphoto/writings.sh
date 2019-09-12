@@ -29,7 +29,7 @@ layout: base
   {% if site.enable_post_image_render and page.image %}
   <div class="post-image-container">
     <figure>
-      <img src="{{ page.image }}" />
+      <img src="{{ page.image | prepend: site.url }}" />
       {% if page.image_ref_text %}
       <figcaption>
         图片来自 <a {% if page.image_ref_link %}href="{{ page.image_ref_link }}"{% endif %} target="_blank">{{ page.image_ref_text }}</a>

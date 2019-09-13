@@ -5,16 +5,16 @@ layout: base
 <header class="post-page-header">
 
   <span class="post-page-nav">
-    <a class="home-link nav icon-wrapper" href="{{ "/" | relative_url }}">
+    <a class="home-link nav icon-wrapper" href="{{ "/" | relative_url }}" title="春水煎茶的首页">
       <span class="icon-home1"></span>
       {{ site.title }}
     </a>
     <span class="nav nav-right-icons">
-      <a class="icon-wrapper" href="{{ site.feedburner_url }}" target="_blank" >
+      <a class="icon-wrapper" href="{{ site.feedburner_url }}" target="_blank"  title="订阅本站">
         <span class="icon-rss1"></span>
       </a>
 
-      <a class="icon-wrapper" href="https://github.com/{{ site.github_username }}" target="_blank">
+      <a class="icon-wrapper" href="https://github.com/{{ site.github_username }}" target="_blank" title="我的Github页面">
         <span class="icon-github1"></span>
       </a>
 
@@ -78,12 +78,12 @@ layout: base
   <!-- Nav botton of Post -->
   <div class="post-bottom-navs">
     <!-- Comment -->
-    <a class="icon-wrapper disqus-link" href="javascript:void(0);" onclick="disqusLoader();">
+    <a class="icon-wrapper disqus-link" href="javascript:void(0);" onclick="disqusLoader();" title="说两句吧！">
       <span class="icon-message-circle"></span> 评论
     </a>
 
     <span class="nav-divider">·</span>
-    <a class="icon-wrapper"
+    <a class="icon-wrapper" title="喜欢本文？打赏支持！"
        href="{{ '/assets/images/buymeacoffee.jpeg' | relative_url }}"
        onclick="window.open(this.href,'targetWindow', 'toolbar=no, location=no, status=no, menubar=no, scrollbars=yes, resizable=yes, width=400, height=400'); return false;">
       <span class="icon-dollar-sign"></span> 打赏
@@ -95,15 +95,15 @@ layout: base
     <span class="nav shares">
       分享
 
-      <a class="icon-wrapper" href="http://twitter.com/share?url={{ page.url | absolute_url }}&text={{ page.title }}" target="_blank">
+      <a class="icon-wrapper" href="http://twitter.com/share?url={{ page.url | absolute_url }}&text={{ page.title }}" target="_blank" title="分享到twitter">
         <span class="icon-twitter1"></span>
       </a>
 
-      <a class="icon-wrapper" href="http://reddit.com/submit?url={{ page.url | absolute_url }}&title={{ page.title }}" target="_blank">
+      <a class="icon-wrapper" href="http://reddit.com/submit?url={{ page.url | absolute_url }}&title={{ page.title }}" target="_blank" title="分享到reddit">
         <span class="icon-reddit"></span>
       </a>
 
-      <a class="icon-wrapper" href="{{ site.feedburner_url }}" target="_blank" >
+      <a class="icon-wrapper" href="{{ site.feedburner_url }}" target="_blank" title="通过RSS订阅本站">
         <span class="icon-rss1"></span>
       </a>
 

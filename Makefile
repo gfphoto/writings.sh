@@ -5,10 +5,10 @@ default: server
 install:
 	bundler install
 
-build-dev:
+build-dev: gulp
 	bundler exec jekyll build
 
-build-prod:
+build-prod: gulp
 	env JEKYLL_ENV=production bundler exec jekyll build
 	# This is for netlify
 	# cp _redirects _site/
@@ -28,4 +28,4 @@ gulp:
 server:
 	bundler exec jekyll s
 
-.PHONY: default build server deploy
+.PHONY: default build server deploy gulp

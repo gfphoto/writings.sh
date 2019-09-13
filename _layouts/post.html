@@ -2,127 +2,137 @@
 layout: base
 ---
 
-<header class="post-page-header">
+<body>
 
-  <span class="post-page-nav">
-    <a class="home-link nav icon-wrapper" href="{{ "/" | relative_url }}" title="春水煎茶的首页">
-      <span class="icon-home1"></span>
-      {{ site.title }}
-    </a>
-    <span class="nav nav-right-icons">
-      <a class="icon-wrapper" href="{{ site.feedburner_url }}" target="_blank"  title="订阅本站">
-        <span class="icon-rss1"></span>
+  <!-- Header -->
+  <header class="post-page-header">
+
+    <span class="post-page-nav">
+      <a class="home-link nav icon-wrapper" href="{{ "/" | relative_url }}" title="春水煎茶的首页">
+        <span class="icon-home1"></span>
+        {{ site.title }}
       </a>
+      <span class="nav nav-right-icons">
+        <a class="icon-wrapper" href="{{ site.feedburner_url }}" target="_blank"  title="订阅本站">
+          <span class="icon-rss1"></span>
+        </a>
 
-      <a class="icon-wrapper" href="https://github.com/{{ site.github_username }}" target="_blank" title="我的Github页面">
-        <span class="icon-github1"></span>
-      </a>
+        <a class="icon-wrapper" href="https://github.com/{{ site.github_username }}" target="_blank" title="我的Github页面">
+          <span class="icon-github1"></span>
+        </a>
 
-    </span>
-  </span>
-  <div class="clear"></div>
-</header>
-
-<!--- Article -->
-<article>
-  <!-- Post image -->
-  {% if site.enable_post_image_render and page.image %}
-  <div class="post-image-container">
-    <figure>
-      <img src="{{ page.image }}" />
-      {% if page.image_ref_text %}
-      <figcaption>
-        图片来自 <a {% if page.image_ref_link %}href="{{ page.image_ref_link }}"{% endif %} target="_blank">{{ page.image_ref_text }}</a>
-      </figcaption>
-      {% endif %}
-    </figure>
-  </div>
-  {% endif %}
-
-  <!-- Post Title  -->
-  <div class="post-title-container">
-    <h1 class="post-title">{{ page.title | escape }}</h1>
-  </div>
-
-  <div class="post-meta">
-    <!-- Post date -->
-    <span class="post-date post-meta-item">
-      <span class="icon-clock"></span>
-      {{ page.date | date: "%Y-%m-%d" }}
-    </span>
-    <span class="nav-divider">·</span>
-
-    <!-- Post Category -->
-    <span class="post-categories post-meta-item">
-      {%- for category in page.categories -%}
-      <span class="post-category">
-        <a class="nav" href="/posts#{{category|slugize}}">{{ category }}</a>
+        <a class="icon-wrapper" href="mailto:{{ site.email }}"  title="邮件联系">
+          <span class="icon-mail"></span>
+        </a>
       </span>
-      {%- endfor -%}
     </span>
+    <div class="clear"></div>
+  </header>
 
-    <span class="nav-divider">·</span>
+  <!--- Article -->
+  <article>
+    <!-- Post image -->
+    {% if site.enable_post_image_render and page.image %}
+    <div class="post-image-container">
+      <figure>
+        <img src="{{ page.image }}" />
+        {% if page.image_ref_text %}
+        <figcaption>
+          图片来自 <a {% if page.image_ref_link %}href="{{ page.image_ref_link }}"{% endif %} target="_blank">{{ page.image_ref_text }}</a>
+        </figcaption>
+        {% endif %}
+      </figure>
+    </div>
+    {% endif %}
 
-    <!-- Copyright Notice. -->
-    <span class="post-copyright post-meta-item">{{ site.copyright_declaration }} </span>
-  </div>
+    <!-- Post Title  -->
+    <div class="post-title-container">
+      <h1 class="post-title">{{ page.title | escape }}</h1>
+    </div>
 
-  <!-- Post body -->
-  <div class="post-body">
-  <!-- https://github.com/allejo/jekyll-anchor-headings -->
-  {% include anchor_headings.html
-     html=content h_max=4 anchorClass="heading-anchor" anchorBody="§" beforeHeading=true
-     bodyPrefix='<span class="heading-text">' bodySuffix='</span>' %}
-  </div>
+    <div class="post-meta">
+      <!-- Post date -->
+      <span class="post-date post-meta-item">
+        <span class="icon-clock"></span>
+        {{ page.date | date: "%Y-%m-%d" }}
+      </span>
+      <span class="nav-divider">·</span>
 
-  <!-- Nav botton of Post -->
-  <div class="post-bottom-navs">
-    <!-- Comment -->
-    <a class="icon-wrapper disqus-link" href="javascript:void(0);" onclick="disqusLoader();" title="说两句吧！">
-      <span class="icon-message-circle"></span> 评论
-    </a>
+      <!-- Post Category -->
+      <span class="post-categories post-meta-item">
+        {%- for category in page.categories -%}
+        <span class="post-category">
+          <a class="nav" href="/posts#{{category|slugize}}">{{ category }}</a>
+        </span>
+        {%- endfor -%}
+      </span>
 
-    <span class="nav-divider">·</span>
-    <a class="icon-wrapper" title="喜欢本文？打赏支持！"
-       href="{{ '/assets/images/buymeacoffee.jpeg' | relative_url }}"
-       onclick="window.open(this.href,'targetWindow', 'toolbar=no, location=no, status=no, menubar=no, scrollbars=yes, resizable=yes, width=400, height=400'); return false;">
-      <span class="icon-thumbs-up"></span> 打赏
-    </a>
+      <span class="nav-divider">·</span>
 
-    <span class="nav-divider">·</span>
+      <!-- Copyright Notice. -->
+      <span class="post-copyright post-meta-item">{{ site.copyright_declaration }} </span>
+    </div>
 
-    <!-- GoTop -->
-    <span class="nav shares">
-      分享
+    <!-- Post body -->
+    <div class="post-body">
+    <!-- https://github.com/allejo/jekyll-anchor-headings -->
+    {% include anchor_headings.html
+       html=content h_max=4 anchorClass="heading-anchor" anchorBody="§" beforeHeading=true
+       bodyPrefix='<span class="heading-text">' bodySuffix='</span>' %}
+    </div>
 
-      <a class="icon-wrapper" href="http://twitter.com/share?url={{ page.url | absolute_url }}&text={{ page.title }}" target="_blank" title="分享到twitter">
-        <span class="icon-twitter1"></span>
+    <!-- Nav botton of Post -->
+    <div class="post-bottom-navs">
+      <!-- Comment -->
+      <a class="icon-wrapper disqus-link" href="javascript:void(0);" onclick="disqusLoader();" title="说两句吧！">
+        <span class="icon-message-circle"></span> 评论
       </a>
 
-      <a class="icon-wrapper" href="http://reddit.com/submit?url={{ page.url | absolute_url }}&title={{ page.title }}" target="_blank" title="分享到reddit">
-        <span class="icon-reddit"></span>
+      <span class="nav-divider">·</span>
+      <a class="icon-wrapper" title="喜欢本文？打赏支持！"
+         href="{{ '/assets/images/buymeacoffee.jpeg' | relative_url }}"
+         onclick="window.open(this.href,'targetWindow', 'toolbar=no, location=no, status=no, menubar=no, scrollbars=yes, resizable=yes, width=400, height=400'); return false;">
+        <span class="icon-thumbs-up"></span> 打赏
       </a>
 
-      <a class="icon-wrapper" href="{{ site.feedburner_url }}" target="_blank" title="通过RSS订阅本站">
-        <span class="icon-rss1"></span>
-      </a>
+      <span class="nav-divider">·</span>
 
-    </span>
-  </div>
+      <!-- GoTop -->
+      <span class="nav shares">
+        分享
 
-  <div class="clear"></div>
+        <a class="icon-wrapper" href="http://twitter.com/share?url={{ page.url | absolute_url }}&text={{ page.title }}" target="_blank" title="分享到twitter">
+          <span class="icon-twitter1"></span>
+        </a>
 
-  <div class="pendant-large">
-    <img class="pendant-img-large" src="{{ '/assets/images/pendant-large.png' | relative_url }}">
-  </div>
-</article>
+        <a class="icon-wrapper" href="http://reddit.com/submit?url={{ page.url | absolute_url }}&title={{ page.title }}" target="_blank" title="分享到reddit">
+          <span class="icon-reddit"></span>
+        </a>
+
+        <a class="icon-wrapper" href="{{ site.feedburner_url }}" target="_blank" title="通过RSS订阅本站">
+          <span class="icon-rss1"></span>
+        </a>
+
+      </span>
+    </div>
+
+    <div class="clear"></div>
+
+    <div class="pendant-large">
+      <img class="pendant-img-large" src="{{ '/assets/images/pendant-large.png' | relative_url }}">
+    </div>
+  </article>
 
 
-<!-- Goto top -->
-<!-- https://github.com/azrsix/ue-scroll-js -->
-<div id="ue-scroll" class="ue-scroll btn-white arrow-black circle"></div>
+  <!-- Goto top -->
+  <!-- https://github.com/azrsix/ue-scroll-js -->
+  <div id="ue-scroll" class="ue-scroll btn-white arrow-black circle"></div>
 
-<!-- Comments / Disqus -->
-{%- if site.disqus.shortname -%}
-  {%- include disqus.html -%}
-{%- endif -%}
+  <!-- Comments / Disqus -->
+  {%- if site.disqus.shortname -%}
+    {%- include disqus.html -%}
+  {%- endif -%}
+
+  <!-- Footer -->
+  {% include footer.html %}
+</body>

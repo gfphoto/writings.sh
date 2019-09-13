@@ -1,0 +1,28 @@
+---
+layout: base
+---
+
+<body class="default">
+  <!-- Top header -->
+  <header>
+    <h1>
+      <a href="/">{{ site.title }}</a>
+    </h1>
+    <p class="divider">
+      <img src="{{ "/assets/images/divider.png" | relative_url }}">
+    </p>
+  </header>
+
+  <!-- Page content -->
+  <article>
+    <!-- Nav -->
+    {% include navbar.html %}
+    <!-- Body -->
+    <div class="post-body">
+    {{ content }}
+    </div>
+  </article>
+
+  <!-- Footer -->
+  {% include footer.html %}
+</body>

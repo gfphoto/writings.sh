@@ -1,11 +1,9 @@
 ---
-layout: default
+layout: page
 title: 归档 | 春水煎茶
 permalink: /posts
 id: posts
 ---
-
-{% include navbar.html %}
 
 {% for category in site.categories %}
 ### [{{ category[0] }}](#{{ category[0]|slugize }})

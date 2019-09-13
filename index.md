@@ -1,11 +1,9 @@
 ---
-layout: default
+layout: page
 title: 春水煎茶
 permalink: /
 id: index
 ---
-
-{% include navbar.html %}
 
 欢迎来到我的博客！
 

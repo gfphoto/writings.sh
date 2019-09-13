@@ -406,6 +406,9 @@ header .divider {
   background-color: #000;
 }
 
+/* Nav bar */
+.navbar { margin-bottom: 20px; }
+
 /* Nav divider */
 .nav-divider { color: #bbb; }
 
@@ -465,6 +468,7 @@ a.icon-wrapper:hover {
     max-width: 730px;
     font-size: 16px;
   }
+  body.default { max-width: 580px; }
   .MathJax { font-size: 16px; }
   h1 { font-size: 30px; }
   h2 { font-size: 26px; }

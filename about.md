@@ -7,12 +7,12 @@ id: about
 
 {% include image.html width="100%" absolute_url='/assets/images/i.jpg' note="2017年 · 瓦莱塔" %}
 
-王超 · Hit9, 软件工程师，工作在上海。
+王超 · Hit9
 
 经历
 
-* 2018-2019 · YOGO机器人
-* 2014-2018 · 饿了么（上海）
+* 2018-2019 · 上海 · YOGO机器人
+* 2014-2018 · 上海 · 饿了么
 
 联系
 

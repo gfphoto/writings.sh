@@ -20,7 +20,8 @@ writings.sh {
 }
 
 # Redirects www record access to without www domain.
-# www.writings.sh {
-#     tls hit9@icloud.com
-#     redir https://writings.sh{uri}
-# }
+www.writings.sh {
+    tls hit9@icloud.com
+    root /srv/site
+    redir https://writings.sh{uri}
+}

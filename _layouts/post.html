@@ -29,7 +29,7 @@ layout: base
   {% if site.enable_post_image_render and page.image %}
   <div class="post-image-container">
     <figure>
-      <img src="{{ page.image | prepend: site.url }}" />
+      <img src="{{ page.image }}" />
       {% if page.image_ref_text %}
       <figcaption>
         图片来自 <a {% if page.image_ref_link %}href="{{ page.image_ref_link }}"{% endif %} target="_blank">{{ page.image_ref_text }}</a>
@@ -78,15 +78,20 @@ layout: base
   <!-- Nav botton of Post -->
   <div class="post-bottom-navs">
     <!-- Comment -->
-    <span class="nav disqus-link">
-      <span class="icon-message-circle"></span>
-      <a id="disqus-hint-link" href="javascript:void(0);" onclick="disqusLoader();">评论</a>
-    </span>
+    <a class="icon-wrapper disqus-link" href="javascript:void(0);" onclick="disqusLoader();">
+      <span class="icon-message-circle"></span> 评论
+    </a>
 
     <span class="nav-divider">·</span>
+    <a class="icon-wrapper"
+       href="{{ '/assets/images/buymeacoffee.jpeg' | relative_url }}"
+       onclick="window.open(this.href,'targetWindow', 'toolbar=no, location=no, status=no, menubar=no, scrollbars=yes, resizable=yes, width=400, height=400'); return false;">
+      <span class="icon-dollar-sign"></span> 打赏
+    </a>
 
     <!-- GoTop -->
     <span class="nav shares">
+      分享到
 
       <a class="icon-wrapper" href="http://twitter.com/share?url={{ page.url | absolute_url }}&text={{ page.title }}" target="_blank">
         <span class="icon-twitter1"></span>

@@ -355,6 +355,7 @@ table td :last-child {
 
 /* Post bottom links: Comment and Go-Top */
 .post-bottom-navs {
+  font-size: 95%;
   margin-top: 30px;
 }
 .post-bottom-navs .shares {

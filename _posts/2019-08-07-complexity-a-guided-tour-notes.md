@@ -51,7 +51,9 @@ image_ref_link: https://en.wikipedia.org/wiki/Mandelbrot_set
       上图中，竖直方向上特定的分叉点之间距离之比的极限也就是第二费根鲍姆常数 $2.50290787$.
       另外，具有自相似性质的著名的[曼德博集合](https://zh.wikipedia.org/wiki/%E6%9B%BC%E5%BE%B7%E5%8D%9A%E9%9B%86%E5%90%88)
       的缩放速率接近费根鲍姆常数
-      {% include image.html path="complexity-a-guided-tour-notes/14.gif" %}
+      {% include image.html id="image-14" path="complexity-a-guided-tour-notes/14.gif"
+         too_large=1 note="曼德博集合示意图"
+         width="100%" %}
 
 
 对于混沌思想的三点总结：
@@ -206,8 +208,8 @@ ${X}^{N}$倍，那么这个$N$就定义为这个分形结构的维度 ([参考�
 
 下图是元胞自动机的例子： [生命的游戏](https://zh.wikipedia.org/wiki/%E5%BA%B7%E5%A8%81%E7%94%9F%E5%91%BD%E6%B8%B8%E6%88%8F)
 
-{% include image.html path="complexity-a-guided-tour-notes/05.gif"  %}
-{% include image.html path="complexity-a-guided-tour-notes/06.gif"  %}
+{% include image.html path="complexity-a-guided-tour-notes/05.gif"  width="60%" %}
+{% include image.html path="complexity-a-guided-tour-notes/06.gif" width="60%" %}
 
 元胞自动机也是由大量简单个体组成，不存在中央控制，每个个体都只与少量其他个体交互。
 
@@ -227,7 +229,7 @@ ${X}^{N}$倍，那么这个$N$就定义为这个分形结构的维度 ([参考�
 * 类型4(复杂态)： 最有趣的一种。 几乎所有的初始模式将会演变成相互作用的复杂和有趣的方式结构，并且局部结构的形成能够长时间存在。
 
 这里推荐下玩一下模拟生命样貌的元胞自动机： [Lenia](https://github.com/Chakazul/Lenia)，下图是Lenia的一个示例图
-{% include image.html path="complexity-a-guided-tour-notes/09.gif"  %}
+{% include image.html path="complexity-a-guided-tour-notes/09.gif"  width="100%" note="Lenia示意图" too_large=1 id="image-09" %}
 
 沃尔夫勒姆的一位助手库克证明了[规则110](https://en.wikipedia.org/wiki/Rule_110)是通用的。
 

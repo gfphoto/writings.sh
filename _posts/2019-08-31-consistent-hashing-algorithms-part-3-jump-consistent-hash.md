@@ -308,7 +308,7 @@ $$
 
   下图10.4中， 删除了 $N_4$ 后， $k_2$ 被重新映射到 $N_3$， 因为 $N_4$ 的数据在 $N_3$ 有备份， 因此正常。
 
-  {% include image.html path="consistent-hashing-algorithms/10.4-jump-hash-replica-of-last-node.jpg" note="图10.4 - 跳跃一致性哈希中的容灾策略" max_height=280 %}
+  {% include image.html path="consistent-hashing-algorithms/10.4-jump-hash-replica-of-last-node.jpg" note="图10.4 - 跳跃一致性哈希中的容灾策略" max_height=320 %}
 
 * 当删除非尾部节点时：
 

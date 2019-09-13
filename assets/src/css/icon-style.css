@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'icomoon';
-  src:  url('fonts/icomoon.eot?emssjs');
-  src:  url('fonts/icomoon.eot?emssjs#iefix') format('embedded-opentype'),
-    url('fonts/icomoon.ttf?emssjs') format('truetype'),
-    url('fonts/icomoon.woff?emssjs') format('woff'),
-    url('fonts/icomoon.svg?emssjs#icomoon') format('svg');
+  src:  url('fonts/icomoon.eot?6giyge');
+  src:  url('fonts/icomoon.eot?6giyge#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?6giyge') format('truetype'),
+    url('fonts/icomoon.woff?6giyge') format('woff'),
+    url('fonts/icomoon.svg?6giyge#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -27,6 +27,9 @@
 
 .icon-activity:before {
   content: "\e900";
+}
+.icon-arrow-up:before {
+  content: "\e910";
 }
 .icon-clock:before {
   content: "\e90e";

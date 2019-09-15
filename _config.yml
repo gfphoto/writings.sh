@@ -41,6 +41,7 @@ enable_post_image_render: true
 image_prefix: "/assets/images/posts/"   # Ends with slash
 
 copyright_declaration: '未经允许，不得转载'
+copyright_declaration_for_print: '源自博客「春水煎茶」'
 
 plugins:
   - jekyll-feed

@@ -71,6 +71,7 @@ layout: base
 
       <!-- Copyright Notice. -->
       <span class="post-copyright post-meta-item">{{ site.copyright_declaration }} </span>
+      <span class="post-copyright-only-for-print"> {{ site.copyright_declaration_for_print }} </span>
     </div>
 
     <!-- Post body -->
@@ -81,6 +82,10 @@ layout: base
        bodyPrefix='<span class="heading-text">' bodySuffix='</span>' %}
     </div>
 
+  </article>
+
+  <!-- Post article -->
+  <div class="post-article">
     <!-- Nav botton of Post -->
     <div class="post-bottom-navs">
       <!-- Comment -->
@@ -113,6 +118,9 @@ layout: base
           <span class="icon-rss1"></span>
         </a>
 
+        <a class="icon-wrapper" href="javascript:void(0);" target="_blank" title="打印本文（PDF）" onclick="window.print(); return false;" >
+          <span class="icon-printer"></span>
+        </a>
       </span>
     </div>
 
@@ -121,18 +129,17 @@ layout: base
     <div class="pendant-large">
       <img class="pendant-img-large" src="{{ '/assets/images/pendant-large.png' | relative_url }}">
     </div>
-  </article>
 
+    <!-- Goto top -->
+    <!-- https://github.com/azrsix/ue-scroll-js -->
+    <div id="ue-scroll" class="ue-scroll btn-white arrow-black circle"></div>
 
-  <!-- Goto top -->
-  <!-- https://github.com/azrsix/ue-scroll-js -->
-  <div id="ue-scroll" class="ue-scroll btn-white arrow-black circle"></div>
+    <!-- Comments / Disqus -->
+    {%- if site.disqus.shortname -%}
+      {%- include disqus.html -%}
+    {%- endif -%}
 
-  <!-- Comments / Disqus -->
-  {%- if site.disqus.shortname -%}
-    {%- include disqus.html -%}
-  {%- endif -%}
-
-  <!-- Footer -->
-  {% include footer.html %}
+    <!-- Footer -->
+    {% include footer.html %}
+  </div>
 </body>

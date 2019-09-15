@@ -514,3 +514,13 @@ a.icon-wrapper:hover {
     to   { opacity: 1;}
   }
 }
+
+.post-copyright-only-for-print {
+  display: none;
+}
+
+/* Print */
+@media print {
+  header, .post-article, .post-copyright { display: none; }
+  .post-copyright-only-for-print { display: inline-block; }
+}

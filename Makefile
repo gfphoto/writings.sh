@@ -4,6 +4,7 @@ default: server
 
 install:
 	bundler install
+	npm install
 
 build-dev: gulp
 	bundler exec jekyll build

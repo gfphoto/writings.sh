@@ -158,6 +158,16 @@ article ::selection { background-color: #F7DC6F; }
 article mark,
 article .highlighted
 { background-color: #D5F5E3; }
+article .highlighted-red {
+  background-color: #D82545;
+  color: #ffffff;
+}
+article .highlighted-red a:link,
+article .highlighted-red a:visited
+{
+  color: #ffffff;
+  border-bottom: 1px solid #ffffff;
+}
 
 p,
 blockquote,

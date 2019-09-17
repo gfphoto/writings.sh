@@ -281,6 +281,7 @@ pre {
 code {
   font-family: "Source Code Pro", "Liberation Mono", Menlo, Courier, monospace;
   padding: 1px 4px;
+  display: inline-block;
   margin: 0 3px;
   background-color: #EAEDED;
   -webkit-border-radius: 2px;
@@ -375,9 +376,13 @@ table td :last-child {
 }
 
 /* Post date. */
-.posts-list-post-date,
-.post-date {
-  color: rgba(0,0,0,0.55);
+.posts-list-post-date {
+  float: right;
+}
+.posts-list a:link,
+.posts-list a:visited
+{
+  border-bottom: 1px solid #fefefe;
 }
 
 /* Pendant */

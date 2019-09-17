@@ -52,8 +52,8 @@ cp Caddyfile _site
 
 # Fix $ANY$ to Img for math.
 # https://www.noamross.net/archives/2012-04-04-math-in-rss-feeds/
-echo "Fix math in feed.xml"
-perl -pi -e 's|(\$$)(.*?)(\$$)|&lt;img src=&quot;http://latex.codecogs.com/png.latex?\2&quot; alt=&quot;\2&quot; /&gt;|g' _site/feed.xml
+perl -pi -e 's|(\$)(.*?)(\$)|&lt;img src=&quot;http://latex.codecogs.com/png.latex?\2&quot; alt=&quot;\2&quot; /&gt;|g' _site/feed.xml
+echo "Fixed math in feed.xml"
 
 # Deploy
 echo "Rsync to remote server"

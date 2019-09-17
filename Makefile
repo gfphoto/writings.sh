@@ -15,4 +15,7 @@ gulp:
 server:
 	bundler exec jekyll s -H 0.0.0.0 --watch
 
-.PHONY: default build server gulp
+deploy:
+	./deploy.sh
+
+.PHONY: default build server gulp deploy

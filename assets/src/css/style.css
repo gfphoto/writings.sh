@@ -10,7 +10,7 @@ html {
 
 body {
   margin: 20px auto;
-  font-family: "Source Code Pro", Courier, Georgia, -apple-system, BlinkMacSystemFont, Helvetica Neue, PingFang SC, sans-serif;
+	font-family: 'Arvo', -apple-system, BlinkMacSystemFont, Helvetica Neue, PingFang SC, sans-serif;;
   line-height: 1.7;
   color: rgba(0,0,0,0.86);
   font-weight: normal;
@@ -52,7 +52,7 @@ a:hover {
 /* Add a '.drop-cap' class around paragraph for first-letter larger and drop.  */
 .post-body .drop-cap p:first-letter {
   float: left;
-  font-size: 32px;
+  font-size: 37px;
   line-height: 1;
   margin-right: 9px;
   font-weight: bold;
@@ -117,6 +117,7 @@ h6 {
 
 /* heading anchors */
 .heading-anchor {
+  font-family: "Inconsolata", "Liberation Mono", Menlo, Courier, monospace;
   font-weight: 200;
   float: left;
   margin-left: -20px;
@@ -289,7 +290,7 @@ pre {
 }
 
 code {
-  font-family: "Source Code Pro", "Liberation Mono", Menlo, Courier, monospace;
+  font-family: "Inconsolata", "Liberation Mono", Menlo, Courier, monospace;
   padding: 1px 4px;
   display: inline-block;
   margin: 0 3px;
@@ -303,8 +304,8 @@ code {
 }
 
 pre code {
-  font-family: "Source Code Pro", "Liberation Mono", Menlo, Courier, monospace;
-  font-size: 16px;
+  font-family: "Inconsolata", "Liberation Mono", Menlo, Courier, monospace;
+  font-size: 17px;
   line-height: 1.45;
   border: none;
   padding: 0;
@@ -481,15 +482,15 @@ a.icon-wrapper:hover {
   body {
     width: 61.8%;
     max-width: 730px;
-    font-size: 16px;
+    font-size: 17px;
   }
   body.default { max-width: 580px; }
   .MathJax { font-size: 16px; }
-  h1 { font-size: 30px; }
-  h2 { font-size: 26px; }
-  h3 { font-size: 20px; }
-  h4 { font-size: 18px; }
-  h5 { font-size: 15px; }
+  h1 { font-size: 33px; }
+  h2 { font-size: 29px; }
+  h3 { font-size: 24px; }
+  h4 { font-size: 22px; }
+  h5 { font-size: 17px; }
   h6 { font-size: 15px; }
 
   .fadein {

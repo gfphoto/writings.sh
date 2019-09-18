@@ -22,9 +22,9 @@ image_ref_link: https://unsplash.com/photos/YfCVCPMNd38
 ### 跳跃一致性哈希法
 
 <div class="drop-cap drop-cap-red" markdown="1">
-跳跃一致性哈希(Jump Consistent Hash)是Google于2014年发布的一个极简的、快速的一致性哈希算法<sup>[[1]](#footnote-1)</sup>。
+跳跃一致性哈希 ( Jump Consistent Hash ) 是 Google 于2014年发布的一个极简的、快速的一致性哈希算法<sup>[[1]](#footnote-1)</sup>。
 <span markdown="1" id="code-definition">
-这个算法精简到可以用几行代码来描述， 下面的就是Google原论文中的算法的C++表示：
+这个算法精简到可以用几行代码来描述， 下面的就是 Google 原论文中的算法的 C++ 表示：
 </span>
 </div>
 
@@ -64,7 +64,7 @@ $K$是映射的数据的总数量：
 接下来的问题是： 哪些 $k$ 要被重新映射呢？ 就是说在新加槽位的时候，要让哪些 $k$ 跳到新的槽位，
 哪些 $k$ 留在老地方不动呢？
 
-Google的办法是用随机数来决定一个 $k$ 每次要不要跳到新槽位中去。
+Google 的办法是用随机数来决定一个 $k$ 每次要不要跳到新槽位中去。
 <span class="highlighted" markdown="1">
 但是请注意，这里所说的「随机数」是指**伪随机数**，即**只要种子不变，随机序列就不变**</span>。
 我们程序语言中的随机数发生器都是伪随机的：
@@ -191,8 +191,8 @@ $$
 因为 $log_{2} e$ 是一个大于1的数， 所以， $O(ln(n))$ 虽然在复杂度上和 $O(log(n))$ 一样，都是对数级别复杂度，
 但是，二分查找的复杂度是二分的，底是2， 跳跃一致性哈希的底是 $e$ ， 跳的要更快。
 
-还是没有达到最终Google的函数呀？
-因为Google的 `JumpConsistentHash` 函数没有用语言自己的 $random$ ,
+还是没有达到最终 Google 的函数呀？
+因为 Google 的 `JumpConsistentHash` 函数没有用语言自己的 $random$ ,
 而是自己做了一个64位的线性同余随机数生成器。
 
 <span class="highlighted" markdown="1">
@@ -343,4 +343,4 @@ $$
 
 ### 引用 & 脚注
 
-1. <span markdown="1" id="footnote-1"> John Lamping, Eric Veach, from Google. [A Fast, Minimal Memory, Consistent Hash Algorithm](https://arxiv.org/abs/1406.2294)</span>
+1. <span markdown="1" id="footnote-1"> John Lamping, Eric Veach, from  Google. [A Fast, Minimal Memory, Consistent Hash Algorithm](https://arxiv.org/abs/1406.2294)</span>

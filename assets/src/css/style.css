@@ -57,8 +57,8 @@
   font-style: normal;
   font-weight: 400;
   src: local('Roboto Mono'), local('RobotoMono-Regular'),
-       url('../fonts/roboto-mono-v7-latin-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-       url('../fonts/roboto-mono-v7-latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+       url('fonts/roboto-mono-v7-latin-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url('fonts/roboto-mono-v7-latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 /* roboto-mono-700 - latin */
 @font-face {
@@ -66,8 +66,8 @@
   font-style: normal;
   font-weight: 700;
   src: local('Roboto Mono Bold'), local('RobotoMono-Bold'),
-       url('../fonts/roboto-mono-v7-latin-700.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-       url('../fonts/roboto-mono-v7-latin-700.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+       url('fonts/roboto-mono-v7-latin-700.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url('fonts/roboto-mono-v7-latin-700.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 
 * {
@@ -82,7 +82,8 @@ html {
 
 body {
   margin: 20px auto;
-	font-family: 'Arvo', -apple-system, BlinkMacSystemFont, Helvetica Neue, PingFang SC, sans-serif;;
+	font-family: 'Arvo', -apple-system, BlinkMacSystemFont, Helvetica Neue, PingFang SC, sans-serif;
+  font-size: 17px;
   line-height: 1.7;
   color: rgba(0,0,0,0.86);
   font-weight: normal;
@@ -94,6 +95,7 @@ body {
   width: 61.8%;
   max-width: 710px;
   background-color: #fefefe;
+  -webkit-text-size-adjust: 100%;
 }
 
 /* A tag / Links */
@@ -189,8 +191,7 @@ h6 {
 
 /* heading anchors */
 .heading-anchor {
-  font-family: "Roboto Mono", "Liberation Mono", Menlo, Courier, monospace;
-  font-weight: 200;
+  font-family: Menlo, 'Roboto Mono', Courier, monospace;
   float: left;
   margin-left: -20px;
   padding-left: 4px;
@@ -354,8 +355,7 @@ img[alt="avatar"] {
 }
 
 pre {
-  background-color:#F8F9F9;
-  border: 0;
+  border: 1px solid #CCC;
   padding: .8em 1em;
   overflow: auto;
   word-spacing: 0;
@@ -366,13 +366,7 @@ code {
   padding: 1px 4px;
   display: inline-block;
   margin: 0 3px;
-  background-color: #F8F9F9;
-  -webkit-border-radius: 2px;
-  -moz-border-radius: 2px;
-  -ms-border-radius: 2px;
-  -o-border-radius: 2px;
-  border-radius: 2px;
-  color: #17202A;
+  background-color: #F4F6F6;
 }
 
 pre code {
@@ -381,6 +375,7 @@ pre code {
   line-height: 1.45;
   border: none;
   padding: 0;
+  background-color: #fefefe;
 }
 
 blockquote {
@@ -520,6 +515,7 @@ a.icon-wrapper:hover {
     max-width: 1000px;
     font-size: 17px;
   }
+  code { font-size: 16px; }
   h1 { font-size: 33px; }
   h2 { font-size: 29px; }
   h3 { font-size: 24px; }
@@ -564,6 +560,7 @@ a.icon-wrapper:hover {
   h4 { font-size: 22px; }
   h5 { font-size: 17px; }
   h6 { font-size: 15px; }
+  code { font-size: 16px; }
 
   .fadein {
     -webkit-animation: fadein 1s; /* Safari, Chrome and Opera > 12.1 */

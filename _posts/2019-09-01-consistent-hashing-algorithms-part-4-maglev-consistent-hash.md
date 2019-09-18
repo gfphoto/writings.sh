@@ -22,7 +22,7 @@ image_ref_link: https://unsplash.com/photos/YfCVCPMNd38
 ### Maglev一致性哈希算法
 
 <div class="drop-cap drop-cap-red" markdown="1">
-Maglev哈希算法来自Google， 在其2016年发布的一篇论文中<sup>[[1]](#footnote-1)</sup>，
+Maglev哈希算法来自 Google ， 在其2016年发布的一篇论文中<sup>[[1]](#footnote-1)</sup>，
 介绍了自2008年起服役的网络负载均衡器Maglev，
 文中包括Maglev负载均衡器中所使用的一致性哈希算法，即Maglev一致性哈希 (Maglev Consistent Hashing)。
 </div>
@@ -87,7 +87,7 @@ $$
 可以看到，这是一种类似「[二次哈希](https://en.wikipedia.org/wiki/Double_hashing)」的方法，
 使用了两个独立无关的哈希函数来减少映射结果的碰撞次数，提高随机性。
 生成偏好序列的方法可以有很多种（比如直接采用一个随机序列等），
-不必须是Google的这个方法，
+不必须是 Google 的这个方法，
 在原论文中也提到<sup>[[1]](#footnote-1)</sup>：
 
 > Other methods of generating random permutations, such as the Fisher-Yates Shuffle,
@@ -169,7 +169,7 @@ Maglev一致性哈希虽然没有导致全量重新映射，
 > After B1 is removed, aside from updating all of the entries that contained B1, only one other entry (row 6) needs to be changed.
 
 意思是，论文指出了联动干扰确实存在， Maglev哈希法并没有实现最小化的干扰。
-不过，在Google的实际测试中总结出来， [当查找表的长度越大时，Maglev哈希的一致性会越好](#more-resilient-to-backend-changes-when-size-larger)。
+不过，在 Google 的实际测试中总结出来， [当查找表的长度越大时，Maglev哈希的一致性会越好](#more-resilient-to-backend-changes-when-size-larger)。
 
 ### Maglev哈希的复杂度分析
 
@@ -216,7 +216,7 @@ $next[i]$ 用来记录槽位 $i$ 的偏好序列将迭代的下一个位置（�
 当然，也不是越大越好， 越大的 $M$ 意味着更高的内存消耗、更慢的建表时长。
 结合[前面所讲的内容](#M-must-be-a-prime)，
 <span class="highlighted" markdown="1">应该选择一个远大于 $N$ 的质数当做查找表的大小 $M$。</span>
-论文中提到，在Google的实践过程中，一般选择 $M$ 为一个大于 $100 \times N$ 的质数，
+论文中提到，在 Google 的实践过程中，一般选择 $M$ 为一个大于 $100 \times N$ 的质数，
 这样各个槽位在查找表上的分布的差异就不会超过 $1\%$。
 
 ### Maglev哈希的测试表现
@@ -235,7 +235,7 @@ $next[i]$ 用来记录槽位 $i$ 的偏好序列将迭代的下一个位置（�
 关于槽位增删对映射一致性的干扰影响，由于[哈希环算法实现了最小的重新映射](/post/consistent-hashing-algorithms-part-2-consistent-hash-ring#hash-ring-impls-minimum-disruption)，
 所以当删除槽位时（比如节点故障时）哈希环算法可以保证剩余的槽位的映射不受影响。
 而我们前面有分析，对于Maglev算法来讲, 则并没有做到最小的重新映射。
-下面的图4.2中是Google对Maglev负载均衡器做的测试结果，
+下面的图4.2中是 Google 对Maglev负载均衡器做的测试结果，
 演示了在相同数量的后端节点、但是不同大小的查找表的情况下(分别是 $65537$ 和 $655373$)，
 映射结果发生变化的节点的占比相对于节点故障占比的关系。
 可以看到，<span class="highlighted" markdown="1">查找表越大，Maglev哈希对槽位增删的容忍能力更强，映射干扰也越小</span>。
@@ -243,15 +243,15 @@ $next[i]$ 用来记录槽位 $i$ 的偏好序列将迭代的下一个位置（�
 {% include image.html max_height=360  path="consistent-hashing-algorithms/4.2-maglev-hashing-resilient-to-backend-changes.jpg" note="图4.2 - 不同节点数量下的映射结果的变化比例和节点故障率之间的关系" %}
 </div>
 
-不过，即使这样，实际中Google仍然选择 $65537$ 作为查找表大小。
+不过，即使这样，实际中 Google 仍然选择 $65537$ 作为查找表大小。
 论文中给出的说法是， 当他们把查找表大小从 $65537$ 调大到 $655373$ 时，
 查找表的生成时间从 $1.8ms$ 升高到了 $22.9ms$， 所以<span class="highlighted" markdown="1">查找表的大小不是越大越好。</span>
 论文中同时提到：
 
 > because we expect concurrent backend failures to be rare, and we still have connection tracking as the primary means of protection.
 
-意思是说， 在Google的场景下， 并没有把后端槽位的变化带来的干扰看的太重要。
-实际上，工程中节点损失是低概率事件， 并且Google的设计中主要的保护手段是连接跟踪，而不是完全依赖一致性哈希。
+意思是说， 在 Google 的场景下， 并没有把后端槽位的变化带来的干扰看的太重要。
+实际上，工程中节点损失是低概率事件， 并且 Google 的设计中主要的保护手段是连接跟踪，而不是完全依赖一致性哈希。
 这样，也可以理解了，这个一致性哈希算法的设计上就没有做到最小化干扰的要求。
 
 ### Maglev哈希的热扩容和容灾
@@ -330,7 +330,7 @@ Maglev哈希做到了尽量平均的映射分布，但是，如果槽位之间�
 
 ### 小结
 
-Maglev哈希是Google在自家的负载均衡器Maglev中使用的一致性哈希算法。
+Maglev哈希是 Google 在自家的负载均衡器Maglev中使用的一致性哈希算法。
 槽位变化时，<span class="highlighted" markdown="1">虽然避免了全局重新映射，但是没有做到最小化的重新映射。
 映射的均匀性非常好</span>。映射的时间复杂度是 $O(1)$， 建立查找表的时间复杂度是 $O(Mlog(M))$。
 可以通过改变填表的相对频率来实现加权。

@@ -307,6 +307,7 @@ img {
   line-height: 28px;
 }
 .post-page-header .home-link {
+  font-size: 20px;
   display: inline-block;
   float: left;
 }

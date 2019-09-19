@@ -448,7 +448,7 @@ $VC_{a} < VC_{b} < VC_{c} < VC_{d} < VC_{e}$， 显然可以确定 $a \rightarro
 但是，这时候小李还没有看见这个事情。所谓「因果」：**有因才有果**。  看见也是一个事件的果。
 这样说， $f$ 和 $e$ 没有因果关系， 因为小李还没有看见这个事件。 所以讨论也就没有意义。
 
-### 版本向量 (Version Clocks)
+### 版本向量 (Version Vectors)
 
 [版本向量 Version Clocks](https://en.wikipedia.org/wiki/Version_vector)
 是一种工程上用来同步分布式数据的算法，

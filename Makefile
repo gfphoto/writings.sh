@@ -15,7 +15,7 @@ gulp:
 server:
 	bundler exec jekyll s -H 0.0.0.0 --watch
 
-deploy:
+deploy-vps:
 	./deploy.sh
 
 build-netlify:
@@ -27,4 +27,4 @@ build-netlify:
 	# Copy file redirects
 	cp _redirects _site
 
-.PHONY: default build server gulp deploy build-netlify
+.PHONY: default build server gulp deploy-vps build-netlify

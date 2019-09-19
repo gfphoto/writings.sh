@@ -89,7 +89,8 @@ layout: base
     <div class="post-bottom-navs">
       <!-- Comment -->
       <a class="icon-wrapper disqus-link" href="javascript:void(0);" onclick="disqusLoader();" title="说两句吧！">
-        <span class="icon-message-circle"></span> 评论
+        <span class="icon-message-circle"></span>
+        <span class="disqus-comment-count" data-disqus-url="{{ site.url }}{{ page.url }}">评论</span>
       </a>
 
       <span class="nav-divider">·</span>
@@ -141,4 +142,8 @@ layout: base
     <!-- Footer -->
     {% include footer.html %}
   </div>
+
+  {%- if page.comments != false -%}
+  <script id="dsq-count-scr" src="//{{ site.disqus.shortname }}.disqus.com/count.js" async></script>
+  {%- endif -%}
 </body>

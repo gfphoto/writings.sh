@@ -3,7 +3,6 @@ function reconfigMath () {
 }
 
 function reloadDisqusCount () {
-  loadDisqusCountTag()
   if (typeof DISQUSWIDGETS !== 'undefined') {
     DISQUSWIDGETS.getCount({ reset: true })
   }

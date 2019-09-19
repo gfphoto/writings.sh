@@ -96,7 +96,7 @@ image_ref_link: https://unsplash.com/photos/OshG1lLSNa4
 我们看下[序理论](https://zh.wikipedia.org/wiki/%E5%BA%8F%E7%90%86%E8%AE%BA)中的两种序关系：偏序(partial ordering) 和 全序 (total ordering).
 
 [偏序](https://zh.wikipedia.org/wiki/%E5%81%8F%E5%BA%8F%E5%85%B3%E7%B3%BB)：
-假设 $\le$ 是集合$S$上的一个二元关系，如果$\lt$满足：
+假设 $\le$ 是集合$S$上的一个二元关系，如果 $\le$ 满足：
 
 1. [自反性](https://zh.wikipedia.org/wiki/%E8%87%AA%E5%8F%8D%E5%85%B3%E7%B3%BB)： 对$S$中任意的元素$a$，都有 $a\le a$.
 2. [反对称性](https://zh.wikipedia.org/wiki/%E5%8F%8D%E5%AF%B9%E7%A7%B0%E5%85%B3%E7%B3%BB)：

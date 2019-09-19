@@ -144,6 +144,19 @@ layout: base
   </div>
 
   {%- if page.comments != false -%}
-  <script id="dsq-count-scr" src="//{{ site.disqus.shortname }}.disqus.com/count.js" async></script>
+  <!-- Don't load js direct from html script src tag, this makes browser non-stopping refresh to get the disqus script which is hardly accesssible to china users -->
+  <!-- Instead, for the fast without-hard-disqus-dependency browsering experience, we use js to do the load disqus thing. -->
+  <!-- <script id="dsq-count-scr" src="//{{ site.disqus.shortname }}.disqus.com/count.js" async></script> -->
+  <script>
+    function loadDisqusCountTag() {
+      var t = document.getElementById("script-disqus-count");
+      if (t == null) {
+        var script = document.createElement('script');
+        script.id = "script-disqus-count";
+        script.src = "//{{ site.disqus.shortname }}.disqus.com/count.js";
+        document.body.appendChild(script);
+      }
+    }
+  </script>
   {%- endif -%}
 </body>

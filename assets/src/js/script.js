@@ -1,4 +1,26 @@
+function reconfigMath () {
+  window.MathJax.Hub.Queue(['Typeset', MathJax.Hub])
+}
+
+function reloadDisqusCount () {
+  loadDisqusCountTag()
+  if (typeof DISQUSWIDGETS !== 'undefined') {
+    DISQUSWIDGETS.getCount({ reset: true })
+  }
+}
+
 function init () {
+  window.onload = function () {
+    console.log(
+      (' _       ______  _______________   _____________  _____ __  __\n') +
+      ('| |     / / __ \/  _/_  __/  _/ | / / ____/ ___/ / ___// / / /\n') +
+      ('| | /| / / /_/ // /  / /  / //  |/ / / __ \__ \  \__ \/ /_/ / \n') +
+      ('| |/ |/ / _, _// /  / / _/ // /|  / /_/ /___/ / ___/ / __  /  \n') +
+      ('|__/|__/_/ |_/___/ /_/ /___/_/ |_/\____//____(_)____/_/ /_/   \n') +
+      ('\n') +
+      ('欢迎光临！\n')
+    )
+  }
   // turbolinks
   Turbolinks.setProgressBarDelay(200)
   Turbolinks.start()
@@ -7,11 +29,25 @@ function init () {
     if (document.getElementsByClassName('post-body').length > 0) {
       var body = document.getElementsByTagName('body')[0]
       body.classList.add('fadein')
+      // Reload disqus count
+      if (typeof DISQUSWIDGETS === 'undefined') {
+        setTimeout(function () {
+          reloadDisqusCount()
+        }, 3000)
+      } else {
+        reloadDisqusCount()
+      }
     }
   }, false)
   // https://stackoverflow.com/questions/20814531/local-mathjax-loading-with-turbolinks-in-rails-4
   document.addEventListener('turbolinks:load', function (e) {
-    window.MathJax.Hub.Queue(['Typeset', MathJax.Hub])
+    if (typeof window.MathJax === 'undefined') {
+      setTimeout(function () {
+        reconfigMath()
+      }, 2000)
+    } else {
+      reconfigMath()
+    }
   }, false)
   // https://github.com/turbolinks/turbolinks/issues/75#issuecomment-443256173
   document.addEventListener('turbolinks:click', function (e) {
@@ -30,8 +66,10 @@ function init () {
       }
     }
     // GA
-    ga('set', 'page', window.location.pathname)
-    ga('send', 'pageview')
+    if (typeof ga !== 'undefined') {
+      ga('set', 'page', window.location.pathname)
+      ga('send', 'pageview')
+    }
   }, false)
 
   // UeScroll

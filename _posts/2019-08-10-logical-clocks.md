@@ -64,7 +64,7 @@ image_ref_link: https://unsplash.com/photos/OshG1lLSNa4
 
 而这两个例子中，我们面临的要解决的问题， 其实是分布式系统中的[因果一致性](https://en.wikipedia.org/wiki/Causal_consistency)，
 换句话说，就是如何准确刻画分布式中的事件顺序，
-**显然仅仅简单地依靠进程接受到的(看到的)事件发生顺序是不准确的**。
+**显然仅仅简单地依靠进程接收到的(看到的)事件发生顺序是不准确的**。
 
 ### 全局物理时钟
 
@@ -130,7 +130,8 @@ image_ref_link: https://unsplash.com/photos/OshG1lLSNa4
 {% include image.html path="logical-clocks/05.jpg" max_height=240 note="图5 - $S1$描述了全序关系； $S2$描述了偏序关系" %}
 
 现在我们回头看，寻求全局时钟为分布式节点中的时间做顺序标定的方式，
-其实是在寻求一种全序关系来描述分布式中的事件顺序。
+其实是在寻求一种全序关系来描述分布式中的事件顺序，
+而且是严格对齐真实的物理时钟的全序关系。
 
 ### 事件先后的相对性
 

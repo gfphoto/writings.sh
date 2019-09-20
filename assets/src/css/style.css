@@ -492,6 +492,13 @@ header .divider {
 
 /* Nav bar */
 .navbar { margin-bottom: 20px; }
+.nav-divider { 
+  margin-right: 3px; 
+  margin-left: 3px; 
+}
+.navbar .nav a {
+  border-bottom: 1px solid rgba(0,0,0,0.5);
+}
 
 /* Nav divider */
 .nav-divider { color: #bbb; }

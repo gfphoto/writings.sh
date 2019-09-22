@@ -47,6 +47,8 @@ echo "Building assets css,js.."
 gulp
 echo "Building jekyll site on production environment"
 env JEKYLL_ENV=production bundler exec jekyll build
+echo "Building images"
+./sqip-images.sh
 echo "Copy Caddyfile to _site"
 cp Caddyfile _site
 

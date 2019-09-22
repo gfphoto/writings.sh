@@ -27,4 +27,7 @@ build-netlify:
 	# Copy file redirects
 	cp _redirects _site
 
-.PHONY: default build server gulp deploy-vps build-netlify
+sqip:
+	./sqip-images.sh
+
+.PHONY: default build server gulp deploy-vps build-netlify sqip

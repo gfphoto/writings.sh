@@ -152,7 +152,7 @@ footer {
   text-align: center;
   padding: .5em 0 .5em 0;
   font-size: 85%;
-  color: #777;
+  color: #999;
 }
 footer a:link { color: #999; }
 footer a:visited { color: #999; }
@@ -299,8 +299,6 @@ img {
 .post-body img {
   margin: 0 auto;
 }
-
-.post-copyright { color: #777; }
 
 /* Post header */
 .post-page-header {

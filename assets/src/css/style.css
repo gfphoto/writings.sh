@@ -334,13 +334,10 @@ img {
   background-color: #000;
 }
 
-/* https://stackoverflow.com/questions/19331362/using-an-image-caption-in-markdown-jekyll */
-/* Image Caption */
-img+figcaption {
+figcaption {
   display: block;
   text-align: center;
   font-size: 85%;
-  font-style: italic;
   color: #777;
 }
 
@@ -450,7 +447,7 @@ table td :last-child {
   margin: 20px 0;
   width: 100%;
 }
-.post-image-container img{
+.post-image-container img {
   width: 100%;
 }
 

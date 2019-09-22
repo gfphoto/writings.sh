@@ -16,5 +16,19 @@
   {% endif %}
 {% endcapture %}
 
+{% capture image_style %}
+  {% if include.max_height %}
+  style="max-height: {{ include.max_height }}; width: auto;"
+  {% endif %}
+
+  {% if include.width %}
+  style="width: {{ include.width }}; height: auto;"
+  {% endif %}
+
+  {% if include.max_width %}
+  style="max-width: {{ include.max_width }};"
+  {% endif %}
+{% endcapture %}
+
 <figure>
-  <img {% if include.id %}id="{{ include.id }}"{% endif %} class="post-content-img" src="{{ image_svg_url }}" data-src="{{ image_url }}" alt="{{ include.alt }}" {% if {{include.max_height}} or include.width %}style="max-height: {{ include.max_height }}px; {% if include.width %}width: {{ include.width }};{% endif %}"{% endif %} />{{ image_note }}</figure>
+  <img {% if include.id %}id="{{ include.id }}"{% endif %} class="post-content-img" src="{{ image_svg_url }}" data-src="{{ image_url }}" alt="{{ include.alt }}" {{ image_style }} />{{ image_note }}</figure>

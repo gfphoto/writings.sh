@@ -38,7 +38,7 @@ image_ref_link: https://unsplash.com/photos/YfCVCPMNd38
    1. 如果 $z$ 正好落在槽位上，返回这个槽位的标号。
    2. 否则， 顺时针沿着环寻找离 $z$ 最近的槽位，返回槽位标号。
 
-{% include image.html path="consistent-hashing-algorithms/5.1-hash-ring.jpg" max_height=260 note="图5.1 - 哈希环示意图" %}
+{% include image.html path="consistent-hashing-algorithms/5.1-hash-ring.jpg" max_width="60%" note="图5.1 - 哈希环示意图" %}
 
 我们接下来讨论下， 当新增和删除槽位时， 哈希环的表现如何。
 
@@ -50,7 +50,7 @@ image_ref_link: https://unsplash.com/photos/YfCVCPMNd38
   来说， 顺时针方向的下一个节点 $N_1$ 需要迁移部分数据到新节点 $N_4$ 上才可以正常服务，
 其他节点不受影响。
 
-{% include image.html path="consistent-hashing-algorithms/5.2-adding-new-node-to-hash-ring.jpg" max_height=300 note="图5.2 - 向哈希环新增一个槽位" %}
+{% include image.html path="consistent-hashing-algorithms/5.2-adding-new-node-to-hash-ring.jpg"  note="图5.2 - 向哈希环新增一个槽位" %}
 
 当从一个哈希环中移除一个槽位时， 如下图5.3中， 红色的 $N_1$ 是被删除的槽位。
 可以看到 $k$ 从 $N_1$ 重新映射到了 $N_3$， 而 $k_1$ 的映射结果不变。
@@ -61,7 +61,7 @@ image_ref_link: https://unsplash.com/photos/YfCVCPMNd38
 下一个节点 $N_1$ 需要迁移部分数据到新节点 $N_4$ 上才可以正常服务，
 其他节点不受影响。
 
-{% include image.html path="consistent-hashing-algorithms/5.3-removing-node-from-hash-ring.jpg" max_height=300 note="图5.3 - 从哈希环中删除一个槽位" %}
+{% include image.html path="consistent-hashing-algorithms/5.3-removing-node-from-hash-ring.jpg" note="图5.3 - 从哈希环中删除一个槽位" %}
 
 <span class="highlighted" markdown="1">
 哈希环做到了在槽位数量变化前后的**增量式的重新映射**， 避免了全量的重新映射。
@@ -81,7 +81,7 @@ image_ref_link: https://unsplash.com/photos/YfCVCPMNd38
 在有序表里做查找， 这是**[二分查找](https://zh.wikipedia.org/wiki/二分搜索算法)**可以解决的事情，
 所以<span class="highlighted" markdown="1">哈希环的映射函数的时间复杂度是 $O(log {n})$</span>。
 
-{% include image.html path="consistent-hashing-algorithms/6.1-binary-search-on-hash-ring.jpg" max_height=200 note="图6.1 - 哈希环上二分查找" %}
+{% include image.html path="consistent-hashing-algorithms/6.1-binary-search-on-hash-ring.jpg" note="图6.1 - 哈希环上二分查找" %}
 
 *附注: 我对ketama做了简单的实现：
 [C语言版本](https://github.com/hit9/C-Snip/blob/master/src/ketama.c){:target="_blank"}，
@@ -99,7 +99,7 @@ image_ref_link: https://unsplash.com/photos/YfCVCPMNd38
 下面的图6.2是一个例子，
 其中 $N_0, N_1, N_2, N_3$ 的权重比是 $1:2:3:2$。 选中一个影子节点如 $V(N_2)$ 就是选中了 $N_2$ 。
 
-{% include image.html path="consistent-hashing-algorithms/6.2-weighted-nodes-on-hash-ring.jpg" max_height=250 note="图6.2 - 加权哈希环" %}
+{% include image.html path="consistent-hashing-algorithms/6.2-weighted-nodes-on-hash-ring.jpg" max_width="70%" note="图6.2 - 加权哈希环" %}
 
 但是需要注意的是， 权重的调整会带来数据迁移的工作。
 
@@ -161,19 +161,19 @@ image_ref_link: https://unsplash.com/photos/YfCVCPMNd38
    $N_4$ 刚加入时可以直接算作时 $N_3$ 的一部分， $N_3$ 算作一个大节点， 当数据对齐后，
    $N_4$ 再从 $N_3$ 中分裂出来，正式成为新节点。
 
-{% include image.html path="consistent-hashing-algorithms/7.1-hash-ring-with-replica-and-relay.jpg" max_height=300 note="图7.1 - 带备份和中继的哈希环" %}
+{% include image.html path="consistent-hashing-algorithms/7.1-hash-ring-with-replica-and-relay.jpg" note="图7.1 - 带备份和中继的哈希环" %}
 
 另外， 可以备份不止一份。 下面图7.2中演示了备份两次情况，
 每个写请求都将备份同步到顺时针方向的最近的两个节点上。
 这样就可以容忍相邻的两节点损失的情况， 进一步提高了系统的[可用性](/post/cap-and-consistency-models#可用性--availability)。
 
-{% include image.html path="consistent-hashing-algorithms/7.2-hash-ring-multiple-replicas.jpg" max_height=300 note="图7.2 - 备份两次的情况" %}
+{% include image.html path="consistent-hashing-algorithms/7.2-hash-ring-multiple-replicas.jpg" note="图7.2 - 备份两次的情况" %}
 
 同样的，中继也可以不止一次。 下面图7.3中演示了中继两次的情况，
 如果一个节点上查不到数据，就中继给下一个节点，最多两次中继，
 这样就可以满足同时添加"两个正好在环上相邻的"节点的情况了。
 
-{% include image.html path="consistent-hashing-algorithms/7.3-hash-ring-multiple-relays.jpg" max_height=260 note="图7.3 - **中继**两次的情况" %}
+{% include image.html path="consistent-hashing-algorithms/7.3-hash-ring-multiple-relays.jpg" max_width="70%" note="图7.3 - **中继**两次的情况" %}
 
 ### 小结
 

@@ -1,2 +1,20 @@
+{% if include.absolute_url %}
+  {% assign image_url = include.absolute_url %}
+{% else %}
+  {% assign image_url = site.image_prefix | append: include.path %}
+{% endif %}
+
+{% if include.absolute_url %}
+  {% assign image_svg_url = image_url %}
+{% else %}
+  {% assign image_svg_url = image_url | append: '-small.svg' %}
+{% endif %}
+
+{% capture image_note %}
+  {% if include.note %}
+  <figcaption>{{ include.note }}</figcaption>
+  {% endif %}
+{% endcapture %}
+
 <figure>
-  <img {% if include.id %}id="{{ include.id }}"{% endif %} class="post-content-img" {% if include.too_large %} src="" data-src="{{ site.image_prefix | append: include.path }}"{% else %} src="{% if include.absolute_url %}{{ include.absolute_url }}{% else %}{{ site.image_prefix | append: include.path }}{% endif %}" {% endif %} alt="{{include.alt}}" {% if {{include.max_height}} or include.too_large or include.width %}style="max-height: {{ include.max_height }}px; {% if include.width %}width: {{ include.width }};{% endif %}"{% endif %} />{% if include.note or include.too_large %}<figcaption>{{ include.note }}{% if include.too_large %}  图片太大，请<a href="javascript: void(0);" onclick="document.getElementById('{{ include.id }}').src = document.getElementById('{{ include.id }}').getAttribute('data-src'); return false;">手动加载</a>{% endif %}</figcaption>{% endif %}</figure>
+  <img {% if include.id %}id="{{ include.id }}"{% endif %} class="post-content-img" src="{{ image_svg_url }}" data-src="{{ image_url }}" alt="{{ include.alt }}" {% if {{include.max_height}} or include.width %}style="max-height: {{ include.max_height }}px; {% if include.width %}width: {{ include.width }};{% endif %}"{% endif %} />{{ image_note }}</figure>

@@ -71,6 +71,10 @@ function init () {
     }
   }, false)
 
+  // lozad
+  var observer = lozad('.post-content-img')
+  observer.observe()
+
   // UeScroll
   UeScroll.init()
 

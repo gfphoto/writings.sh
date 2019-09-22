@@ -22,7 +22,7 @@ function init () {
   }
   // lozad
   var observer = lozad('.post-content-img')
-  observer.observe({ threshold: 0.1 })
+  observer.observe({ threshold: 0.01 })
 
   // turbolinks
   Turbolinks.setProgressBarDelay(200)

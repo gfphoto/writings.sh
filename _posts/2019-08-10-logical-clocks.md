@@ -37,7 +37,7 @@ image_ref_link: https://unsplash.com/photos/OshG1lLSNa4
 3. 但是由于无法确定的网络延迟原因，导致进程A发出的消息到达C晚于进程B发出的消息到达C，这样
    进程C的视角上，最终看到的事件顺序是 $b, a$，但是这与事实是相悖的。
 
-{% include image.html path="logical-clocks/01.jpg" max_height=240 note="图1 - 由于网络延迟， 进程$B$发出的消息晚于进程$A$发出的消息到达进程$C$" %}
+{% include image.html path="logical-clocks/01.jpg" note="图1 - 由于网络延迟， 进程$B$发出的消息晚于进程$A$发出的消息到达进程$C$" %}
 
 可以看到，在分布式通信中，由于网络延迟的不确定性，
 **仅仅以接收顺序作为整个分布式系统中事件的发生顺序是不可取的**。
@@ -50,15 +50,15 @@ image_ref_link: https://unsplash.com/photos/OshG1lLSNa4
 4. 但是由于无法确定的网络延迟的原因，导致纽约的数据中心先收到小红的回复，而后收到了原始的提问消息。
    这样，导致最终小李看到的问答顺序是不符合问答的因果一致性的。
 
-{% include image.html path="logical-clocks/02.jpg" max_height=450 note="图2 - 由于网络延迟，小李看到的事件顺序并不符合问答的因果关系" %}
+{% include image.html path="logical-clocks/02.jpg"  note="图2 - 由于网络延迟，小李看到的事件顺序并不符合问答的因果关系" %}
 
 以上的例子，是腾讯微信朋友圈真实碰到并解决的问题。 详细的介绍见 [微信朋友圈技术之道](https://ppt.baomitu.com/d/010f1d70)。
 
 下面是微信朋友圈架构设计的两个关于因果一致性算法设计的PPT截图：
 
-{% include image.html path="logical-clocks/03.jpg" max_height=450 note="图3 - 《微信朋友圈技术之道》中分享的关于因果性的PPT" %}
+{% include image.html path="logical-clocks/03.jpg" note="图3 - 《微信朋友圈技术之道》中分享的关于因果性的PPT" %}
 
-{% include image.html path="logical-clocks/04.jpg" max_height=450 note="图4 - 《微信朋友圈技术之道》中分享的关于向量时钟的PPT" %}
+{% include image.html path="logical-clocks/04.jpg" note="图4 - 《微信朋友圈技术之道》中分享的关于向量时钟的PPT" %}
 
 在腾讯的分享PPT中，提到了「向量时钟」， 不过我们稍后再揭开它的神秘面纱。
 
@@ -127,7 +127,7 @@ image_ref_link: https://unsplash.com/photos/OshG1lLSNa4
 
 而$S_{2}$上的关系，描述的是集合之间的包含关系，是一种偏序关系，其中 $v_{2}$ 和 $v_{3}$ 是不可比较的。
 
-{% include image.html path="logical-clocks/05.jpg" max_height=240 note="图5 - $S1$描述了全序关系； $S2$描述了偏序关系" %}
+{% include image.html path="logical-clocks/05.jpg" note="图5 - $S1$描述了全序关系； $S2$描述了偏序关系" %}
 
 现在我们回头看，寻求全局时钟为分布式节点中的时间做顺序标定的方式，
 其实是在寻求一种全序关系来描述分布式中的事件顺序，
@@ -171,7 +171,7 @@ image_ref_link: https://unsplash.com/photos/OshG1lLSNa4
 但是对于月台的观察者$B$而言，火车的尾部会迎向光移动，而车头会远离光移动，
 而且光速是有限的，且相对于两个观察者都是相同的常数，所以$B$认为光会先到达车尾，后到达车头。
 
-{% include image.html path="logical-clocks/06.jpg" max_height=270 note="图6 - 狭义相对论中著名的火车思想实验" %}
+{% include image.html path="logical-clocks/06.jpg"  note="图6 - 狭义相对论中著名的火车思想实验" %}
 
 这样，**对于不同参照系的观察者而言，事件的顺序并没有一个一致性的结论**。
 之所以得出这样神奇的结论，仍然是因为关键的「光速不变原理」。
@@ -191,7 +191,7 @@ image_ref_link: https://unsplash.com/photos/OshG1lLSNa4
 造成了一个新的事件$B$，叫做「观察到了事件$A$的事件$B$」。
 这时我们才有 $A$ happened before $B$ 的因果关系。
 
-{% include image.html path="logical-clocks/07.jpg" max_height=200 note="图7 - 物理时空中因果关系建立了事件顺序" %}
+{% include image.html path="logical-clocks/07.jpg" max_width="80%" note="图7 - 物理时空中因果关系建立了事件顺序" %}
 
 可以看到，时空对于描述事件顺序的「happened before」同样是偏序关系。
 
@@ -299,7 +299,7 @@ Lamport受相对论中事件顺序的相对性的启发，创造了[Lamport Logi
 
    那么，最终推导出 $C_{a} < C_{b}$（严格小于）。
 
-   {% include image.html path="logical-clocks/11.jpg" note="图11 - 事件 $a$ 和 $b$ 在不同进程的情况下，中间一定有消息传递，否则两个事件并发"  max_height=200 %}
+   {% include image.html path="logical-clocks/11.jpg" note="图11 - 事件 $a$ 和 $b$ 在不同进程的情况下，中间一定有消息传递，否则两个事件并发"  %}
 
 以上，得证 $a \rightarrow b \Rightarrow C_{a} < C_{b}$。
 
@@ -307,7 +307,7 @@ Lamport受相对论中事件顺序的相对性的启发，创造了[Lamport Logi
 
 悲哀的是，不能。 下面的图12是个反例：
 
-{% include image.html path="logical-clocks/12.jpg" note="图12 - lamport时钟无法反向推导事件顺序的反例： 红色 $a$ 和蓝色 $b$ 是并发的"  max_height=240 %}
+{% include image.html path="logical-clocks/12.jpg" note="图12 - lamport时钟无法反向推导事件顺序的反例： 红色 $a$ 和蓝色 $b$ 是并发的"  %}
 
 这样，我们反证了 $C_{ a } < C_{ b } \nRightarrow a \rightarrow b$。
 
@@ -352,7 +352,7 @@ lamport时钟的缺陷在于：**如果两个事件并不相关，那么这个�
    2. 发送消息的时候，需要传播出去自己的整个向量（也就是广播自己对整个系统的视角）。
    3. 接收到消息的时候，也就是蓝色事件，需要对齐对方的向量，并应用第一条规则，即自己的向量内相应计数器自增。
 
-{% include image.html path="logical-clocks/13.jpg" note="图13 - 向量时钟示意图"  max_height=340 %}
+{% include image.html path="logical-clocks/13.jpg" note="图13 - 向量时钟示意图"  %}
 
 可以发现，向量时钟和lamport的时钟算法结构一样， 不同的点在于：
 lamport时钟只是在对齐时钟的计数器，
@@ -392,7 +392,7 @@ lamport时钟只是在对齐时钟的计数器，
    因为 $VC_a < VC_b$ ，所以 $m \le s$， 所以必然在 不早于 $a$ 之前 和 不晚于 $b$ 之后的时间内，
    $P_a$ 向 $P_b$ 发送了消息 （否则 $P_b$ 对 $P_a$ 的计数器得不到及时刷新，$s$ 就不会不小于 $m$ ）。
 
-   {% include image.html path="logical-clocks/14.jpg" note="图14 - 中间必然存在$P_a$向$P_b$发送了消息"  max_height=200 %}
+   {% include image.html path="logical-clocks/14.jpg" note="图14 - 中间必然存在$P_a$向$P_b$发送了消息"  %}
 
    实际上，可以分为以下几种情况：
 

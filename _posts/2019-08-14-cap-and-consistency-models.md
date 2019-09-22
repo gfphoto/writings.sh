@@ -182,7 +182,7 @@ CAP其实在说**强一致性和高可用性，二者择其一**。
 CAP定理中对分区的定义<sup>[[1]](#footnote-1)</sup>是相对狭义的，
 比连通性更广义的分区界定是按通信时限的说法： 如果不能在通信时限内达成数据一致，就意味着发生了分区。
 例如下面图4.2中，数据同步的消息多次重试后，两个节点没有在一定时限内达成数据一致，此时即认为发生了分区。
-{% include image.html path="cap-and-consistency-models/4.2.jpg" max_height=200 note="图4.2 - 分区现象示意图" %}
+{% include image.html path="cap-and-consistency-models/4.2.jpg" note="图4.2 - 分区现象示意图" max_width="90%" %}
 
 分区现象的概念清楚了后，我们看分区容忍性：
 

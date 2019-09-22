@@ -233,10 +233,10 @@ $$
   下面图9.3，
   假如我们在非尾部添加一个新的槽位， 会导致这个位置后续的槽位的标号全部发生变化。
   所以在非尾部插入新槽位没有意义， **我们只能在尾部插入**。
-  {% include image.html path="consistent-hashing-algorithms/9.3-jump-hash-add-node-not-on-the-end.jpg" note="图9.3 - 跳跃一致性哈希中在非尾部插入新槽位没有意义" max_height=220 %}
+  {% include image.html path="consistent-hashing-algorithms/9.3-jump-hash-add-node-not-on-the-end.jpg" note="图9.3 - 跳跃一致性哈希中在非尾部插入新槽位没有意义" max_width="95%" %}
 
   对于在非尾部删除一个槽位也是一样的, **我们只能在尾部删除**。
-  {% include image.html path="consistent-hashing-algorithms/9.4-jump-hash-remove-node-not-on-the-end.jpg" note="图9.4 - 跳跃一致性哈希中在非尾部删除槽位" max_height=180 %}
+  {% include image.html path="consistent-hashing-algorithms/9.4-jump-hash-remove-node-not-on-the-end.jpg" note="图9.4 - 跳跃一致性哈希中在非尾部删除槽位" max_width="85%" %}
 
   如果导致后面的槽位全部重新标号，更提不上一致性映射。
 

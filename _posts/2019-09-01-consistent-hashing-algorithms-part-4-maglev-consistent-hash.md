@@ -183,7 +183,7 @@ $next[i]$ 用来记录槽位 $i$ 的偏好序列将迭代的下一个位置（�
 对于每一个槽位 $i$ , 我们从它的偏好序列中找出一个候选的、还没占用的位置数字 $c$ ,
 然后把槽位标号 $i$ 填入查找表 $entry$ 中。
 
-{% include image.html path="consistent-hashing-algorithms/3.1-maglev-hashing-pseudocode-make-table.jpg" note="图3.1 - 建表的伪代码" max_height=420 %}
+{% include image.html path="consistent-hashing-algorithms/3.1-maglev-hashing-pseudocode-make-table.jpg" note="图3.1 - 建表的伪代码" max_width="70%"  %}
 
 先看下，最坏的时间复杂度是怎样的？
 那肯定是，在查找下一个合适的填充位置的时候，
@@ -193,7 +193,7 @@ $next[i]$ 用来记录槽位 $i$ 的偏好序列将迭代的下一个位置（�
 总共需要尝试 $4+3+2+1$ 个数字（也就是 ${((4+1)\times 4)} / {2}$），
 <span class="highlighted" markdown="1">所以最坏复杂度是 $O(((M+1)\times M)/2)$， 即平方级别的 $O(M^2)$。</span>
 
-{% include image.html path="consistent-hashing-algorithms/3.2-maglev-hashing-worst-case-to-make-a-lookup-table.jpg" note="图3.2 - 建表最坏的情况" max_height=320 %}
+{% include image.html path="consistent-hashing-algorithms/3.2-maglev-hashing-worst-case-to-make-a-lookup-table.jpg" note="图3.2 - 建表最坏的情况" max_width="70%" %}
 
 现在考虑下平均的时间复杂度，
 我们就要分析这个过程总共需要尝试多少个数字。
@@ -229,7 +229,7 @@ $next[i]$ 用来记录槽位 $i$ 的偏好序列将迭代的下一个位置（�
 从图中可以看到，两种槽位数量的情况下，Maglev的映射结果中占比最大和占比最小的占比量都非常接近，
 也就是说，<span class="highlighted" markdown="1">Maglev一致性哈希的映射平均性非常好</span>。
 
-{% include image.html max_height=360 path="consistent-hashing-algorithms/4.1-maglev-hashing-load-balancing-test-result.jpg" note="图4.1 - 不同算法的映射结果的最大和最小占比的对比" %}
+{% include image.html max_height=360 path="consistent-hashing-algorithms/4.1-maglev-hashing-load-balancing-test-result.jpg" note="图4.1 - 不同算法的映射结果的最大和最小占比的对比" max_width="75%" %}
 
 <div id="more-resilient-to-backend-changes-when-size-larger" markdown="1">
 关于槽位增删对映射一致性的干扰影响，由于[哈希环算法实现了最小的重新映射](/post/consistent-hashing-algorithms-part-2-consistent-hash-ring#hash-ring-impls-minimum-disruption)，
@@ -240,7 +240,7 @@ $next[i]$ 用来记录槽位 $i$ 的偏好序列将迭代的下一个位置（�
 映射结果发生变化的节点的占比相对于节点故障占比的关系。
 可以看到，<span class="highlighted" markdown="1">查找表越大，Maglev哈希对槽位增删的容忍能力更强，映射干扰也越小</span>。
 
-{% include image.html max_height=360  path="consistent-hashing-algorithms/4.2-maglev-hashing-resilient-to-backend-changes.jpg" note="图4.2 - 不同节点数量下的映射结果的变化比例和节点故障率之间的关系" %}
+{% include image.html max_height=360  path="consistent-hashing-algorithms/4.2-maglev-hashing-resilient-to-backend-changes.jpg" note="图4.2 - 不同节点数量下的映射结果的变化比例和节点故障率之间的关系" max_width="75%" %}
 </div>
 
 不过，即使这样，实际中 Google 仍然选择 $65537$ 作为查找表大小。
@@ -326,7 +326,7 @@ Maglev哈希做到了尽量平均的映射分布，但是，如果槽位之间�
 也就是其他槽位每填表一次， $B_0$ 填表两次。
 可以观察到，填表的结果上， $B_0$ 的席位占比 $4/7$， 符合权重的设定。
 
-{% include image.html id="image-6-1" path="consistent-hashing-algorithms/6.1-maglev-hashing-weighted-buckets.jpg" max_height=400 note="带权重的填表过程" %}
+{% include image.html id="image-6-1" path="consistent-hashing-algorithms/6.1-maglev-hashing-weighted-buckets.jpg" max_height=400 note="带权重的填表过程" max_width="75%" %}
 
 ### 小结
 

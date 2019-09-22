@@ -20,6 +20,10 @@ function init () {
       ('欢迎光临！\n')
     )
   }
+  // lozad
+  var observer = lozad('.post-content-img')
+  observer.observe({ threshold: 0.1 })
+
   // turbolinks
   Turbolinks.setProgressBarDelay(200)
   Turbolinks.start()
@@ -71,15 +75,9 @@ function init () {
     }
   }, false)
 
-  // lozad
-  var observer = lozad('.post-content-img')
-  observer.observe()
-
   // UeScroll
   UeScroll.init()
 
   // mediumZoom
-  mediumZoom('img.post-content-img', {
-    background: 'rgba(153,153,153,0.6)'
-  })
+  mediumZoom('img.post-content-img')
 }

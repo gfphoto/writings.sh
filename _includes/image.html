@@ -1,34 +1,41 @@
-{% if include.absolute_url %}
-  {% assign image_url = include.absolute_url %}
-{% else %}
-  {% assign image_url = site.image_prefix | append: include.path %}
-{% endif %}
+{% capture imageWorkspace %}
+   {% if include.absolute_url %}
+     {% assign image_url = include.absolute_url %}
+   {% else %}
+     {% assign image_url = site.image_prefix | append: include.path %}
+   {% endif %}
 
-{% if include.absolute_url %}
-  {% assign image_svg_url = image_url %}
-{% else %}
-  {% assign image_svg_url = image_url | append: '-small.svg' %}
-{% endif %}
+   {% if include.absolute_url %}
+     {% assign image_svg_url = image_url %}
+   {% else %}
+     {% assign image_svg_url = image_url | append: '-small.svg' %}
+   {% endif %}
 
-{% capture image_note %}
-  {% if include.note %}
-  <figcaption>{{ include.note }}</figcaption>
-  {% endif %}
-{% endcapture %}
+   {% capture image_note %}
+     {% if include.note %}
+     <figcaption>{{ include.note }}</figcaption>
+     {% endif %}
+   {% endcapture %}
 
-{% capture image_style %}
-  {% if include.max_height %}
-  style="max-height: {{ include.max_height }}; width: auto;"
-  {% endif %}
+   {% capture image_style %}
+     {% if include.width %}
+     style="width: {{ include.width }}; height: auto;"
+     {% endif %}
 
-  {% if include.width %}
-  style="width: {{ include.width }}; height: auto;"
-  {% endif %}
+    {% if include.max_width %}
+    style="max-width: {{ include.max_width }};"
+    {% endif %}
+   {% endcapture %}
 
-  {% if include.max_width %}
-  style="max-width: {{ include.max_width }};"
-  {% endif %}
-{% endcapture %}
-
-<figure>
-  <img {% if include.id %}id="{{ include.id }}"{% endif %} class="post-content-img" src="{{ image_svg_url }}" data-src="{{ image_url }}" alt="{{ include.alt }}" {{ image_style }} />{{ image_note }}</figure>
+  {% capture figure_tag %}
+   <figure>
+    <img
+    {% if include.id %}id="{{ include.id }}"{% endif %}
+    class="post-content-img"
+    src="{{ image_svg_url }}" data-src="{{ image_url }}"
+    alt="{{ include.alt }}"
+    {{ image_style }} />
+    {{ image_note }}
+   </figure>
+  {% endcapture %}
+{% endcapture %}{% assign imageWorkspace  = '' %}{{ figure_tag | strip }}

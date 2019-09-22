@@ -22,20 +22,20 @@
      style="width: {{ include.width }}; height: auto;"
      {% endif %}
 
-    {% if include.max_width %}
-    style="max-width: {{ include.max_width }};"
-    {% endif %}
+     {% if include.max_width %}
+     style="max-width: {{ include.max_width }};"
+     {% endif %}
    {% endcapture %}
 
   {% capture figure_tag %}
-   <figure>
-    <img
-    {% if include.id %}id="{{ include.id }}"{% endif %}
-    class="post-content-img"
-    src="{{ image_svg_url }}" data-src="{{ image_url }}"
-    alt="{{ include.alt }}"
-    {{ image_style }} />
-    {{ image_note }}
-   </figure>
+    <figure>
+      <img {% if include.id %}id="{{ include.id }}"{% endif %}
+           class="post-content-img"
+           src="{{ image_svg_url }}"
+           data-src="{{ image_url }}"
+           alt="{{ include.alt }}"
+           {{ image_style }} />
+      {{ image_note }}
+    </figure>
   {% endcapture %}
 {% endcapture %}{% assign imageWorkspace  = '' %}{{ figure_tag | strip }}

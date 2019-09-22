@@ -16,11 +16,13 @@ and the theme is self-created and self-maintained.
 
 Hosting:
 
-1. China: My personal vps, because for the well-known reason, cloudfront is slowly when visited from China mainland..
-2. Other: Thanks to greate [Netlify](https://www.netlify.com/),
+1. Thanks to greate [Netlify](https://www.netlify.com/),
    it's a super-easy, super-cool page hosting service,
    with lots of **free features** such as free cdn, free cert-allocations, css&js minify, image optimization,
    and the most-featured deployment (much like CD) etc.
+   However, because of the well-known reason,
+   netlify and cloudfront sometimes perform slow when visited from China mainland,
+   so these requests are forwarded to my own vps by dns.
 
 Images:
 

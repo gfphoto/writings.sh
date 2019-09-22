@@ -30,8 +30,8 @@ function init () {
 
   document.addEventListener('turbolinks:load', function (e) {
     if (document.getElementsByClassName('post-body').length > 0) {
-      var body = document.getElementsByTagName('body')[0]
-      body.classList.add('fadein')
+      // var body = document.getElementsByTagName('body')[0]
+      // body.classList.add('fadein')
       // Reload disqus count
       if (typeof DISQUSWIDGETS === 'undefined') {
         setTimeout(function () {

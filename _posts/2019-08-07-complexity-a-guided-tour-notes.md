@@ -20,7 +20,7 @@ image_ref_link: https://en.wikipedia.org/wiki/Mandelbrot_set
 
 豆瓣链接： [《复杂》·梅拉妮·米歇尔](https://book.douban.com/subject/6749832/)
 
-{% include image.html path="complexity-a-guided-tour-notes/01.jpg" %}
+{% include image.html path="complexity-a-guided-tour-notes/01.jpg" max_width="50%" %}
 
 ---
 
@@ -53,7 +53,7 @@ image_ref_link: https://en.wikipedia.org/wiki/Mandelbrot_set
       的缩放速率接近费根鲍姆常数
       {% include image.html id="image-14" path="complexity-a-guided-tour-notes/14.gif"
          too_large=1 note="曼德博集合示意图"
-         width="100%" %}
+         max_width="100%" %}
 
 
 对于混沌思想的三点总结：
@@ -208,8 +208,8 @@ ${X}^{N}$倍，那么这个$N$就定义为这个分形结构的维度 ([参考�
 
 下图是元胞自动机的例子： [生命的游戏](https://zh.wikipedia.org/wiki/%E5%BA%B7%E5%A8%81%E7%94%9F%E5%91%BD%E6%B8%B8%E6%88%8F)
 
-{% include image.html path="complexity-a-guided-tour-notes/05.gif"  width="60%" %}
-{% include image.html path="complexity-a-guided-tour-notes/06.gif" width="60%" %}
+{% include image.html path="complexity-a-guided-tour-notes/05.gif"  max_width="60%" %}
+{% include image.html path="complexity-a-guided-tour-notes/06.gif" max_width="60%" %}
 
 元胞自动机也是由大量简单个体组成，不存在中央控制，每个个体都只与少量其他个体交互。
 

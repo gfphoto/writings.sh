@@ -34,12 +34,17 @@ layout: base
     {% if site.enable_post_image_render and page.image %}
     <div class="post-image-container">
       <figure>
-        <img {% if page.image_svg_data %}
-           src="data:image/svg+xml;utf8,{{ page.image_svg_data | strip }}"
-          {% else %}
-          src="{{ page.image | append: '-small.svg' }}"
-          {% endif %}
-          data-src="{{ page.image }}" class="post-content-img" />
+        <img class="post-content-img  {% if site.enable_image_lazyload %}lazyload{% endif%}"
+          {% if site.enable_image_lazyload %}
+                {% if page.image_svg_data %}
+                src="data:image/svg+xml;utf8,{{ page.image_svg_data | strip }}"
+                {% else %}
+                src="{{ page.image | append: '-small.svg' }}"
+                {% endif %}
+                data-src="{{ page.image }}" class="post-content-img"
+             {% else %}
+                src="{{ page.image }}"
+             {% endif %} />
         {% if page.image_ref_text %}
         <figcaption>
           图片来自 <a {% if page.image_ref_link %}href="{{ page.image_ref_link }}"{% endif %} target="_blank">{{ page.image_ref_text }}</a>

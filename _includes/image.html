@@ -30,9 +30,13 @@
   {% capture figure_tag %}
     <figure>
       <img {% if include.id %}id="{{ include.id }}"{% endif %}
-           class="post-content-img"
+     class="post-content-img {% if site.enable_image_lazyload %}lazyload{% endif%}"
+           {% if site.enable_image_lazyload %}
            src="{{ image_svg_url }}"
            data-src="{{ image_url }}"
+           {% else %}
+           src="{{ image_url }}"
+           {% endif %}
            alt="{{ include.alt }}"
            {{ image_style }} />
       {{ image_note }}

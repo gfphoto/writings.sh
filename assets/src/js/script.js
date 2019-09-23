@@ -21,7 +21,7 @@ function init () {
     )
   }
   // lozad
-  var observer = lozad('.post-content-img')
+  var observer = lozad('.lazyload')
   observer.observe({ threshold: 0.01 })
 
   // turbolinks

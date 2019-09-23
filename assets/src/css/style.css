@@ -156,6 +156,7 @@ footer {
 }
 footer a:link { color: #999; }
 footer a:visited { color: #999; }
+footer .host-by { margin-top: 8px; }
 
 /* Headings */
 
@@ -546,6 +547,8 @@ a.icon-wrapper:hover {
   .divider img {  display: none; }
   /* Recover the header h1 margin-bottom */
   header h1 { margin-bottom: 30px; }
+  /* Won't display host-by */
+  .host-by { display: none; }
 }
 
 /* Desktop */

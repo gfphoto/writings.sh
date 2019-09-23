@@ -156,7 +156,9 @@ footer {
 }
 footer a:link { color: #999; }
 footer a:visited { color: #999; }
-footer .host-by { margin-top: 8px; }
+footer .host-by { 
+  margin-top: 8px; 
+}
 
 /* Headings */
 

@@ -1,0 +1,12 @@
+# Disable directory files listing
+IndexIgnore *
+# Enable rewrite
+RewriteEngine on
+RewriteBase /
+# Pass through if requested file exist.
+RewriteCond %{REQUEST_FILENAME} -f
+RewriteRule ^(.*)$ - [L]
+# Rewrite rules
+RewriteRule ^post/(.+)$  /post/$1.html
+RewriteRule ^posts$  /posts.html
+RewriteRule ^about$  /about.html

@@ -147,18 +147,18 @@ header h1 a:link {
   border-bottom: 0;
 }
 
+
 /* Footer */
 footer {
-  text-align: center;
-  padding: .5em 0 .5em 0;
   font-size: 85%;
   color: #999;
+  text-align: center;
+  padding: .5em 0 .5em 0;
 }
 footer a:link { color: #999; }
 footer a:visited { color: #999; }
-footer .host-by { 
-  margin-top: 8px; 
-}
+footer .thanks-to, footer .uptime-badge { margin-top: 10px; }
+footer img.badge { height: 17px; }
 
 /* Headings */
 
@@ -302,6 +302,8 @@ img {
 .post-body img {
   margin: 0 auto;
 }
+
+img.badge { display: inline; }
 
 /* Post header */
 .post-page-header {
@@ -550,7 +552,7 @@ a.icon-wrapper:hover {
   /* Recover the header h1 margin-bottom */
   header h1 { margin-bottom: 30px; }
   /* Won't display host-by */
-  .host-by { display: none; }
+  .thanks-to, .uptime-badge { display: none; }
 }
 
 /* Desktop */

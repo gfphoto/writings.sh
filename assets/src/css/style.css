@@ -157,7 +157,7 @@ footer {
 }
 footer a:link { color: #999; }
 footer a:visited { color: #999; }
-footer .thanks-to, footer .uptime-badge { margin-top: 10px; }
+footer .uptime-badge { margin-top: 10px; }
 footer img.badge { height: 17px; }
 
 /* Headings */
@@ -552,7 +552,7 @@ a.icon-wrapper:hover {
   /* Recover the header h1 margin-bottom */
   header h1 { margin-bottom: 30px; }
   /* Won't display host-by */
-  .thanks-to, .uptime-badge { display: none; }
+  .uptime-badge { display: none; }
 }
 
 /* Desktop */

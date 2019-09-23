@@ -35,6 +35,11 @@ exclude:
   - package.json
   - package-lock.json
   - Caddyfile
+  - sqip-images.sh
+  - deploy.sh
+  - fix-lazyload-in-feed.sh
+  - fix-mathjax-in-feed.sh
+  - assets/src
 
 # Image
 enable_post_image_render: true

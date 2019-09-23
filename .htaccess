@@ -10,6 +10,9 @@ RewriteBase /
 RewriteCond %{REQUEST_FILENAME} -f
 RewriteRule ^(.*)$ - [L]
 # Rewrite rules
+RewriteCond %{REQUEST_FILENAME}.html -f
 RewriteRule ^post/(.+)$  /post/$1.html
 RewriteRule ^posts$  /posts.html
 RewriteRule ^about$  /about.html
+# 404 Page
+ErrorDocument 404 /404.html

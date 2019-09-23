@@ -47,10 +47,15 @@ echo "Building assets css,js.."
 gulp
 echo "Building jekyll site on production environment"
 env JEKYLL_ENV=production bundler exec jekyll build
+
+# Process images via SQIP
 echo "Building images"
 ./sqip-images.sh
-echo "Copy Caddyfile to _site"
-cp Caddyfile _site
+
+# echo "Copy Caddyfile to _site"
+# cp Caddyfile _site
+echo "Copy htaccess to _site"
+cp .htaccess _site
 
 # Fix $ANY$ to Img for math.
 ./fix-mathjax-in-feed.sh
@@ -61,5 +66,7 @@ echo "Fixed math in feed.xml"
 echo "Fixed lazyload in feed.xml"
 
 # Deploy
-echo "Rsync to remote server"
-rsync -avz ./_site/*  writings.sh:/srv/site/
+echo "Transfering to remote server"
+# rsync -avz ./_site/*  writings.sh:/srv/site/
+# Using ftp now..
+lftp ct.ftp.zeus.smartgslb.com –e 'set ftp:sync-mode off' -e 'set ftp:use-mdtm off'  -e 'mirror --parallel=4 --ignore-time -R _site/ / ; ls; quit'

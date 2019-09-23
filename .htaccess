@@ -2,6 +2,9 @@
 IndexIgnore *
 # Enable rewrite
 RewriteEngine on
+# HTTP => HTTPS
+RewriteCond %{HTTP:KERSSL} !on
+RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
 RewriteBase /
 # Pass through if requested file exist.
 RewriteCond %{REQUEST_FILENAME} -f

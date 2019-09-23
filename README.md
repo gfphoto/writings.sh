@@ -22,7 +22,7 @@ Hosting:
    and the most-featured deployment (much like CD) etc.
    However, because of the well-known reason,
    netlify and cloudfront sometimes perform slow when visited from China mainland,
-   so these requests are forwarded to my own vps by dns.
+   so requests from china are forwarded to [Hostker](http://www.zhujike.com/) (via dns).
 
 Images:
 

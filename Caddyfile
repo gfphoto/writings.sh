@@ -4,16 +4,16 @@ writings.sh {
     tls hit9@icloud.com
     root /srv/site
     gzip
-    
+
     # Rewrite post/XXX  to /post/XXX.html
     rewrite /post/(.+) /post/{1}.html
     rewrite /posts$ posts.html
     rewrite /about$ about.html
-    
+
     errors {
         404 404.html
     }
-    
+
     log / /var/log/site/site.log {
         rotate_keep 7
     }

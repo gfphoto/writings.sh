@@ -14,6 +14,7 @@ RewriteCond %{REQUEST_FILENAME}.html -f
 RewriteRule ^post/(.+)$  /post/$1.html [L]
 RewriteRule ^posts$  /posts.html
 RewriteRule ^about$  /about.html
+RewriteRule ^status$  /status.html
 
 # 404 Page
 ErrorDocument 404 /404.html

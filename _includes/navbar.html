@@ -16,6 +16,13 @@
   </span>
   <span class="nav-divider">·</span>
 
+  {%- if site.hire.enabled -%}
+  <span class="nav">
+    <a href="{{ site.hire.hire_link }}" target="_blank">招聘</a>
+  </span>
+
+  <span class="nav-divider">·</span>
+  {%- endif -%}
 
   <span class="nav">
     <a href="{{ site.feedburner_url }}" target="_blan">订阅</a>

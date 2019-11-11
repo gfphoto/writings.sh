@@ -134,6 +134,12 @@ layout: base
       </span>
     </div>
 
+    {%- if site.hire.enabled -%}
+    <div class="hire">
+      <a href="{{ site.hire.hire_link }}" target="_blank"> {{ site.hire.hire_text }}</a>
+    </div>
+    {%- endif -%}
+
     <div class="clear"></div>
 
     <div class="pendant-large">

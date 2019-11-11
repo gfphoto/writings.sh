@@ -11,7 +11,7 @@ id: about
 
 <span class="heading-anchor">§</span> 时间线
 
-> 2018 - 今  · 上海 · YOGO机器人 - Team Lead
+> 2018 - 今  · 上海 · YOGO ROBOT - Team Lead
 >
 > 2014 - 2018 · 上海 · 饿了么 - Architect
 >

@@ -530,6 +530,7 @@ a.icon-wrapper:hover {
   h4 { font-size: 22px; }
   h5 { font-size: 17px; }
   h6 { font-size: 15px; }
+  .hire {display: none;}
 }
 
 /* Phone */
@@ -553,6 +554,7 @@ a.icon-wrapper:hover {
   header h1 { margin-bottom: 30px; }
   /* Won't display host-by */
   .uptime-badge { display: none; }
+  .hire {display: none;}
 }
 
 /* Desktop */
@@ -616,6 +618,16 @@ a.icon-wrapper:hover {
 
 /* Print */
 @media print {
-  header, .post-article, .post-copyright { display: none; }
+  header, .post-article, .post-copyright, .hire { display: none; }
   .post-copyright-only-for-print { display: inline-block; }
+}
+
+/* Hire */
+.hire {
+  margin-top: 10px;
+  text-align: center;
+}
+.hire a:link,
+.hire a:visited { 
+  border-bottom: 1px solid rgba(0,0,0,0.5);
 }

@@ -52,6 +52,9 @@ env JEKYLL_ENV=production bundler exec jekyll build
 echo "Building images"
 ./sqip-images.sh
 
+echo "Copy wellknown to _site"
+cp -rf .wellknown _site/
+
 # echo "Copy Caddyfile to _site"
 # cp Caddyfile _site
 echo "Copy htaccess to _site"

@@ -25,7 +25,8 @@ build-netlify:
 	./fix-mathjax-in-feed.sh
 	./fix-lazyload-in-feed.sh
 	# Copy file redirects
-	cp _redirects _site
+	cp _redirects _site/
+	cp -rf .wellknown _site/
 
 sqip:
 	./sqip-images.sh

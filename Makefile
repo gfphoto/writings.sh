@@ -26,7 +26,7 @@ build-netlify:
 	./fix-lazyload-in-feed.sh
 	# Copy file redirects
 	cp _redirects _site/
-	cp -rf .wellknown _site/
+	cp -rf .well-known _site/
 
 sqip:
 	./sqip-images.sh

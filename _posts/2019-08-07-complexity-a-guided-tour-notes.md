@@ -57,7 +57,8 @@ image_svg_data: "%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 700 525'
 
      {% include image.html id="image-14" path="complexity-a-guided-tour-notes/14.gif"
         too_large=1 note="曼德博集合示意图"
-        max_width="100%" %}
+        max_width="100%"
+        enable_image_lazyload=true %}
 
 
 对于混沌思想的三点总结：
@@ -146,7 +147,7 @@ image_svg_data: "%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 700 525'
 
 ### 分形
 
-{% include image.html path="complexity-a-guided-tour-notes/03.jpg"  note="曼德博集合" %}
+{% include image.html path="complexity-a-guided-tour-notes/03.jpg"  note="曼德博集合" enable_image_lazyload=true %}
 
 在任何尺度上都有微细结构的几何形状，具有 **自相似性** 和 **无尺度性**。分形也被称为扩展对称或展开对称。
 如果在每次放大后，形状的重复是完全相同的，这被称为自相似。
@@ -212,8 +213,8 @@ ${X}^{N}$倍，那么这个$N$就定义为这个分形结构的维度 ([参考�
 
 下图是元胞自动机的例子： [生命的游戏](https://zh.wikipedia.org/wiki/%E5%BA%B7%E5%A8%81%E7%94%9F%E5%91%BD%E6%B8%B8%E6%88%8F)
 
-{% include image.html path="complexity-a-guided-tour-notes/05.gif"  max_width="60%" %}
-{% include image.html path="complexity-a-guided-tour-notes/06.gif" max_width="60%" %}
+{% include image.html path="complexity-a-guided-tour-notes/05.gif"  max_width="60%" enable_image_lazyload=true %}
+{% include image.html path="complexity-a-guided-tour-notes/06.gif" max_width="60%" enable_image_lazyload=true %}
 
 元胞自动机也是由大量简单个体组成，不存在中央控制，每个个体都只与少量其他个体交互。
 
@@ -233,7 +234,7 @@ ${X}^{N}$倍，那么这个$N$就定义为这个分形结构的维度 ([参考�
 * 类型4(复杂态)： 最有趣的一种。 几乎所有的初始模式将会演变成相互作用的复杂和有趣的方式结构，并且局部结构的形成能够长时间存在。
 
 这里推荐下玩一下模拟生命样貌的元胞自动机： [Lenia](https://github.com/Chakazul/Lenia)，下图是Lenia的一个示例图
-{% include image.html path="complexity-a-guided-tour-notes/09.gif"  width="100%" note="Lenia示意图" too_large=1 id="image-09" %}
+{% include image.html path="complexity-a-guided-tour-notes/09.gif"  width="100%" note="Lenia示意图" too_large=1 id="image-09" enable_image_lazyload=true %}
 
 沃尔夫勒姆的一位助手库克证明了[规则110](https://en.wikipedia.org/wiki/Rule_110)是通用的。
 

@@ -25,11 +25,4 @@ id: about
 
 [https://github.com/hit9](https://github.com/hit9){:target="_blank"}
 
-<span class="heading-anchor">§</span> 关于博客
-
-基于 [jekyll](https://jekyllrb.com/) 搭建，
-源代码托管在 [Github](https://github.com/hit9/writings.sh) 上。
-
-DNS 按境内、境外分流解析到 [Hostker](https://i.zhujike.com/flag/13188) 和
-[Netlify](https://app.netlify.com/sites/writings-sh/deploys) 上。
-关于这个博客更多的技术细节见[这里](https://github.com/hit9/writings.sh#about-this-site)。
+[About this site](https://github.com/hit9/writings.sh#writingssh)

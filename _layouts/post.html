@@ -98,17 +98,21 @@ layout: base
     <!-- Nav botton of Post -->
     <div class="post-bottom-navs">
       <!-- Comment -->
+      {%- if site.disqus.enabled -%}
       <a class="icon-wrapper disqus-link" href="javascript:void(0);" onclick="disqusLoader();" title="说两句吧！">
         <span class="icon-message-circle"></span>
         <span class="disqus-comment-count" data-disqus-url="{{ site.url }}{{ page.url }}">评论</span>
       </a>
-
       <span class="nav-divider">·</span>
+      {%- endif -%}
+
+      {%- if site.bymeacoffee.enabled -%}
       <a class="icon-wrapper" title="喜欢本文？打赏支持！"
          href="{{ '/assets/images/buymeacoffee.jpeg' | relative_url }}"
          onclick="window.open(this.href,'targetWindow', 'toolbar=no, location=no, status=no, menubar=no, scrollbars=yes, resizable=yes, width=400, height=400'); return false;">
         <span class="icon-thumbs-up"></span> 打赏
       </a>
+      {%- endif -%}
 
       <span class="nav-divider">·</span>
 
@@ -151,15 +155,25 @@ layout: base
     <div id="ue-scroll" class="ue-scroll btn-white arrow-black circle"></div>
 
     <!-- Comments / Disqus -->
-    {%- if site.disqus.shortname -%}
-      {%- include disqus.html -%}
+    {%- if site.disqus.enabled -%}
+       {%- if site.disqus.shortname -%}
+         {%- include disqus.html -%}
+      {%- endif -%}
+    {%- endif -%}
+
+    <!-- Comments / Gitalk -->
+    {%- if site.gitalk.enabled -%}
+      {%- include gitalk.html -%}
     {%- endif -%}
 
     <!-- Footer -->
     {% include footer.html %}
   </div>
 
-  {%- if page.comments != false -%}
-  <script id="dsq-count-scr" src="//{{ site.disqus.shortname }}.disqus.com/count.js" async></script>
+  {%- if site.disqus.enabled -%}
+    {%- if page.comments != false -%}
+    <script id="dsq-count-scr" src="//{{ site.disqus.shortname }}.disqus.com/count.js" async></script>
+    {%- endif -%}
   {%- endif -%}
+
 </body>

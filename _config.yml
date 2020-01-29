@@ -61,7 +61,7 @@ gitalk:
   enabled: true
   client_id: "b49909a7c3f92a0c9e3f"
   client_secret: "1f69d2d171d80104a32664c3d6817bdb7778c01e"
-  repo: "writings-sh"
+  repo: "writings.sh"
   owner: "hit9"
   admin: "hit9"
 

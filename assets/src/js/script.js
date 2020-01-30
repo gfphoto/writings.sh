@@ -58,7 +58,8 @@ function init () {
     }
 
     // Gitalk (delay 2s)
-    setTimeout(function () { loadGitalk() }, 2000)
+    loadGitalk()
+    // setTimeout(function () { loadGitalk() }, 2000)
 
     // GA
     if (typeof ga !== 'undefined') {

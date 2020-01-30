@@ -515,12 +515,12 @@ header .divider {
   background-color: #fefefe;
 }
 a.icon-wrapper:hover {
-  color: #900;
+  color: #000;
 }
 
 /* Turbolinks */
 .turbolinks-progress-bar {
-  background-color: #900;
+  background-color: #000;
 }
 
 /* Not-Desktop */

@@ -728,10 +728,15 @@
 /* .gt-container a { */
 /*   color: #000000; */
 /* } */
-/* .gt-container a:hover { */
-/*   color: #999999; */
-/*   border-color: #999999; */
-/* } */
+.gt-container a:not(.gt-avatar-github):hover {
+  color: #ffffff;
+  background-color: #000;
+  text-decoration: none;
+}
+
+.gt-container a:hover .gt-svg svg {
+  fill: #ffffff;
+}
 /* .gt-container a.is--active { */
 /*   color: #333; */
 /*   cursor: default !important; */
@@ -834,6 +839,11 @@
   width: 3em;
   height: 3em;
 }
+
+.gt-container .gt-avatar-github:hover {
+  background-color: none;
+}
+
 @media (max-width: 479px) {
   .gt-container .gt-avatar-github {
     width: 1.875em;
@@ -951,6 +961,9 @@
 }
 .gt-container .gt-user .is--poping .gt-ico svg {
   fill: #000000;
+}
+.gt-container .gt-user .is--poping .gt-ico svg: hover {
+  fill: #ffffff;
 }
 .gt-container .gt-version {
   color: #a1a1a1;

@@ -557,7 +557,7 @@ a.icon-wrapper:hover {
   .pendant { display: none; margin: 0; }
   .pendant-img {display: none; margin: 0; }
   .divider img {  display: none; }
-  .post-article { display: none; }
+  .pendant-large { display: none; }
   /* Recover the header h1 margin-bottom */
   header h1 { margin-bottom: 30px; }
   /* Won't display host-by */

@@ -58,6 +58,9 @@ function init () {
     reconfigMath()
   }
 
+  // Gitalk (delay 2s)
+  setTimeout(function () { loadGitalk() }, 2000)
+
   // GA
   if (typeof ga !== 'undefined') {
     ga('set', 'page', window.location.pathname)

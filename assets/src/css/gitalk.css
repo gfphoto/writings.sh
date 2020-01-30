@@ -734,9 +734,12 @@
   text-decoration: none;
 }
 
-.gt-container a:hover .gt-svg svg {
+a.gt-avatar-github:hover { background-color: inherit; }
+
+.gt-container a:not(.gt-avatar-github):hover .gt-svg svg {
   fill: #ffffff;
 }
+
 /* .gt-container a.is--active { */
 /*   color: #333; */
 /*   cursor: default !important; */
@@ -840,9 +843,6 @@
   height: 3em;
 }
 
-.gt-container .gt-avatar-github:hover {
-  background-color: none;
-}
 
 @media (max-width: 479px) {
   .gt-container .gt-avatar-github {

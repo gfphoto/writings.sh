@@ -8,7 +8,6 @@
   -webkit-text-size-adjust: 100%;
   line-height: 1.5;
   color: #24292e;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   font-size: 16px;
   line-height: 1.5;
   word-wrap: break-word;
@@ -178,7 +177,6 @@
 .markdown-body code,
 .markdown-body kbd,
 .markdown-body pre {
-  font-family: monospace, monospace;
   font-size: 1em;
 }
 
@@ -216,12 +214,12 @@
 }
 
 .markdown-body a {
-  color: #0366d6;
+  /* color: #0366d6; */
   text-decoration: none;
 }
 
 .markdown-body a:hover {
-  text-decoration: underline;
+  /* text-decoration: underline; */
 }
 
 .markdown-body strong {
@@ -330,15 +328,15 @@
   margin-left: 0;
 }
 
-.markdown-body code {
-  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
-  font-size: 12px;
-}
+/* .markdown-body code { */
+  /* font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace; */
+  /* font-size: 12px; */
+/* } */
 
 .markdown-body pre {
   margin-top: 0;
   margin-bottom: 0;
-  font: 12px "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  /* font: 12px "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace; */
 }
 
 .markdown-body .octicon {
@@ -444,7 +442,7 @@
 .markdown-body kbd {
   display: inline-block;
   padding: 3px 5px;
-  font-size: 11px;
+  font-size: 12px;
   line-height: 10px;
   color: #444d56;
   vertical-align: middle;
@@ -641,7 +639,7 @@
   overflow: auto;
   font-size: 85%;
   line-height: 1.45;
-  background-color: #f6f8fa;
+  /* background-color: #f6f8fa; */
   border-radius: 3px;
 }
 
@@ -685,7 +683,7 @@
 .markdown-body :checked+.radio-label {
   position: relative;
   z-index: 1;
-  border-color: #0366d6;
+  border-color: #000000;
 }
 
 .markdown-body .task-list-item {
@@ -727,20 +725,20 @@
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
-.gt-container a {
-  color: #6190e8;
-}
-.gt-container a:hover {
-  color: #81a6ed;
-  border-color: #81a6ed;
-}
-.gt-container a.is--active {
-  color: #333;
-  cursor: default !important;
-}
-.gt-container a.is--active:hover {
-  color: #333;
-}
+/* .gt-container a { */
+/*   color: #000000; */
+/* } */
+/* .gt-container a:hover { */
+/*   color: #999999; */
+/*   border-color: #999999; */
+/* } */
+/* .gt-container a.is--active { */
+/*   color: #333; */
+/*   cursor: default !important; */
+/* } */
+/* .gt-container a.is--active:hover { */
+/*   color: #333; */
+/* } */
 .gt-container .hide {
   display: none !important;
 }
@@ -753,7 +751,7 @@
 .gt-container .gt-svg svg {
   width: 100%;
   height: 100%;
-  fill: #6190e8;
+  fill: #000000;
 }
 .gt-container .gt-ico {
   display: inline-block;
@@ -787,7 +785,7 @@
   margin-left: -0.375em;
   border-radius: 50%;
   border: 1px solid #fff;
-  border-top-color: #6190e8;
+  border-top-color: #000000;
   -webkit-animation: gt-kf-rotate 0.6s linear infinite;
           animation: gt-kf-rotate 0.6s linear infinite;
 }
@@ -849,9 +847,9 @@
   text-decoration: none;
   white-space: nowrap;
   cursor: pointer;
-  border: 1px solid #6190e8;
+  border: 1px solid #000000;
   border-radius: 5px;
-  background-color: #6190e8;
+  background-color: #000000;
   color: #fff;
   outline: none;
   font-size: 0.75em;
@@ -876,15 +874,15 @@
 }
 .gt-container .gt-btn-preview {
   background-color: #fff;
-  color: #6190e8;
+  color: #000000;
 }
 .gt-container .gt-btn-preview:hover {
   background-color: #f2f2f2;
-  border-color: #81a6ed;
+  border-color: #999999;
 }
 .gt-container .gt-btn-public:hover {
-  background-color: #81a6ed;
-  border-color: #81a6ed;
+  background-color: #999999;
+  border-color: #999999;
 }
 .gt-container .gt-error {
   text-align: center;
@@ -904,7 +902,7 @@
   text-align: center;
 }
 .gt-container .gt-link {
-  border-bottom: 1px dotted #6190e8;
+  border-bottom: 1px dotted #000000;
 }
 .gt-container .gt-link-counts,
 .gt-container .gt-link-project {
@@ -952,7 +950,7 @@
   fill: inherit;
 }
 .gt-container .gt-user .is--poping .gt-ico svg {
-  fill: #6190e8;
+  fill: #000000;
 }
 .gt-container .gt-version {
   color: #a1a1a1;
@@ -986,7 +984,7 @@
   content: '';
   width: 0.25em;
   height: 0.25em;
-  background: #6190e8;
+  background: #000000;
   position: absolute;
   left: 0.5em;
   top: 0.4375em;
@@ -1017,11 +1015,11 @@
   min-height: 5.125em;
   max-height: 15em;
   border-radius: 5px;
-  border: 1px solid rgba(0,0,0,0.1);
+  border: 1px solid rgba(0,0,0,0.25);
   font-size: 0.875em;
   word-wrap: break-word;
   resize: vertical;
-  background-color: #f6f6f6;
+  /* background-color: #f6f6f6; */
   outline: none;
   -webkit-transition: all 0.25s ease;
   transition: all 0.25s ease;
@@ -1032,8 +1030,8 @@
 .gt-container .gt-header-preview {
   padding: 0.75em;
   border-radius: 5px;
-  border: 1px solid rgba(0,0,0,0.1);
-  background-color: #f6f6f6;
+  border: 1px solid rgba(0,0,0,0.25);
+  /* background-color: #f6f6f6; */
 }
 .gt-container .gt-header-controls {
   position: relative;
@@ -1054,7 +1052,7 @@
 }
 .gt-container .gt-header-controls-tip {
   font-size: 0.875em;
-  color: #6190e8;
+  color: #000000;
   text-decoration: none;
   vertical-align: sub;
 }
@@ -1147,7 +1145,7 @@
 }
 .gt-container .gt-comment-username {
   font-weight: 500;
-  color: #6190e8;
+  color: #000000;
   text-decoration: none;
 }
 .gt-container .gt-comment-username:hover {

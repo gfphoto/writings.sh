@@ -123,6 +123,12 @@ a:hover {
   border-bottom: 1px solid rgba(0,0,0,0.5);
 }
 
+/* Link inside gitalk */
+#gitalk-container .markdown-body a:link,
+#gitalk-container .markdown-body a:visited {
+  border-bottom: 1px solid rgba(0,0,0,0.5);
+}
+
 /* Add a '.drop-cap' class around paragraph for first-letter larger and drop.  */
 .post-body .drop-cap p:first-letter {
   float: left;
@@ -137,7 +143,8 @@ a:hover {
 /* DropCap effect in RED color */
 .post-body .drop-cap-red p:first-letter {
   color: #fff;
-  background-color: #900;
+  /* background-color: #900; */
+  background-color: #000;
 }
 
 /* h1 is the blog title */
@@ -356,6 +363,7 @@ img[alt="avatar"] {
 }
 
 pre {
+  font-family: "Roboto Mono", "Liberation Mono", Menlo, Courier, monospace;
   border: 1px solid #CCC;
   padding: .8em 1em;
   overflow: auto;
@@ -371,7 +379,6 @@ code {
 }
 
 pre code {
-  font-family: "Roboto Mono", "Liberation Mono", Menlo, Courier, monospace;
   font-size: 16px;
   line-height: 1.45;
   border: none;

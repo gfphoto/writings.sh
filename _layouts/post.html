@@ -116,25 +116,32 @@ layout: base
 
       <span class="nav-divider">·</span>
 
-      <!-- GoTop -->
+      <!-- Shares -->
       <span class="nav shares">
         分享
 
-        <a class="icon-wrapper" href="http://twitter.com/share?url={{ page.url | absolute_url }}&text={{ page.title }}" target="_blank" title="分享到twitter">
+        <a class="shares-item icon-wrapper" href="http://twitter.com/share?url={{ page.url | absolute_url }}&text={{ page.title }}" target="_blank" title="分享到twitter">
           <span class="icon-twitter1"></span>
         </a>
 
-        <a class="icon-wrapper" href="http://reddit.com/submit?url={{ page.url | absolute_url }}&title={{ page.title }}" target="_blank" title="分享到reddit">
+        <a class="shares-item icon-wrapper" href="http://reddit.com/submit?url={{ page.url | absolute_url }}&title={{ page.title }}" target="_blank" title="分享到reddit">
           <span class="icon-reddit"></span>
         </a>
 
-        <a class="icon-wrapper" href="{{ site.feedburner_url }}" target="_blank" title="通过RSS订阅本站">
+        <a class="shares-item icon-wrapper" href="{{ site.feedburner_url }}" target="_blank" title="通过RSS订阅本站">
           <span class="icon-rss1"></span>
         </a>
 
-        <a class="icon-wrapper" href="javascript:void(0);" target="_blank" title="打印本文（PDF）" onclick="window.print(); return false;" >
+        <a class="shares-item icon-wrapper" href="javascript:void(0);" target="_blank" title="打印本文（PDF）" onclick="window.print(); return false;" >
           <span class="icon-printer"></span>
         </a>
+
+        {%- if site.gotop.enabled -%}
+        <a title="返回顶部" href="#" class="shares-item gotop">
+          ↑顶部
+        </a>
+      {%- endif -%}
+
       </span>
     </div>
 
@@ -149,10 +156,6 @@ layout: base
     <div class="pendant-large">
       <img class="pendant-img-large" src="{{ '/assets/images/pendant-large.png' | relative_url }}">
     </div>
-
-    <!-- Goto top -->
-    <!-- https://github.com/azrsix/ue-scroll-js -->
-    <div id="ue-scroll" class="ue-scroll btn-white arrow-black circle"></div>
 
     <!-- Comments / Disqus -->
     {%- if site.disqus.enabled -%}

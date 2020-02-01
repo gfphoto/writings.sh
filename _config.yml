@@ -68,6 +68,9 @@ gitalk:
 bymeacoffee:
   enabled: false
 
+gotop:
+  enabled: true
+
 google_analytics_gtag:  "UA-145761297-1"
 
 ### feedburner

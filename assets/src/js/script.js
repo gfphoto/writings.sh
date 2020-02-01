@@ -67,9 +67,6 @@ function init () {
       ga('send', 'pageview')
     }
 
-    // UeScroll
-    UeScroll.init()
-
     // mediumZoom
     mediumZoom('img.post-content-img')
   }

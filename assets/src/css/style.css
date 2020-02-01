@@ -377,10 +377,11 @@ img[alt="avatar"] {
 
 pre {
   font-family: "Roboto Mono", "Liberation Mono", Menlo, Courier, monospace;
-  border: 1px solid #CCC;
-  padding: .8em 1em;
+  /* border: 1px solid #CCC; */
+  padding: 10px 15px;
   overflow: auto;
   word-spacing: 0;
+  background-color: #F2F3F4;
 }
 
 code {
@@ -388,7 +389,7 @@ code {
   padding: 1px 4px;
   display: inline-block;
   margin: 0 3px;
-  background-color: #F4F6F6;
+  background-color: #F2F3F4;
 }
 
 pre code {
@@ -396,7 +397,7 @@ pre code {
   line-height: 1.45;
   border: none;
   padding: 0;
-  background-color: #fefefe;
+  background-color: #F2F3F4;
 }
 
 blockquote {

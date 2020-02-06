@@ -83,8 +83,8 @@ html {
 body {
   margin: 20px auto;
 	font-family: 'Arvo', -apple-system, BlinkMacSystemFont, Helvetica Neue, PingFang SC, sans-serif;
-  font-size: 16px;
-  line-height: 1.7;
+  font-size: 15px;
+  line-height: 1.5;
   color: rgba(0,0,0,0.86);
   font-weight: normal;
   font-variant: normal;
@@ -134,7 +134,7 @@ a:hover {
 /* Add a '.drop-cap' class around paragraph for first-letter larger and drop.  */
 .post-body .drop-cap p:first-letter {
   float: left;
-  font-size: 35px;
+  font-size: 34px;
   line-height: 1;
   margin-right: 9px;
   font-weight: bold;
@@ -531,15 +531,15 @@ a.icon-wrapper:hover {
   body {
     width: 90%;
     max-width: 1000px;
-    font-size: 16px;
+    font-size: 15px;
     padding: 0;
   }
   code { font-size: 15px; }
   h1 { font-size: 32px; }
-  h2 { font-size: 28px; }
+  h2 { font-size: 27px; }
   h3 { font-size: 23px; }
-  h4 { font-size: 21px; }
-  h5 { font-size: 16px; }
+  h4 { font-size: 20px; }
+  h5 { font-size: 15px; }
   h6 { font-size: 14px; }
   .hire {display: none;}
 }
@@ -574,12 +574,17 @@ a.icon-wrapper:hover {
 
 /* Desktop */
 @media (min-device-width:1281px) {
-  html { background-color: #E5E7E9; }
+  html { 
+    min-height: 100%;
+    background: #ecf0f1;
+  }
   body {
     width: 61.8%;
     max-width: 710px;
     font-size: 16px;
-    padding: 35px;
+    padding: 30px;
+    box-shadow: 0px 30px 60px 0px #d3dde2;
+    -webkit-box-shadow: 0px 30px 60px 0px #d3dde2;
   }
   body.default { max-width: 580px; }
   .MathJax { font-size: 15px; }

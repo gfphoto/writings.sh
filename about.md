@@ -17,12 +17,10 @@ id: about
 
 <span class="heading-anchor">§</span> 时间线
 
-> 2018 - 今  · 上海 · YOGO ROBOT - Team Lead
+> 2018 - 今   · 上海 · YOGO ROBOT - 部门研发负责人
 >
-> 2014 - 2018 · 上海 · 饿了么 - Architect
+> 2014 - 2018 · 上海 · 饿了么 - 架构师 & 部门研发负责人
 >
 > 2010 - 2014 · 哈尔滨工业大学
->
-> 1992 - ｡◕‿◕｡ · Hello World !
 
 <span class="heading-anchor">§</span> [关于本站](https://github.com/hit9/writings.sh#writingssh){:target="_blank"}

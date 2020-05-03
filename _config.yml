@@ -43,7 +43,7 @@ exclude:
 
 # Image
 enable_post_image_render: true  # Post head large image
-enable_image_lazyload: true  # Disable to load image directly.
+enable_image_lazyload: false  # Disable to load image directly.
 image_prefix: "/assets/images/posts/"   # Ends with slash
 
 copyright_declaration: '未经允许，不得转载'
@@ -72,6 +72,9 @@ gotop:
   enabled: true
 
 google_analytics_gtag:  "UA-145761297-1"
+
+### uptime-badge
+enable_uptime-badge: false
 
 ### feedburner
 

@@ -7,18 +7,16 @@
     <!-- Copyright Notice. -->
     <span class="post-copyright"> {{ site.copyright_declaration }} </span>
     <span class="nav-divider">·</span>
-    <!-- <1!-- Uptime --1> -->
-    <!-- <a href="https://stats.uptimerobot.com/jv6RVHn6rl" target="_blank" class="icon-wrapper"> -->
-    <!--   <span class="icon-activity"></span> status -->
-    <!-- </a> -->
   <div/>
-  {% if page.layout != 'post' %}
-  <div class="uptime-badge">
-    <a class="icon-wrapper" href="https://stats.uptimerobot.com/jv6RVHn6rl" title="最近30天可用率" target="_blank">
-      <img class="badge" alt="UptimeRobot" src="https://img.shields.io/uptimerobot/ratio/m783450200-5bf5289a5ee7900f651b344f?style=flat">
-    </a>
-  </div>
-  {% endif %}
+    {% if page.layout != 'post' %}
+      {% if site.enable_uptime %}
+      <div class="uptime-badge">
+        <a class="icon-wrapper" href="https://stats.uptimerobot.com/jv6RVHn6rl" title="最近30天可用率" target="_blank">
+          <img class="badge" alt="UptimeRobot" src="https://img.shields.io/uptimerobot/ratio/m783450200-5bf5289a5ee7900f651b344f?style=flat">
+        </a>
+      </div>
+      {% endif %}
+     {% endif %}
 </footer>
 
 <script> init(); </script>

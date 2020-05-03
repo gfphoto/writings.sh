@@ -43,7 +43,7 @@ exclude:
 
 # Image
 enable_post_image_render: true  # Post head large image
-enable_image_lazyload: false  # Disable to load image directly.
+enable_image_lazyload: true  # Disable to load image directly.
 image_prefix: "/assets/images/posts/"   # Ends with slash
 
 copyright_declaration: '未经允许，不得转载'
@@ -82,6 +82,6 @@ feedburner_url: https://feeds.feedburner.com/writings-sh
 
 # Hire
 hire:
-  enabled: false
+  enabled: true
   hire_link: "https://zi.com/w/a/95274tw"
   hire_text: "🦄 我的团队正在寻优秀的小伙伴加入~ ！！"

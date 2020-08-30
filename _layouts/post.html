@@ -39,6 +39,15 @@ layout: base
       </span>
       <span class="nav-divider">·</span>
 
+      <!-- Site Name -->
+      <span class="post-site-name post-meta-item">
+        <a class="nav" href="{{ "/" | relative_url }}" title="春水煎茶的首页">
+          {{ site.title }}
+        </a>
+      </span>
+
+      <span class="nav-divider">·</span>
+
       <!-- Post Category -->
       <span class="post-categories post-meta-item">
         {%- for category in page.categories -%}
@@ -63,13 +72,12 @@ layout: base
        bodyPrefix='<span class="heading-text">' bodySuffix='</span>' %}
     </div>
 
-
-  <!-- Post article -->
-  <div class="post-article">
-
     <div class="pendant-large">
       <img class="pendant-img-large" src="{{ '/assets/images/pendant-large.png' | relative_url }}">
     </div>
+
+  <!-- Post article -->
+  <div class="post-article">
 
     <span class="post-page-nav">
       <a class="home-link nav" href="{{ "/" | relative_url }}" title="春水煎茶的首页">

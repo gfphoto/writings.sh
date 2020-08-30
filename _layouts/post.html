@@ -4,55 +4,32 @@ layout: base
 
 <body>
 
-  <!-- Header -->
-  <header class="post-page-header">
-
-    <span class="post-page-nav">
-      <a class="home-link nav" href="{{ "/" | relative_url }}" title="春水煎茶的首页">
-        {{ site.title }}
-      </a>
-      <span class="nav nav-right-icons">
-        <a class="icon-wrapper" href="{{ site.feedburner_url }}" target="_blank"  title="订阅本站">
-          <span class="icon-rss1"></span>
-        </a>
-
-        <a class="icon-wrapper" href="https://github.com/{{ site.github_username }}" target="_blank" title="我的Github页面">
-          <span class="icon-github1"></span>
-        </a>
-
-        <a class="icon-wrapper" href="mailto:{{ site.email }}"  title="邮件联系">
-          <span class="icon-mail"></span>
-        </a>
-      </span>
-    </span>
-    <div class="clear"></div>
-  </header>
+  <!-- Post image -->
+  {% if site.enable_post_image_render and page.image %}
+  <div class="post-image-container">
+    <figure>
+      <img class="post-content-img  {% if site.enable_image_lazyload %}lazyload{% endif%}"
+        {% if site.enable_image_lazyload %}
+              {% if page.image_svg_data %}
+              src="data:image/svg+xml;utf8,{{ page.image_svg_data | strip }}"
+              {% else %}
+              src="{{ page.image | append: '-small.svg' }}"
+              {% endif %}
+              data-src="{{ page.image }}" class="post-content-img"
+           {% else %}
+              src="{{ page.image }}"
+           {% endif %} />
+      {% if page.image_ref_text %}
+      <figcaption>
+        图片来自 <a {% if page.image_ref_link %}href="{{ page.image_ref_link }}"{% endif %} target="_blank">{{ page.image_ref_text }}</a>
+      </figcaption>
+      {% endif %}
+    </figure>
+  </div>
+{% endif %}
 
   <!--- Article -->
   <article>
-    <!-- Post image -->
-    {% if site.enable_post_image_render and page.image %}
-    <div class="post-image-container">
-      <figure>
-        <img class="post-content-img  {% if site.enable_image_lazyload %}lazyload{% endif%}"
-          {% if site.enable_image_lazyload %}
-                {% if page.image_svg_data %}
-                src="data:image/svg+xml;utf8,{{ page.image_svg_data | strip }}"
-                {% else %}
-                src="{{ page.image | append: '-small.svg' }}"
-                {% endif %}
-                data-src="{{ page.image }}" class="post-content-img"
-             {% else %}
-                src="{{ page.image }}"
-             {% endif %} />
-        {% if page.image_ref_text %}
-        <figcaption>
-          图片来自 <a {% if page.image_ref_link %}href="{{ page.image_ref_link }}"{% endif %} target="_blank">{{ page.image_ref_text }}</a>
-        </figcaption>
-        {% endif %}
-      </figure>
-    </div>
-    {% endif %}
 
     <!-- Post Title  -->
     <div class="post-title-container">
@@ -93,6 +70,30 @@ layout: base
 
   </article>
 
+  <!-- Header -->
+  <header class="post-page-header">
+
+    <span class="post-page-nav">
+      <a class="home-link nav" href="{{ "/" | relative_url }}" title="春水煎茶的首页">
+        {{ site.title }}
+      </a>
+      <span class="nav nav-right-icons">
+        <a class="icon-wrapper" href="{{ site.feedburner_url }}" target="_blank"  title="订阅本站">
+          <span class="icon-rss1"></span>
+        </a>
+
+        <a class="icon-wrapper" href="https://github.com/{{ site.github_username }}" target="_blank" title="我的Github页面">
+          <span class="icon-github1"></span>
+        </a>
+
+        <a class="icon-wrapper" href="mailto:{{ site.email }}"  title="邮件联系">
+          <span class="icon-mail"></span>
+        </a>
+      </span>
+    </span>
+    <div class="clear"></div>
+  </header>
+
   <!-- Post article -->
   <div class="post-article">
     <!-- Nav botton of Post -->
@@ -116,6 +117,7 @@ layout: base
 
       <span class="nav-divider">·</span>
 
+      {% if site.shares.enabled %}
       <!-- Shares -->
       <span class="nav shares">
         分享
@@ -140,6 +142,7 @@ layout: base
         <a title="返回顶部" href="#" class="shares-item gotop">
           ↑顶部
         </a>
+        {%- endif -%}
       {%- endif -%}
 
       </span>
@@ -156,27 +159,5 @@ layout: base
     <div class="pendant-large">
       <img class="pendant-img-large" src="{{ '/assets/images/pendant-large.png' | relative_url }}">
     </div>
-
-    <!-- Comments / Disqus -->
-    {%- if site.disqus.enabled -%}
-       {%- if site.disqus.shortname -%}
-         {%- include disqus.html -%}
-      {%- endif -%}
-    {%- endif -%}
-
-    <!-- Comments / Gitalk -->
-    {%- if site.gitalk.enabled -%}
-      {%- include gitalk.html -%}
-    {%- endif -%}
-
-    <!-- Footer -->
-    {% include footer.html %}
-  </div>
-
-  {%- if site.disqus.enabled -%}
-    {%- if page.comments != false -%}
-    <script id="dsq-count-scr" src="//{{ site.disqus.shortname }}.disqus.com/count.js" async></script>
-    {%- endif -%}
-  {%- endif -%}
 
 </body>

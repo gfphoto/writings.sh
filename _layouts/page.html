@@ -3,18 +3,19 @@ layout: base
 ---
 
 <body class="default">
-  <!-- Top header -->
-  <header>
-    <h1>
-      <a href="/">{{ site.title }}</a>
-    </h1>
-    <p class="divider">
-      <img src="{{ "/assets/images/divider.png" | relative_url }}">
-    </p>
-  </header>
-
   <!-- Page content -->
   <article>
+
+    <!-- Top header -->
+    <header>
+      <h1>
+        <a href="/">{{ site.title }}</a>
+      </h1>
+      <p class="divider">
+        <img src="{{ "/assets/images/divider.png" | relative_url }}">
+      </p>
+    </header>
+
     <!-- Nav -->
     {% include navbar.html %}
     <!-- Body -->
@@ -25,4 +26,5 @@ layout: base
 
   <!-- Footer -->
   {% include footer.html %}
+
 </body>

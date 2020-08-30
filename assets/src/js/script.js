@@ -2,12 +2,6 @@ function reconfigMath () {
   window.MathJax.Hub.Queue(['Typeset', MathJax.Hub])
 }
 
-function reloadDisqusCount () {
-  if (typeof DISQUSWIDGETS !== 'undefined') {
-    DISQUSWIDGETS.getCount({ reset: true })
-  }
-}
-
 function init () {
   window.onload = function () {
     console.log(
@@ -22,20 +16,6 @@ function init () {
     // lozad
     var observer = lozad('.lazyload')
     observer.observe({ threshold: 0.01 })
-
-    // Disqus count
-    // if (document.getElementsByClassName('post-body').length > 0) {
-    //   // var body = document.getElementsByTagName('body')[0]
-    //   // body.classList.add('fadein')
-    //   // Reload disqus count
-    //   if (typeof DISQUSWIDGETS === 'undefined') {
-    //     setTimeout(function () {
-    //       reloadDisqusCount()
-    //     }, 3000)
-    //   } else {
-    //     reloadDisqusCount()
-    //   }
-    // }
 
     // Location href
     if (window.location.hash) {
@@ -56,10 +36,6 @@ function init () {
     } else {
       reconfigMath()
     }
-
-    // Gitalk (delay 2s)
-    loadGitalk()
-    // setTimeout(function () { loadGitalk() }, 2000)
 
     // GA
     if (typeof ga !== 'undefined') {

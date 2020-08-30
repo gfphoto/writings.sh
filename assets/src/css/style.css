@@ -81,7 +81,7 @@ html {
 }
 
 body {
-  margin: 20px auto;
+  margin: 30px auto;
 	font-family: 'Arvo', -apple-system, BlinkMacSystemFont, Helvetica Neue, PingFang SC, sans-serif;
   font-size: 15px;
   line-height: 1.7;
@@ -122,12 +122,6 @@ a:hover {
 /* Link inside post */
 .post-body a:link,
 .post-body a:visited {
-  border-bottom: 1px solid rgba(0,0,0,0.4);
-}
-
-/* Link inside gitalk */
-#gitalk-container .markdown-body a:link,
-#gitalk-container .markdown-body a:visited {
   border-bottom: 1px solid rgba(0,0,0,0.4);
 }
 
@@ -221,7 +215,7 @@ h6 {
 a.heading-anchor:link {
   border: none;
 }
-a.heading-anchor:hover 
+a.heading-anchor:hover
 {
   background-color: #58D68D;
 }
@@ -321,27 +315,6 @@ img {
 
 img.badge { display: inline; }
 
-/* Post header */
-.post-page-header {
-  line-height: 28px;
-}
-.post-page-header .home-link {
-  font-size: 19px;
-  display: inline-block;
-  float: left;
-}
-a.home-link:link,
-a.home-link:visited {
-  border-bottom: 1px solid rgba(0,0,0,0.5);
-}
-.post-page-header .nav-right-icons {
-  float: right;
-}
-.post-page-header .nav-right-icons a {
-  display: inline-block;
-  margin-left: 6px;
-}
-
 /* Post meta */
 .post-meta {
   font-size: 90%;
@@ -362,6 +335,10 @@ figcaption {
   text-align: center;
   font-size: 85%;
   color: #777;
+}
+
+figcaption .image_ref_text { 
+  color: #777; 
 }
 
 /* Avatar */
@@ -496,6 +473,27 @@ header .divider {
   opacity: 0.86;
 }
 
+/* Post article */
+.post-article {
+  line-height: 28px;
+}
+.post-article .home-link {
+  font-size: 16px;
+  display: inline-block;
+  float: left;
+}
+a.home-link:link,
+a.home-link:visited {
+  border-bottom: 1px solid rgba(0,0,0,0.5);
+}
+.post-article .nav-right-icons {
+  float: right;
+}
+.post-article .nav-right-icons a {
+  display: inline-block;
+  margin-left: 12px;
+}
+
 /* Nav bar */
 .navbar { margin-bottom: 20px; }
 .nav-divider {
@@ -574,20 +572,20 @@ a.icon-wrapper:hover {
 
 /* Desktop */
 @media (min-device-width:1281px) {
-  html { 
+  html {
     min-height: 100%;
     background: #ecf0f1;
   }
   body {
-    width: 61.8%;
-    max-width: 710px;
+    width: 70%;
+    max-width: 768px;
     font-size: 16px;
-    padding: 30px 45px;
-    /* border: 1px solid black; */
     box-shadow: 0px 30px 60px 0px #d3dde2;
     -webkit-box-shadow: 0px 30px 60px 0px #d3dde2;
+    margin-top: 50px;
   }
   body.default { max-width: 580px; }
+  article { padding: 15px 45px; }
   .MathJax { font-size: 15px; }
   h1 { font-size: 32px; }
   h2 { font-size: 28px; }
@@ -645,8 +643,3 @@ a.icon-wrapper:hover {
   .post-copyright-only-for-print { display: inline-block; }
 }
 
-/* Hire */
-.hire {
-  margin-top: 10px;
-  text-align: center;
-}

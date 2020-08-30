@@ -53,23 +53,10 @@ plugins:
   - jekyll-feed
   - jekyll-sitemap
 
-bymeacoffee:
-  enabled: false
-
 gotop:
   enabled: true
 
 google_analytics_gtag:  "UA-145761297-1"
 
-### uptime-badge
-enable_uptime-badge: false
-
 ### feedburner
-
 feedburner_url: https://feeds.feedburner.com/writings-sh
-
-# Hire
-hire:
-  enabled: false
-  hire_link: "https://zi.com/w/a/95274tw"
-  hire_text: "🦄 我的团队正在寻优秀的小伙伴加入~ ！！"

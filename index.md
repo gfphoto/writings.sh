@@ -5,6 +5,8 @@ permalink: /
 id: index
 ---
 
+{% include image.html width="100%" absolute_url='/assets/images/b.jpeg'  %}
+
 <span class="heading-anchor">§</span>
 **最新博文**
 

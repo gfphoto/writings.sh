@@ -83,7 +83,7 @@ html {
 body {
   margin: 30px auto;
 	font-family: 'Arvo', -apple-system, BlinkMacSystemFont, Helvetica Neue, PingFang SC, sans-serif;
-  font-size: 15px;
+  font-size: 16px;
   line-height: 1.7;
   color: rgba(0,0,0,0.72);
   font-weight: normal;
@@ -128,7 +128,7 @@ a:hover {
 /* Add a '.drop-cap' class around paragraph for first-letter larger and drop.  */
 .post-body .drop-cap p:first-letter {
   float: left;
-  font-size: 34px;
+  font-size: 36px;
   line-height: 1;
   margin-right: 9px;
   font-weight: bold;
@@ -481,7 +481,7 @@ header .divider {
   line-height: 28px;
 }
 .post-article .home-link {
-  font-size: 16px;
+  font-size: 18px;
   display: inline-block;
   float: left;
 }
@@ -581,13 +581,13 @@ a.icon-wrapper:hover {
   }
   body {
     width: 70%;
-    max-width: 768px;
-    font-size: 16px;
+    max-width: 810px;
+    font-size: 18px;
     box-shadow: 0px 30px 60px 0px #d3dde2;
     -webkit-box-shadow: 0px 30px 60px 0px #d3dde2;
     margin-top: 50px;
   }
-  body.default { max-width: 580px; }
+  body.default { max-width: 700px; }
   article { padding: 15px 45px; }
   .MathJax { font-size: 15px; }
   h1 { font-size: 32px; }

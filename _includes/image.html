@@ -6,7 +6,11 @@
    {% endif %}
 
    {% if include.absolute_url %}
-     {% assign image_svg_url = image_url %}
+     {% if include.with_svg %}
+        {% assign image_svg_url = image_url | append: '-small.svg' %}
+     {% else %}
+        {% assign image_svg_url = image_url %}
+     {% endif %}
    {% else %}
      {% assign image_svg_url = image_url | append: '-small.svg' %}
    {% endif %}

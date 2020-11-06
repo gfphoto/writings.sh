@@ -5,7 +5,7 @@ permalink: /
 id: index
 ---
 
-{% include image.html width="100%" absolute_url='/assets/images/b.jpeg'  %}
+{% include image.html width="100%" absolute_url='/assets/images/b.jpeg' with_svg=true  %}
 
 <span class="heading-anchor">§</span>
 **最新博文**

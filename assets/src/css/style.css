@@ -650,6 +650,14 @@ a.icon-wrapper:hover {
 /* Print */
 @media print {
   header, .post-article, .post-copyright, .hire { display: none; }
+  body {
+    font-size: 18px;
+    width: 100%; 
+    max-width: none; 
+    box-shadow: none;
+  }
+  footer { display: none; }
+  img.pendant-img-large { display: none; }
   .post-copyright-only-for-print { display: inline-block; }
 }
 

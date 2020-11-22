@@ -192,7 +192,9 @@ h3 { font-weight: 400; }
 
 .post-body h1:hover,
 .post-body h2:hover,
-.post-body h3:hover { background-color: #D5F5E3; }
+.post-body h3:hover {
+  /* background-color: #D5F5E3; */
+}
 
 h6 {
   color: #555;
@@ -241,10 +243,15 @@ a.heading-anchor:hover
 }
 
 /* Selection background, mark, highlighted */
-article ::selection { background-color: #F7DC6F; }
+article ::selection { 
+  color: white;
+  background-color: #707B7C;
+}
 article mark,
 article .highlighted
-{ background-color: #D5F5E3; }
+{
+  background-color: #D6EAF8;
+}
 article .highlighted-red {
   background-color: #D82545;
   color: #ffffff;
@@ -337,8 +344,8 @@ figcaption {
   color: #777;
 }
 
-figcaption .image_ref_text { 
-  color: #777; 
+figcaption .image_ref_text {
+  color: #777;
 }
 
 /* Avatar */
@@ -583,8 +590,8 @@ a.icon-wrapper:hover {
     width: 70%;
     max-width: 850px;
     font-size: 18px;
-    box-shadow: 0px 30px 60px 0px #d3dde2;
-    -webkit-box-shadow: 0px 30px 60px 0px #d3dde2;
+    box-shadow: 0px 20px 20px 0px #d3dde2;
+    -webkit-box-shadow: 0px 20px 20px 0px #d3dde2;
     margin-top: 50px;
   }
   body.default { max-width: 700px; }

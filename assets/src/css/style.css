@@ -584,7 +584,7 @@ a.icon-wrapper:hover {
 @media (min-device-width:1281px) {
   html {
     min-height: 100%;
-    background: #ecf0f1;
+    /* background: #ecf0f1; */
   }
   body {
     width: 70%;

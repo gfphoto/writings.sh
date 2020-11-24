@@ -25,30 +25,6 @@ layout: base
 
   <!--- Article -->
   <article>
-    <!-- Post image -->
-    {% if site.enable_post_image_render and page.image %}
-    <div class="post-image-container">
-      <figure>
-        <img class="post-content-img  {% if site.enable_image_lazyload %}lazyload{% endif%}"
-          {% if site.enable_image_lazyload %}
-                {% if page.image_svg_data %}
-                src="data:image/svg+xml;utf8,{{ page.image_svg_data | strip }}"
-                {% else %}
-                src="{{ page.image | append: '-small.svg' }}"
-                {% endif %}
-                data-src="{{ page.image }}" class="post-content-img"
-             {% else %}
-                src="{{ page.image }}"
-             {% endif %} />
-        {% if page.image_ref_text %}
-        <figcaption>
-          图片来自 <a {% if page.image_ref_link %}href="{{ page.image_ref_link }}"{% endif %} target="_blank">{{ page.image_ref_text }}</a>
-        </figcaption>
-        {% endif %}
-      </figure>
-    </div>
-    {% endif %}
-
     <!-- Post Title  -->
     <div class="post-title-container">
       <h1 class="post-title">{{ page.title | escape }}</h1>
@@ -129,24 +105,13 @@ layout: base
     <div class="clear"></div>
   </div>
 
-  </article>
-
-  <!-- Footer -->
-  {% include footer.html %}
-
     <!-- Comments / Gitalk -->
     {%- if site.gitalk.enabled -%}
       {%- include gitalk.html -%}
     {%- endif -%}
 
-    <!-- Footer -->
-    {% include footer.html %}
-  </div>
+  </article>
 
-  {%- if site.disqus.enabled -%}
-    {%- if page.comments != false -%}
-    <script id="dsq-count-scr" src="//{{ site.disqus.shortname }}.disqus.com/count.js" async></script>
-    {%- endif -%}
-  {%- endif -%}
+  {% include footer.html %}
 
 </body>

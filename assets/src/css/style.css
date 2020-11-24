@@ -77,7 +77,7 @@
 
 html {
   width: 100%;
-  background-color: #fefefe;
+  background-color: #ffffff;
 }
 
 body {
@@ -94,7 +94,7 @@ body {
   /* letter-spacing; -0.005em; */
   width: 70%;
   max-width: 768px;
-  background-color: #fefefe;
+  background-color: #ffffff;
   -webkit-text-size-adjust: 100%;
 }
 
@@ -116,7 +116,7 @@ a:hover {
   color: #fff;
   background-color: #000;
   text-decoration: none;
-  border-bottom: 1px solid #fefefe;
+  border-bottom: 1px solid #ffffff;
 }
 
 /* Link inside post */
@@ -519,11 +519,11 @@ a.home-link:visited {
 
 /* Icon */
 .icon-wrapper:hover {
-  background-color: #fefefe;
+  background-color: #ffffff;
 }
 a.icon-wrapper:link,
 a.icon-wrapper:visited {
-  border-bottom: 1px solid #fefefe;
+  border-bottom: 1px solid #ffffff;
 }
 a.icon-wrapper:hover {
   color: #000;
@@ -584,7 +584,7 @@ a.icon-wrapper:hover {
 @media (min-device-width:1281px) {
   html {
     min-height: 100%;
-    /* background: #ecf0f1; */
+    background: #ecf0f1;
   }
   body {
     width: 70%;

@@ -4,7 +4,6 @@ title: 中学时代的笔记本 - 回忆曾经的梦想
 date: 2020-11-14 11:30:00 +0800
 categories: 生活
 permalink: /post/my-notebooks-middle-school-age
-image: https://upload.wikimedia.org/wikipedia/commons/0/0e/Georg_Cantor_%28Portr%C3%A4t%29.jpg
 image: /assets/images/posts/my-notebooks-middle-school-age/Georg_Cantor.jpg
 image_ref_text: Georg Cantor
 image_ref_link: https://en.wikipedia.org/wiki/Georg_Cantor

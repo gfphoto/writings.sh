@@ -29,6 +29,10 @@
      {% if include.max_width %}
      style="max-width: {{ include.max_width }};"
      {% endif %}
+
+     {% if include.max_height %}
+     style="max-height: {{ include.max_height }}px;"
+     {% endif %}
    {% endcapture %}
 
   {% capture figure_tag %}

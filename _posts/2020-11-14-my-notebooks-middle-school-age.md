@@ -22,24 +22,24 @@ image_svg_data: "%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1184 160
 今年十月长假在老家时，翻到了自己中学时代的一些笔记本，本子中记录着我关于数学和物理的思考、奥赛的练习题、复变和近世代数的笔记等等，还夹着许多日记、格言和雄心壮志的目标。
 岁月荏苒，长大后我并没有履行当时的愿望，也觉得愧对当时的自己。
 
-{% include image.html path="my-notebooks-middle-school-age/junior-shool-notebook-1.jpeg" max_height=200 note="初中的一本研究物理和数学的笔记本" %}
+{% include image.html path="my-notebooks-middle-school-age/junior-shool-notebook-1.jpeg" max_height=600 note="初中的一本研究物理和数学的笔记本" %}
 
 
 初中时候，我有两个业余爱好：写小说和研究数理。记得当时写了一本神话小说叫做《莲花仙子》，在各个宿舍传阅，如今已经找不到那个本子了。
 不过，研究数学和物理的本子《我的研究天堂》还在。里面记录了很多天真的、对物理定理的解释、证明，甚至一些发明。
 
-{% include image.html path="my-notebooks-middle-school-age/junior-shool-notebook-2.jpeg" max_height=120 note="初中的一个笔记本上构思的一种发电装置" %}
+{% include image.html path="my-notebooks-middle-school-age/junior-shool-notebook-2.jpeg" max_height=600 note="初中的一个笔记本上构思的一种发电装置" %}
 
 当时的我对很多事情都想搞明白，理解清楚，因此经常“想入非非”，思考各种定理、原理到底是怎么来的，想办法用自己确信的、已知的理论去圆满地解释出来新的知识点。
 
-{% include image.html path="my-notebooks-middle-school-age/junior-shool-notebook-3.jpeg" max_height=120 note="初中的一个笔记本上对杠杆定理的证明(1)" %}
-{% include image.html path="my-notebooks-middle-school-age/junior-shool-notebook-4.jpeg" max_height=120 note="初中的一个笔记本上对杠杆定理的证明(2)" %}
+{% include image.html path="my-notebooks-middle-school-age/junior-shool-notebook-3.jpeg" max_height=400 note="初中的一个笔记本上对杠杆定理的证明(1)" %}
+{% include image.html path="my-notebooks-middle-school-age/junior-shool-notebook-4.jpeg" max_height=400 note="初中的一个笔记本上对杠杆定理的证明(2)" %}
 
 这个笔记本上还记录了一些从微观角度的思考，比如“温度差导致的热传递现象”，“电流为什么具有热效应”，“为什么高温的物体容易变形”，现在来看很多想法和解释可能是错的，
 , 现在，我也很好奇地去 Google 下网络上、知乎上对一些问题的解答，比如蒲丰投针的解释，比如杠杆定理的解释，去验证下当年的思考是不是正确的，
 当然有些是错误的，有些我到现在也觉得是正确的，结果已经不那么重要了。
 
-{% include image.html path="my-notebooks-middle-school-age/junior-shool-notebook-5.jpeg" max_height=120 note="对热传递现象的解释的一部分内容" %}
+{% include image.html path="my-notebooks-middle-school-age/junior-shool-notebook-5.jpeg" max_height=600 note="对热传递现象的解释的一部分内容" %}
 
 进入高中后，我便专一到只热爱数学了。高中最喜爱的一点就是图书馆，我甚至认为，高中的学校图书馆比大学的图书馆还要好，
 里面有许多老数学书。我经常泡在空空的图书馆里看数学，对康托建立的集合论兴趣盎然，也会看一些近世代数和复变函数的东西，当时许多知识看不懂，但是十足有一种感觉，就是看到这些数学分支就非常的兴奋，
@@ -51,7 +51,7 @@ image_svg_data: "%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1184 160
 这是我写在高中时代的最重要的一本奥赛笔记本的第一页的一句话。当时的我非常讨厌死板僵硬的高考文化，“自命不凡”地追求数学家的梦 ,
 把奥数之路当成自己的唯一出路。 看如今的自己，倒是再也说不出这样的话来。
 
-{% include image.html path="my-notebooks-middle-school-age/high-shool-notebook-1.jpeg" max_height=150 note="高中的一本数学奥赛笔记本" %}
+{% include image.html path="my-notebooks-middle-school-age/high-shool-notebook-1.jpeg" max_height=600 note="高中的一本数学奥赛笔记本" %}
 
 > 崇尚自由思维,  善用两面思考。
 

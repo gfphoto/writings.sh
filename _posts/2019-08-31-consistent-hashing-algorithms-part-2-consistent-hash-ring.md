@@ -39,7 +39,7 @@ image_svg_data: "%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 900 600'
    1. 如果 $z$ 正好落在槽位上，返回这个槽位的标号。
    2. 否则， 顺时针沿着环寻找离 $z$ 最近的槽位，返回槽位标号。
 
-{% include image.html path="consistent-hashing-algorithms/5.1-hash-ring.jpg" max_width="60%" note="图5.1 - 哈希环示意图" %}
+{% include image.html path="consistent-hashing-algorithms/5.1-hash-ring.jpg" max_width="50%" note="图5.1 - 哈希环示意图" %}
 
 我们接下来讨论下， 当新增和删除槽位时， 哈希环的表现如何。
 
@@ -82,7 +82,7 @@ image_svg_data: "%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 900 600'
 在有序表里做查找， 这是**[二分查找](https://zh.wikipedia.org/wiki/二分搜索算法)**可以解决的事情，
 所以<span class="highlighted" markdown="1">哈希环的映射函数的时间复杂度是 $O(log {n})$</span>。
 
-{% include image.html path="consistent-hashing-algorithms/6.1-binary-search-on-hash-ring.jpg" note="图6.1 - 哈希环上二分查找" %}
+{% include image.html path="consistent-hashing-algorithms/6.1-binary-search-on-hash-ring.jpg" max_width="70%" note="图6.1 - 哈希环上二分查找" %}
 
 *附注: 我对ketama做了简单的实现：
 [C语言版本](https://github.com/hit9/C-Snip/blob/master/src/ketama.c){:target="_blank"}，
@@ -100,7 +100,7 @@ image_svg_data: "%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 900 600'
 下面的图6.2是一个例子，
 其中 $N_0, N_1, N_2, N_3$ 的权重比是 $1:2:3:2$。 选中一个影子节点如 $V(N_2)$ 就是选中了 $N_2$ 。
 
-{% include image.html path="consistent-hashing-algorithms/6.2-weighted-nodes-on-hash-ring.jpg" max_width="70%" note="图6.2 - 加权哈希环" %}
+{% include image.html path="consistent-hashing-algorithms/6.2-weighted-nodes-on-hash-ring.jpg" max_width="50%" note="图6.2 - 加权哈希环" %}
 
 但是需要注意的是， 权重的调整会带来数据迁移的工作。
 

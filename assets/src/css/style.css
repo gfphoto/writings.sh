@@ -537,9 +537,9 @@ a.icon-wrapper:hover {
 
 /* Avatar */
 img.avatar {
-  border-radius: 5em;
-  width: 70px;
-  height: 70px;
+  border-radius: 8em;
+  width: 80px;
+  height: 80px;
 }
 
 /* About */
@@ -617,6 +617,12 @@ img.avatar {
     box-shadow: 0 2px 3px rgba(0,0,0,.1);
   }
   .container.default { max-width: 830px; }
+  .container.default .posts-list {
+    background: url("/assets/images/bg.jpeg");
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: 350px;
+  }
   header {
     border-bottom: 2px solid black;
     margin-bottom: 50px;

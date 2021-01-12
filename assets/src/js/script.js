@@ -45,8 +45,5 @@ function init () {
 
     // mediumZoom
     mediumZoom('img.post-content-img')
-
-    // Gitalk
-    loadGitalk()
   }
 }

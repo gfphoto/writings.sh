@@ -4,6 +4,16 @@ layout: base
 
 <body>
 
+  <!-- Back home -->
+
+  <div class="back-home">
+    ⟵   <a class="back-home-title" href="{{ '/' | relative_url }}">
+       {{ site.title }}
+    </a>
+  </div>
+
+  <container>
+
   <!-- Post image -->
   {% if site.enable_post_image_render and page.image %}
   <div class="post-image-container">
@@ -33,16 +43,7 @@ layout: base
     <div class="post-meta">
       <!-- Post date -->
       <span class="post-date post-meta-item">
-        <!-- <span class="icon-clock"></span> -->
         {{ page.date | date: "%Y-%m-%d" }}
-      </span>
-      <span class="nav-divider">·</span>
-
-      <!-- Site Name -->
-      <span class="post-site-name post-meta-item">
-        <a class="nav" href="{{ "/" | relative_url }}" title="春水煎茶的首页">
-          {{ site.title }}
-        </a>
       </span>
 
       <span class="nav-divider">·</span>
@@ -56,11 +57,6 @@ layout: base
         {%- endfor -%}
       </span>
 
-      <span class="nav-divider">·</span>
-
-      <!-- Copyright Notice. -->
-      <span class="post-copyright post-meta-item">{{ site.copyright_declaration }} </span>
-      <span class="post-copyright-only-for-print"> {{ site.copyright_declaration_for_print }} </span>
     </div>
 
     <!-- Post body -->
@@ -79,13 +75,14 @@ layout: base
   <div class="post-article">
 
     <span class="post-page-nav">
-      <a class="home-link nav" href="{{ "/" | relative_url }}" title="春水煎茶的首页">
-        {{ site.title }}
+      <a class="comment-trigger nav" href="javascript:void(0);" onclick="loadGitalk();">
+        评论
+        <span class="icon-message-circle"></span>
       </a>
       <span class="nav nav-right-icons">
 
-        <a class="icon-wrapper" href="https://github.com/{{ site.github_username }}" target="_blank" title="Github">
-          <span class="icon-github1"></span>
+        <a class="icon-wrapper" href="{{ "/" | relative_url }}"  title="回到首页">
+          <span class="icon-home1"></span>
         </a>
 
         <a class="icon-wrapper" href="mailto:{{ site.email }}"  title="邮件联系">
@@ -114,4 +111,5 @@ layout: base
 
   {% include footer.html %}
 
+  </container>
 </body>

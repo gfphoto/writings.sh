@@ -90,7 +90,7 @@ body {
 .container {
   background-color: #ffffff;
   width: 70%;
-  max-width: 810px;
+  max-width: 830px;
   margin: 30px auto;
   display: block;
 }
@@ -125,7 +125,7 @@ a:hover {
 /* Backhome */
 .back-home {
   width: 70%;
-  max-width: 810px;
+  max-width: 830px;
   margin: 30px auto;
 }
 
@@ -616,12 +616,12 @@ img.avatar {
     margin-top: 20px;
     box-shadow: 0 2px 3px rgba(0,0,0,.1);
   }
-  .container.default { max-width: 700px; }
+  .container.default { max-width: 830px; }
   header {
     border-bottom: 2px solid black;
     margin-bottom: 50px;
   }
-  article { padding: 20px 50px; }
+  article { padding: 20px 60px; }
   .MathJax { font-size: 15px; }
   h1 { font-size: 32px; }
   h2 { font-size: 28px; }

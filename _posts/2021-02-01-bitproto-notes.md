@@ -143,7 +143,7 @@ bitproto 编解码的工作原理则是：
 
 接下来，就是对两个字节做对齐处理：
 
-{% include image.html path="bitproto-notes/3.jpg" max_width="100%" %}
+{% include image.html path="bitproto-notes/3.jpg"  %}
 
 把源数据字节进行向右（或者向左，视目标字节位置靠左还是靠右而定）的位移，
 然后用或操作符取出要拷贝的 `c` 个比特即可。

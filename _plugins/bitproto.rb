@@ -2,7 +2,7 @@
 
 Jekyll::Hooks.register :site, :pre_render do |site|
   require "rouge"
-    class MoreJSLexer < Rouge::Lexers::Protobuf
+    class BitprotoLexer < Rouge::Lexers::Protobuf
       title 'bitproto'
       desc 'bitproto syntax lexer'
       tag 'bitproto'

@@ -81,9 +81,10 @@ html {
 }
 
 body {
-	font-family: 'Arvo', 'PingFang SC', 'Microsoft YaHei', 'Helvetica Neue', Helvetica, -apple-system, sans-serif;
+  /* Hiragino Sans GB => 冬青黑 */
+  font-family: Arvo, Verdana, "Hiragino Sans GB", -apple-system, "华文细黑", STXihei, "Microsoft YaHei", "微软雅黑", Heiti, "黑体", sans-serif;
   font-size: 16px;
-  line-height: 1.7;
+  line-height: 1.6;
   color: rgba(0,0,0,0.9);
 }
 
@@ -100,13 +101,13 @@ body {
 a:link {
   color: rgba(0,0,0,0.9);
   text-decoration: none;
-  border-bottom: 1px solid rgba(0,0,0,0.3);
+  border-bottom: 1px dotted rgba(0,0,0,0.3);
 }
 
 a:visited {
   color: rgba(0,0,0,0.9);
   text-decoration: none;
-  border-bottom: 1px solid rgba(0,0,0,0.3);
+  border-bottom: 1px dotted rgba(0,0,0,0.3);
 }
 
 a:hover {
@@ -119,7 +120,7 @@ a:hover {
 /* Link inside post */
 .post-body a:link,
 .post-body a:visited {
-  border-bottom: 1px solid rgba(0,0,0,0.3);
+  border-bottom: 1px dotted rgba(0,0,0,0.3);
 }
 
 /* Backhome */
@@ -203,7 +204,7 @@ h6 {
 
 /* heading anchors */
 .heading-anchor {
-  font-family: Menlo, 'Roboto Mono', Courier, monospace;
+  font-family: Menlo, 'Roboto Mono', Consolas, monospace;
   float: left;
   margin-left: -20px;
   padding-left: 4px;
@@ -347,22 +348,21 @@ figcaption .image_ref_text {
 }
 
 pre {
-  font-family: monospace, "Roboto Mono", "Liberation Mono", Menlo, Courier, monospace;
+  font-family: 'Roboto Mono', 'Consolas', 'Menlo', monospace;
   border-radius: 15px;
-  padding: 20px 25px;
-  margin: 36px auto;
+  padding: 15px 20px;
+  margin: 20px auto;
   overflow: auto;
   word-spacing: 0;
 }
 
 code {
-  font-family: "Roboto Mono", "Liberation Mono", Menlo, Courier, monospace;
+  font-family: 'Roboto Mono', 'Consolas', 'Menlo', monospace;
   display: inline-block;
 }
 
 pre code {
-  font-size: 17px;
-  line-height: 1.45;
+  line-height: 1.4;
   border: none;
   padding: 0;
 }
@@ -374,7 +374,7 @@ pre, pre code {
 /* Inline code */
 article p code,
 article li code {
-  color: black;
+  color: #364f6b;
   font-weight: bold;
   padding: 1px 2px;
   margin: 0 3px;
@@ -385,7 +385,6 @@ article li code {
 blockquote {
   border-left: 4px solid #e2e2e2;
   padding: 0 16px;
-  font-style: italic;
   line-height: 1.0;
   quotes: "“" "”" "‘" "’";
   margin: 25px auto;

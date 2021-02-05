@@ -12,7 +12,7 @@ permalink: /post/bitproto-notes
 
 下面是一个 bitproto 的例子:
 
-```proto
+```bitproto
 message Data {
     uint3 the = 1
     uint3 bit = 2
@@ -91,7 +91,7 @@ protobuf 没有胜任这个工作还有一个非技术的原因：
 我最初的构思，就是把大家手工设计的协议用一个类似 protobuf 的协议语言描述出来。
 于是有了类似下面的语法设计:
 
-```proto
+```bitproto
 proto pen
 
 enum Color : uint3 {
@@ -224,7 +224,7 @@ int DecodeDrone(struct Drone *m, unsigned char *s) {
 [protobuf 的方案](https://stackoverflow.com/questions/27610647/protocol-buffers-how-is-the-extensibility-and-backward-compatibility-achieved/27611721)
 编码的数据带入字段的标号，解码侧只解码自己认识的字段。但是，这种方式带入的额外字节量比较大。
 
-```proto
+```bitproto
 message Data {
     uint32 field_old = 1;
     // Decoder don't know this field number, skip it.
@@ -252,7 +252,7 @@ bitproto 主要的场景是在嵌入式场景， 或者和嵌入式发生关系�
 bitproto 的新版中，用一个单引号来标记消息是可扩展的，如果编码和解码两方对齐协议的时候，
 已经标记一个消息是可扩展的， 那么未来一方单方面新增协议字段，是没有问题的：
 
-```proto
+```bitproto
 // Single quote to mark a message to be extensible
 message Data' {
     uint3 field_old = 1

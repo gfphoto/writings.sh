@@ -128,14 +128,14 @@ bitproto 编解码的工作原理则是：
 举个例子来说，比如我们要从一个 4 字节的基本类型 (比如说 `uint32`) 的第 `i` 个比特开始，
 逐个拷贝 `n` 个比特到目标字节流 `s` 的第 `j` 个比特的位置上。
 
-{% include image.html path="bitproto-notes/1.png" max_width="80%" %}
+{% include image.html path="bitproto-notes/1.jpg" max_width="80%" %}
 
 首先，要找出拷贝源和目标串的对应字节的位置 `i/8` 和 `j/8`，取出两个字节后，
 依次进行字节内拷贝，直到 `n` 个比特都拷贝完成。
 
 考虑字节内拷贝一次比特的数量 `c` ， 它是以下三者中最小的一个数：
 
-{% include image.html path="bitproto-notes/2.png" max_width="80%" %}
+{% include image.html path="bitproto-notes/2.jpg" max_width="80%" %}
 
 * `n-i` 当前处理类型的，剩余需要拷贝的比特数量。
 * `8-i%8` 源数据字节内剩余的比特数量。
@@ -143,7 +143,7 @@ bitproto 编解码的工作原理则是：
 
 接下来，就是对两个字节做对齐处理：
 
-{% include image.html path="bitproto-notes/3.png" max_width="100%" %}
+{% include image.html path="bitproto-notes/3.jpg" max_width="100%" %}
 
 把源数据字节进行向右（或者向左，视目标字节位置靠左还是靠右而定）的位移，
 然后用或操作符取出要拷贝的 `c` 个比特即可。
@@ -263,7 +263,7 @@ message Data' {
 
 解码的原理如下图所示：
 
-{% include image.html path="bitproto-notes/4.png" max_width="80%" %}
+{% include image.html path="bitproto-notes/4.jpg" max_width="80%" %}
 
 1. 解码端在解码一个消息的时候，先记录起始位置 `P` (即在字节流中的比特索引)。
 2. 读取消息的头两个字节，获取到消息的大小 (多少个比特)。
@@ -337,7 +337,7 @@ while n > 0 {  // 当前剩余的要拷贝的比特数量 > 0
 新算法的第一步，是要先通过老的算法的方式，到达下面图示的状态，这个状态下，目标串的起始比特索引值处于字节的 `0 bit` 处，
 这样为后面的直接赋值法做准备。
 
-{% include image.html path="bitproto-notes/5.png" max_width="80%" %}
+{% include image.html path="bitproto-notes/5.jpg" max_width="80%" %}
 
 下面就是 C 语言指针展示威力的时候了，通过指针按照整型直接读取此时源数据区的数据。比如，如果还有大于 `32bits` 需要拷贝，
 则可以直接读取一个 `uint32_t` 类型来:
@@ -353,7 +353,7 @@ uint32_t v32 = (*((uint32_t *)(src_ptr)));
 v32 >>= shift;
 ```
 
-{% include image.html path="bitproto-notes/6.png" max_width="80%" %}
+{% include image.html path="bitproto-notes/6.jpg" max_width="80%" %}
 
 这时，就可以直接把 `v32` 的字节一个一个直接赋值到目标串了：
 

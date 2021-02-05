@@ -402,6 +402,6 @@ bitproto 的编译器在这个优化模式下，会直白的生成老版的编�
   然而，扩展性的支持需要依赖动态计算。bitproto 的标准模式通过编解码的支持库来支持扩展性，但是这降低了性能。
 
 
-最后，欢迎你关注这个项目： https://github.com/hit9/bitproto
+最后，欢迎你关注这个项目： [https://github.com/hit9/bitproto](https://github.com/hit9/bitproto)
 
 毕。

@@ -100,13 +100,13 @@ body {
 a:link {
   color: rgba(0,0,0,0.9);
   text-decoration: none;
-  border-bottom: 1px solid rgba(0,0,0,0.1);
+  border-bottom: 1px solid rgba(0,0,0,0.3);
 }
 
 a:visited {
   color: rgba(0,0,0,0.9);
   text-decoration: none;
-  border-bottom: 1px solid rgba(0,0,0,0.1);
+  border-bottom: 1px solid rgba(0,0,0,0.3);
 }
 
 a:hover {
@@ -119,7 +119,7 @@ a:hover {
 /* Link inside post */
 .post-body a:link,
 .post-body a:visited {
-  border-bottom: 1px solid rgba(0,0,0,0.1);
+  border-bottom: 1px solid rgba(0,0,0,0.3);
 }
 
 /* Backhome */
@@ -367,13 +367,13 @@ pre code {
   padding: 0;
 }
 
-/* Noise. */
 pre, pre code {
-  background:#fafafa url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwBAMAAAClLOS0AAAAFVBMVEUAAAD8+vzs7uz8/vz08vT09vTs6uyDjcy1AAAAAXRSTlMAQObYZgAAAAlwSFlzAAAOxAAADsQBlSsOGwAAAxRJREFUOI0VVDl6aysMZgsC5J7J/eFAeqb0CJHejnP3v4THa0Ho+0dECoVp1qi1aVNBoW/DYZMUaGEk1psm03ZpXY/p5e2SiNnj9uiDzeFX5qiDJlrcRWsB847/9vjrkS1G62VM1YoWKZi4fyrp1bLlbEZZVmcxMlafbz9CcW6W7KCaxPIS7HKmDxCPJanbEtD0ElwUnOiq25h6bqy7m4fUQxggIAcT8tpacWwc6oFi8jezMKo6/6dv1+219gafdPG/OETvnQo2bYZUXvW0k1QRWhU0qgKAIlv0lNiCBAJkFPro1GzcIz/KY+Tsc5ivMyWuPsshEWrJUK0iI4POyi+h3vvSJiSHdpJcnSXqK/EQAWVYOtsoyRoEDrrtd2hdAGKB8L/ofSpTDbkEe0cSJiwFXofWnsHr30MWdr22P0YdjRLJvaS/j5W+DCtDCWI11PZhJMzD7cOl3DNuL1ng/K49HTsLZRW9ybq0AWOJmRYno5g3bX32VrPD0B8W4DEO+ZPkM8SQCjzhvOhdClvXM+hdh3GEdUu3LTOxFVBTj8N7YMagrzL5AzDxwH3a+yAqZ0x6p5clM9Awiccrd03dv6heTJl31TFUdZLoKExJ/urtnrXXNdQdn6jE7+YTRVf17K3lPD79QvZfS2gIcsHNxunvhC1t4vfZgcLuSRqNl0bfWX20noX8Olo1wsxQClrTRrQ5Ic1OUwu/8pBWKQs1xiSbNfIaA1HkYU4UrbEfOU+ufhQ0zB+UogJuKZe7KsVq28T7oFc9iGFkq0e5pd5ll6M1Vh2mmSIFhjhH18dYMttOXM96AiPOCVzalltyW/QosX8hyLFFGGx1+PgdTr+83Y9O6qrLiSrH2DVn+c5RoTkFucorTyNaH6eLR5ZRcUbw4xfTsaWIfYW7e6vukaXP4znk+/Y1L1Hd+RKytpd1HQF6aZygGCtKADNNPWb4roicPZaPa9xinz7Uk8mumFDaXmyhug9zMh5fga/t9gBjrdavP7r8Ldbz6ySSNMiwtf1ebut2mQ1CZ7ZcZXgNdKsC24HUyjX+A1Ai62jzUy1nAAAAAElFTkSuQmCC);
+  background: #f8f8f8;
 }
 
 /* Inline code */
-article p code {
+article p code,
+article li code {
   color: black;
   font-weight: bold;
   padding: 1px 2px;
@@ -609,7 +609,7 @@ img.avatar {
     background: #d3dde2;
   }
   body {
-    font-size: 17px;
+    font-size: 16px;
   }
   .container {
     width: 70%;

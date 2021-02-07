@@ -40,6 +40,7 @@ exclude:
   - fix-lazyload-in-feed.sh
   - fix-mathjax-in-feed.sh
   - assets/src
+  - _plugins
 
 # Image
 enable_post_image_render: true  # Post head large image

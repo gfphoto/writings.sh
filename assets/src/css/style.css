@@ -246,20 +246,18 @@ a.heading-anchor:hover
 
 /* Selection background, mark, highlighted */
 article ::selection,
-article mark,
-article .highlighted
+article mark
 {
   background-color: #D6EAF8;
 }
-article .highlighted-red {
-  background-color: #D82545;
-  color: #ffffff;
+
+/* highlighted */
+article .highlighted {
+  border-bottom: 2px solid #73C6B6;
 }
-article .highlighted-red a:link,
-article .highlighted-red a:visited
-{
-  color: #ffffff;
-  border-bottom: 1px solid #ffffff;
+
+article .highlighted-red {
+  border-bottom: 2px solid #D82545;
 }
 
 p,

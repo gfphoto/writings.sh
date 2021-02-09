@@ -101,13 +101,13 @@ body {
 a:link {
   color: rgba(0,0,0,0.9);
   text-decoration: none;
-  border-bottom: 1px dotted rgba(0,0,0,0.3);
+  border-bottom: 1px dotted rgba(0,0,0,0.5);
 }
 
 a:visited {
   color: rgba(0,0,0,0.9);
   text-decoration: none;
-  border-bottom: 1px dotted rgba(0,0,0,0.3);
+  border-bottom: 1px dotted rgba(0,0,0,0.5);
 }
 
 a:hover {
@@ -120,7 +120,7 @@ a:hover {
 /* Link inside post */
 .post-body a:link,
 .post-body a:visited {
-  border-bottom: 1px dotted rgba(0,0,0,0.3);
+  border-bottom: 1px dotted rgba(0,0,0,0.5);
 }
 
 /* Backhome */

@@ -66,6 +66,7 @@ gitalk:
 gotop:
   enabled: true
 
+enable_google_analytics: false
 google_analytics_gtag:  "UA-145761297-1"
 
 ### feedburner

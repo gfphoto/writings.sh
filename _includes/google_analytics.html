@@ -1,3 +1,4 @@
+{% if site.enable_google_analytics %}
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-145761297-1"></script>
 <script>
@@ -7,3 +8,4 @@
 
   gtag('config', '{{ site.google_analytics_gtag }}');
 </script>
+{% endif %}

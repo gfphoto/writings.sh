@@ -41,6 +41,7 @@ exclude:
   - fix-mathjax-in-feed.sh
   - assets/src
   - _plugins
+  - _resource
 
 # Image
 enable_post_image_render: true  # Post head large image
